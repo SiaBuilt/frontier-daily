@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Frontier 早报的全部信源：一线 AI builder、一手长文、播客与官方渠道。">
 <title>Frontier 早报</title>
+<link rel="icon" type="image/svg+xml" href="logo.svg">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -417,6 +418,16 @@ h2{font-weight:600!important;letter-spacing:-.03em!important}
 .t-heavy .st,.t-cond .st{font-family:var(--f-sans)!important;font-weight:600;text-transform:uppercase;letter-spacing:.03em}
 /* hover-to-open shelf */
 .spine.on{animation:turn .6s cubic-bezier(.2,.7,.2,1) both}
+/* hover never moves the shelf: the book grows up from its base, its cover floats above */
+.spine{transition:width .8s cubic-bezier(.65,0,.35,1),height .3s cubic-bezier(.2,.7,.2,1),box-shadow .6s}
+.spine:hover,.spine:focus-visible,.spine.on:hover{transform:none}
+.spine.lean:hover,.spine.lean:focus-visible{transform:rotate(-7deg)}
+.spine:not(.on):hover,.spine:not(.on):focus-visible,.spine.peeked{height:calc(var(--h) + 14px)}
+#shelf-top{position:relative}
+.peek{position:absolute;z-index:6;pointer-events:none;width:190px;padding:14px 14px 12px;border-radius:3px 3px 0 0;background:var(--bg);color:var(--fg);box-shadow:0 18px 40px rgba(0,0,0,.25);transform-origin:left bottom;opacity:0;visibility:hidden}
+.peek .cov{display:flex;flex-direction:column;justify-content:space-between;height:100%;text-align:left}
+.peek.on{opacity:1;visibility:visible;animation:turn .45s cubic-bezier(.2,.7,.2,1) both}
+@media (prefers-reduced-motion:reduce){.peek.on{animation:none}}
 
 /* portrait wall */
 .wchips{display:flex;flex-wrap:wrap;gap:8px;margin:-6px 0 34px}
@@ -442,6 +453,15 @@ h2{font-weight:600!important;letter-spacing:-.03em!important}
 .pn em{font-style:normal;font-family:var(--f-mono);font-size:9.5px;font-weight:400;color:var(--mute);border:1px solid var(--line);border-radius:3px;padding:0 4px}
 .po{font-size:12px;color:var(--mute);line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media (max-width:520px){.wgrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 10px}.pn{font-size:13px}.po{font-size:11px}.pb{display:none}}
+/* brand, plaque, fewer small marks */
+.brand{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:18px;letter-spacing:-.03em}
+.brand img{display:block;border-radius:6px}
+.lede{display:none}
+.teaser{margin-top:32px}
+.plaque{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin:0;padding:12px clamp(16px,3vw,32px) 40px;color:var(--mute);font-size:13px}
+.plaque .cap{color:var(--ink)}
+.bookend,.spine .mk,.spine .mk-o{display:none!important}
+.cst-lab b{display:none}
 /* builders constellation: one sunflower cluster per field, fisheye on hover, a card that links back to the briefs */
 .wg{display:none}
 .cst{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:clamp(20px,3vw,36px);align-items:start}
@@ -478,7 +498,7 @@ h2{font-weight:600!important;letter-spacing:-.03em!important}
 .cst-card .cm a:hover span:last-child{text-decoration:underline;text-underline-offset:3px}
 .cst-card .cm p{margin:4px 0 0;font-size:12.5px;color:var(--mute)}
 .cst-close{display:none}
-.cst-key{display:flex;gap:16px;flex-wrap:wrap;margin-top:6px;color:var(--mute);font-size:12px}
+.cst-key{display:flex;gap:18px;flex-wrap:wrap;margin:-10px 0 32px;color:var(--mute);font-size:13px}
 .cst-key span{display:inline-flex;align-items:center;gap:6px}
 .cst-key i{width:10px;height:10px;border-radius:50%;background:var(--paper);box-shadow:0 0 0 1.5px var(--orange)}
 @media (max-width:860px){
@@ -544,10 +564,27 @@ h2{font-weight:600!important;letter-spacing:-.03em!important}
 .drawer .sw::before{content:"→";font-family:var(--f-sans);font-size:13px;letter-spacing:0;color:var(--c);margin-right:6px}
 .drawer .qs{border-radius:12px;padding:18px 20px;margin-top:32px}
 .drawer .qs h3{font-family:var(--f-sans);font-weight:600;font-size:16px;margin:6px 0 0}
+/* drawer v4: one bar — logo, date, prev/next, calendar, close; pulse at the end; quotes lead */
+.dbar{grid-template-columns:minmax(0,1fr) auto auto;gap:6px;border-bottom:1px solid var(--line)}
+.dbt{flex-direction:row;align-items:center;gap:10px}
+.dbt img{border-radius:6px;flex:none}
+.dbt b{font-size:17px}
+.dnn{font-family:var(--f-mono);font-size:11px;font-weight:400;letter-spacing:.06em;color:var(--mute);margin-left:10px}
+.drawer .wk{gap:0}
+.drawer .wk .wnav{width:32px;height:32px;display:grid;place-items:center}
+.wnav:disabled{opacity:.3;cursor:default;background:none}
+.wnav[aria-pressed="true"]{background:var(--paper);color:var(--ink)}
+.drawer .days.week{display:none}
+.drawer .days.month{right:0;left:auto;transform:none}
+.drawer .days.month .mh{grid-column:1/-1;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;color:var(--mute);padding:2px 4px 8px}
+.xbtn{margin-left:8px}
+.drawer .ticker{margin-top:40px;border-top:1px solid var(--line);border-bottom:0;padding-top:14px}
+.drawer .q{background:var(--paper);border:0;border-radius:12px;padding:14px 18px 13px;margin:6px 0 4px}
+.drawer .q .en{font-size:18px;font-weight:500;line-height:1.45;letter-spacing:-.01em;color:var(--ink)}
+.drawer .q .qm{font-style:normal;color:var(--c);font-size:1.5em;line-height:0;vertical-align:-.28em;margin-right:2px}
+.drawer .q .zh{display:block;font-size:13px;margin-top:6px}
 @media (max-width:700px){
-  .dbar{grid-template-columns:minmax(0,1fr) auto;row-gap:8px}
-  .drawer .wk{grid-column:1/-1;grid-row:2;justify-content:space-between}
-  .drawer .wk .mtitle{display:none}
+  .dnn{display:none}
 }
 </style>
 
@@ -557,19 +594,19 @@ h2{font-weight:600!important;letter-spacing:-.03em!important}
 
 <div class="panel">
   <header class="bar">
-    <span class="cap">Frontier · Siabuilt</span>
-    <nav aria-label="章节"><a class="pill" href="#daily" data-open="daily" style="background:var(--orange);border-color:var(--orange);color:#1B120D">Today</a><a class="pill" href="#builders" data-s="builders">Builders</a><a class="pill" href="#rules" data-s="rules">Rules</a></nav>
+    <a class="brand" href="./" aria-label="Frontier 首页"><img src="logo.svg" alt="" width="28" height="28"><span>Frontier</span></a>
+    <nav aria-label="章节"><a class="pill" href="#daily" data-open="daily" style="background:var(--orange);border-color:var(--orange);color:#1B120D">今日早报</a></nav>
   </header>
 
   <div id="shelf-top" data-idx="01">
     <div class="hero">
       <h1>The Frontier<br>Curation</h1>
-      <p class="lede">Frontier 早报的全部信源。只跟随在一线做产品、做模型、做硬件的人，每条消息都能回到原文。</p>
     </div>
     <div style="text-align:center"><a class="teaser" id="teaser" href="#daily" data-open="daily" hidden><span class="tl"></span><span class="tg">今日早报 →</span></a></div>
     <div class="shelf"><div class="bay one"><div class="books"><span class="bookend" aria-hidden="true"><span>Long Reads</span></span><a class="spine k-reads t-cond " style="--bg:#E8642C;--fg:#1B120D;--h:293px;--w:38px" href="https://simonwillison.net" target="_blank" rel="noopener" data-n="Simon Willison" data-d="新模型与工具的实测笔记" data-k="一手长文"><span class="mk mk-r"></span><span class="st">Simon Willison</span><span class="cov"><span class="ck">一手长文</span><span class="ct">Simon Willison</span><span class="cd">新模型与工具的实测笔记</span></span></a><a class="spine k-reads t-serif " style="--bg:#3E1E22;--fg:#E9B23A;--h:246px;--w:32px" href="https://www.oneusefulthing.org" target="_blank" rel="noopener" data-n="One Useful Thing" data-d="Ethan Mollick：AI 与工作，附数据" data-k="一手长文"><span class="mk mk-r"></span><span class="st">One Useful Thing</span><span class="cov"><span class="ck">一手长文</span><span class="ct">One Useful Thing</span><span class="cd">Ethan Mollick：AI 与工作，附数据</span></span></a><a class="spine k-reads t-serif " style="--bg:#1F2A55;--fg:#F3EFE6;--h:225px;--w:35px" href="https://www.interconnects.ai" target="_blank" rel="noopener" data-n="Interconnects" data-d="Nathan Lambert：开源模型与后训练" data-k="一手长文"><span class="mk mk-r"></span><span class="st">Interconnects</span><span class="cov"><span class="ck">一手长文</span><span class="ct">Interconnects</span><span class="cd">Nathan Lambert：开源模型与后训练</span></span></a><a class="spine k-reads t-serif " style="--bg:#F6F2EA;--fg:#1F2A55;--h:235px;--w:35px" href="https://importai.substack.com" target="_blank" rel="noopener" data-n="Import AI" data-d="Jack Clark：每周前沿研究" data-k="一手长文"><span class="mk mk-r"></span><span class="st">Import AI</span><span class="cov"><span class="ck">一手长文</span><span class="ct">Import AI</span><span class="cd">Jack Clark：每周前沿研究</span></span></a><a class="spine k-reads t-sans " style="--bg:#2F55B5;--fg:#FFFFFF;--h:245px;--w:32px" href="https://hamel.dev" target="_blank" rel="noopener" data-n="Hamel Husain" data-d="AI 产品评估方法" data-k="一手长文"><span class="mk mk-r"></span><span class="st">Hamel Husain</span><span class="cov"><span class="ck">一手长文</span><span class="ct">Hamel Husain</span><span class="cd">AI 产品评估方法</span></span></a><a class="spine k-reads t-serif " style="--bg:#C9A6E0;--fg:#1B120D;--h:203px;--w:38px" href="https://eugeneyan.com" target="_blank" rel="noopener" data-n="Eugene Yan" data-d="LLM 系统落地模式" data-k="一手长文"><span class="mk mk-r"></span><span class="st">Eugene Yan</span><span class="cov"><span class="ck">一手长文</span><span class="ct">Eugene Yan</span><span class="cd">LLM 系统落地模式</span></span></a><a class="spine k-reads t-serif " style="--bg:#E9B23A;--fg:#2A1D16;--h:238px;--w:32px" href="https://newsletter.semianalysis.com" target="_blank" rel="noopener" data-n="SemiAnalysis" data-d="芯片、数据中心、算力供应链" data-k="一手长文"><span class="mk mk-r"></span><span class="st">SemiAnalysis</span><span class="cov"><span class="ck">一手长文</span><span class="ct">SemiAnalysis</span><span class="cd">芯片、数据中心、算力供应链</span></span></a><a class="spine k-reads t-sans " style="--bg:#F2A7C3;--fg:#1B120D;--h:268px;--w:38px" href="https://www.lennysnewsletter.com" target="_blank" rel="noopener" data-n="Lenny&#x27;s Newsletter" data-d="产品方法论与 How I AI" data-k="一手长文"><span class="mk mk-r"></span><span class="st">Lenny&#x27;s Newsletter</span><span class="cov"><span class="ck">一手长文</span><span class="ct">Lenny&#x27;s Newsletter</span><span class="cd">产品方法论与 How I AI</span></span></a><a class="spine k-reads t-sans " style="--bg:#2E5A3F;--fg:#F1EBDD;--h:280px;--w:32px" href="https://www.latent.space" target="_blank" rel="noopener" data-n="Latent Space" data-d="AI 工程每日动态" data-k="一手长文"><span class="mk mk-r"></span><span class="st">Latent Space</span><span class="cov"><span class="ck">一手长文</span><span class="ct">Latent Space</span><span class="cd">AI 工程每日动态</span></span></a><a class="spine k-reads t-cond " style="--bg:#D9373B;--fg:#FFF3EA;--h:246px;--w:32px" href="https://www.dwarkesh.com" target="_blank" rel="noopener" data-n="Dwarkesh Podcast" data-d="长访谈，附完整文字稿" data-k="一手长文"><span class="mk mk-r"></span><span class="st">Dwarkesh Podcast</span><span class="cov"><span class="ck">一手长文</span><span class="ct">Dwarkesh Podcast</span><span class="cd">长访谈，附完整文字稿</span></span></a><span class="bookend" aria-hidden="true"><span>Podcasts</span></span><a class="spine k-pods t-cond " style="--bg:#222222;--fg:#F3EFE6;--h:280px;--w:32px" href="https://www.youtube.com/@LatentSpacePod" target="_blank" rel="noopener" data-n="Latent Space" data-d="AI 工程师的一线访谈" data-k="播客"><span class="mk mk-p"></span><span class="st">Latent Space</span><span class="cov"><span class="ck">播客</span><span class="ct">Latent Space</span><span class="cd">AI 工程师的一线访谈</span></span></a><a class="spine k-pods t-serif " style="--bg:#D6D4CE;--fg:#111111;--h:266px;--w:35px" href="https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8" target="_blank" rel="noopener" data-n="Training Data" data-d="红杉对话 AI 创始人" data-k="播客"><span class="mk mk-p"></span><span class="st">Training Data</span><span class="cov"><span class="ck">播客</span><span class="ct">Training Data</span><span class="cd">红杉对话 AI 创始人</span></span></a><a class="spine k-pods t-cond " style="--bg:#E8642C;--fg:#1B120D;--h:220px;--w:35px" href="https://www.youtube.com/@NoPriorsPodcast" target="_blank" rel="noopener" data-n="No Priors" data-d="Sarah Guo 与 Elad Gil 的 AI 访谈" data-k="播客"><span class="mk mk-p"></span><span class="st">No Priors</span><span class="cov"><span class="ck">播客</span><span class="ct">No Priors</span><span class="cd">Sarah Guo 与 Elad Gil 的 AI 访谈</span></span></a><a class="spine k-pods t-serif " style="--bg:#3E1E22;--fg:#E9B23A;--h:301px;--w:35px" href="https://www.youtube.com/@RedpointAI" target="_blank" rel="noopener" data-n="Unsupervised Learning" data-d="Redpoint 的 AI 创业者对话" data-k="播客"><span class="mk mk-p"></span><span class="st">Unsupervised Learning</span><span class="cov"><span class="ck">播客</span><span class="ct">Unsupervised Learning</span><span class="cd">Redpoint 的 AI 创业者对话</span></span></a><a class="spine k-pods t-serif " style="--bg:#1F2A55;--fg:#F3EFE6;--h:267px;--w:41px" href="https://www.youtube.com/@DataDrivenNYC" target="_blank" rel="noopener" data-n="The MAD Podcast" data-d="Matt Turck 聊数据与 AI" data-k="播客"><span class="mk mk-p"></span><span class="st">The MAD Podcast</span><span class="cov"><span class="ck">播客</span><span class="ct">The MAD Podcast</span><span class="cd">Matt Turck 聊数据与 AI</span></span></a><a class="spine k-pods t-serif " style="--bg:#F6F2EA;--fg:#1F2A55;--h:291px;--w:38px" href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank" rel="noopener" data-n="AI &amp; I" data-d="Every 主理，AI 如何改变工作" data-k="播客"><span class="mk mk-p"></span><span class="st">AI &amp; I</span><span class="cov"><span class="ck">播客</span><span class="ct">AI &amp; I</span><span class="cd">Every 主理，AI 如何改变工作</span></span></a><a class="spine k-pods t-sans " style="--bg:#2F55B5;--fg:#FFFFFF;--h:263px;--w:38px" href="https://allin.com" target="_blank" rel="noopener" data-n="All-In" data-d="四位投资人聊科技与宏观" data-k="播客"><span class="mk mk-p"></span><span class="st">All-In</span><span class="cov"><span class="ck">播客</span><span class="ct">All-In</span><span class="cd">四位投资人聊科技与宏观</span></span></a><a class="spine k-pods t-serif " style="--bg:#C9A6E0;--fg:#1B120D;--h:298px;--w:32px" href="https://www.acquired.fm" target="_blank" rel="noopener" data-n="Acquired" data-d="讲透一家伟大公司的长篇史" data-k="播客"><span class="mk mk-p"></span><span class="st">Acquired</span><span class="cov"><span class="ck">播客</span><span class="ct">Acquired</span><span class="cd">讲透一家伟大公司的长篇史</span></span></a><div class="spine k-pods t-serif " style="--bg:#E9B23A;--fg:#2A1D16;--h:209px;--w:41px" data-n="BG2" data-d="Gerstner 与 Gurley 的投资视角" data-k="播客"><span class="mk mk-p"></span><span class="st">BG2</span><span class="cov"><span class="ck">播客</span><span class="ct">BG2</span><span class="cd">Gerstner 与 Gurley 的投资视角</span></span></div><span class="bookend" aria-hidden="true"><span>Primary</span></span><a class="spine k-official t-sans " style="--bg:#F2A7C3;--fg:#1B120D;--h:295px;--w:41px" href="https://openai.com/news/" target="_blank" rel="noopener" data-n="OpenAI News" data-d="模型发布、收购、研究" data-k="官方一手"><span class="st">OpenAI News</span><span class="mk-o">OFFICIAL</span><span class="cov"><span class="ck">官方一手</span><span class="ct">OpenAI News</span><span class="cd">模型发布、收购、研究</span></span></a><a class="spine k-official t-sans " style="--bg:#2E5A3F;--fg:#F1EBDD;--h:290px;--w:32px" href="https://deepmind.google/blog/" target="_blank" rel="noopener" data-n="Google DeepMind Blog" data-d="研究与 Gemini 发布" data-k="官方一手"><span class="st">Google DeepMind Blog</span><span class="mk-o">OFFICIAL</span><span class="cov"><span class="ck">官方一手</span><span class="ct">Google DeepMind Blog</span><span class="cd">研究与 Gemini 发布</span></span></a><a class="spine k-official t-cond " style="--bg:#D9373B;--fg:#FFF3EA;--h:267px;--w:38px" href="https://www.anthropic.com/news" target="_blank" rel="noopener" data-n="Anthropic News" data-d="Claude 发布与公司公告" data-k="官方一手"><span class="st">Anthropic News</span><span class="mk-o">OFFICIAL</span><span class="cov"><span class="ck">官方一手</span><span class="ct">Anthropic News</span><span class="cd">Claude 发布与公司公告</span></span></a><a class="spine k-official t-cond " style="--bg:#222222;--fg:#F3EFE6;--h:301px;--w:35px" href="https://www.anthropic.com/engineering" target="_blank" rel="noopener" data-n="Anthropic Engineering" data-d="工程深度文章" data-k="官方一手"><span class="st">Anthropic Engineering</span><span class="mk-o">OFFICIAL</span><span class="cov"><span class="ck">官方一手</span><span class="ct">Anthropic Engineering</span><span class="cd">工程深度文章</span></span></a><div class="spine k-official t-serif " style="--bg:#D6D4CE;--fg:#111111;--h:252px;--w:41px" data-n="财报与监管文件" data-d="Tesla 等公司的一手披露" data-k="官方一手"><span class="st">财报与监管文件</span><span class="mk-o">OFFICIAL</span><span class="cov"><span class="ck">官方一手</span><span class="ct">财报与监管文件</span><span class="cd">Tesla 等公司的一手披露</span></span></div></div></div></div>
     
-    <span id="counter" hidden></span><div style="height:44px"></div>
+    <span id="counter" hidden></span>
+    <p class="plaque"><span class="cap">信源书架 · 24 种</span><span>只跟随一线做产品、做模型、做硬件的人，每条消息都能回到原文。</span></p>
   </div>
 
 
@@ -592,29 +629,28 @@ h2{font-weight:600!important;letter-spacing:-.03em!important}
 
 
   <footer class="pf cap">
-    <span>Maintained by Sia · Compiled daily with Claude</span>
-    <span>Core list via <a href="https://github.com/zarazhangrui/follow-builders" target="_blank" rel="noopener">follow-builders</a> by Zara Zhang</span>
+    <span>Maintained by Sia · Compiled with Claude · Core list via <a href="https://github.com/zarazhangrui/follow-builders" target="_blank" rel="noopener">follow-builders</a></span>
   </footer>
 </div>
 
 <div class="dov" id="dov" hidden></div>
 <aside class="drawer" id="daily" role="dialog" aria-modal="true" aria-label="Frontier 早报" aria-hidden="true" tabindex="-1">
   <div class="dbar">
-    <div class="dbt"><span class="cap">Frontier 早报</span><b id="dno">—</b></div>
+    <div class="dbt"><img src="logo.svg" alt="" width="24" height="24"><b id="dno">—</b></div>
     <div class="wk">
-      <span class="mtitle cap" id="mtitle">—</span>
-      <button type="button" class="wnav" id="prev" aria-label="上一页">‹</button>
+      <span class="mtitle cap" id="mtitle" hidden>—</span>
+      <button type="button" class="wnav" id="prev" aria-label="上一期">‹</button>
+      <button type="button" class="wnav" id="next" aria-label="下一期">›</button>
+      <button type="button" class="wnav" id="mode" aria-pressed="false" aria-label="月历"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></button>
       <div class="days" id="days"></div>
-      <button type="button" class="wnav" id="next" aria-label="下一页">›</button>
-      <button type="button" class="pill" id="mode" aria-pressed="false">月历</button>
-      <div class="dow cap" id="dow"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
+      <div class="dow cap" id="dow" hidden></div>
     </div>
     <button type="button" class="xbtn" id="dclose" aria-label="关闭">✕</button>
   </div>
-  <div class="ticker" id="ticker" aria-label="AI 温度计"></div>
   <div class="dwrap">
       <div class="dmain" id="dmain"><div class="dstate"><b>Loading</b>正在取出这一期</div></div>
     </div>
+  <div class="ticker" id="ticker" aria-label="AI 温度计"></div>
 
 </aside>
 <script>
@@ -666,24 +702,26 @@ var index=[],dates={},view=null,cur=null,full=false,data=null;
       document.getElementById('mtitle').replaceChildren(document.createTextNode((a.getUTCMonth()+1)+'月'));}
     else{var y=a.getUTCFullYear(),m=a.getUTCMonth(),first=new Date(Date.UTC(y,m,1)),n=new Date(Date.UTC(y,m+1,0)).getUTCDate(),lead=(first.getUTCDay()+6)%7;
       for(var i=0;i<lead;i++)list.push(null);for(var d=1;d<=n;d++)list.push(new Date(Date.UTC(y,m,d)));
-      document.getElementById('mtitle').replaceChildren(document.createTextNode((m+1)+'月'),el('small',null,String(y)));}
+      document.getElementById('mtitle').textContent=y+' 年 '+(m+1)+' 月';}
     box.className='days '+mode;
     list.forEach(function(dt){if(!dt){box.append(el('span','day blank'));return}var ds=fmt(dt),has=!!dates[ds];
       var c=el(has?'button':'span','day'+(has?' has':'')+(ds===td?' today':'')+(cur===ds?' sel':''));if(mode==='week')c.append(el('span','dw',ZW[dt.getUTCDay()]));c.append(el('span','dn',String(dt.getUTCDate())));if(has)c.append(el('i','dot2'));
       if(has){c.type='button';c.setAttribute('aria-label',ds+' 早报');c.addEventListener('click',function(){if(mode==='month'){mode='week';view=ds}go(ds,true)})}
       box.append(c)});
-    document.getElementById('mode').textContent=mode==='week'?'月历':'收起';document.getElementById('mode').setAttribute('aria-pressed',mode==='month'?'true':'false');
+    document.getElementById('mode').setAttribute('aria-pressed',mode==='month'?'true':'false');
+    if(mode==='month')box.prepend(el('div','mh',document.getElementById('mtitle').textContent));
+    var i=index.findIndex(function(x){return x.date===cur});document.getElementById('prev').disabled=mode==='week'&&!index[i+1];document.getElementById('next').disabled=mode==='week'&&!(i>0);
   }
   function recent(){var r=document.getElementById('recent');r.replaceChildren();index.slice(0,6).forEach(function(x){var a=el('a',x.date===cur?'on':'');a.href='#'+x.date;var d=parse(x.date),dd=el('div','rd',md(x.date));dd.append(el('small',null,WK[d.getUTCDay()]));a.append(dd,el('div','rh',x.headline||''));a.addEventListener('click',function(e){e.preventDefault();go(x.date,true)});r.append(a)})}
   function item(it,sid){var a=el('article','item'),p=SEC[sid]||PAL[0];a.style.setProperty('--c',p[0]);a.style.setProperty('--t',p[1]);
     var w=el('div','who');w.append(el('b',null,it.who||''));if(it.tag)w.append(el('span','tag',it.tag));
     var u=safe(it.url);if(u){var l=el('a','src',(it.sourceLabel||'原文')+' ↗');l.href=u;l.target='_blank';l.rel='noopener';w.append(l)}a.append(w);
     if(it.title)a.append(el('h4',null,it.title));if(it.summary){var sm=el('p','sm',it.summary);sm.title='点击展开';sm.addEventListener('click',function(){sm.classList.toggle('open')});a.append(sm)}
-    if(it.quote||it.quoteZh){var q=el('div','q');if(it.quote)q.append(el('span','en','“'+it.quote+'”'));if(it.quoteZh)q.append(el('span','zh',it.quoteZh));a.append(q)}
+    if(it.quote||it.quoteZh){var q=el('div','q');if(it.quote){var en=el('span','en');en.append(el('i','qm','“'),document.createTextNode(it.quote+'”'));q.append(en)}if(it.quoteZh)q.append(el('span','zh',it.quoteZh));a.append(q)}
     if(it.soWhat)a.append(el('p','sw',it.soWhat));return a}
   function render(){var d=data,m=document.getElementById('dmain');m.replaceChildren();var dt=parse(d.date);
     var no=index.length-index.findIndex(function(x){return x.date===d.date});
-    document.getElementById('dno').textContent=md(d.date)+' 周'+ZW[dt.getUTCDay()]+' · No.'+String(no).padStart(3,'0');
+    document.getElementById('dno').replaceChildren(document.createTextNode(md(d.date)+' 周'+ZW[dt.getUTCDay()]),el('span','dnn','No.'+String(no).padStart(3,'0')));
     m.append(el('p','headline',d.headline||''));
     if(d.themes&&d.themes.length){var ul=el('ol','themes');d.themes.forEach(function(t,i){var li=el('li');li.style.setProperty('--c',['#E8642C','#2F55B5','#2E5A3F'][i%3]);li.append(el('b',null,String(i+1).padStart(2,'0')),document.createTextNode(t));ul.append(li)});m.append(ul)}
     if(full&&d.stats)m.append(el('p','dstats',d.stats));
@@ -699,9 +737,10 @@ var index=[],dates={},view=null,cur=null,full=false,data=null;
     if(scroll&&location.hash!=='#'+ds)history.replaceState(null,'','#'+ds);state('Loading','正在取出这一期');
     fetch('briefs/'+ds+'.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){if(cur!==ds)return;data=d;render();document.getElementById('daily').scrollTop=0}).catch(function(){state('Not found','这一期暂时取不到，刷新再试')})}
   function shift(k){var a=parse(view);if(mode==='week')a=new Date(a.getTime()+k*7*864e5);else a=new Date(Date.UTC(a.getUTCFullYear(),a.getUTCMonth()+k,1));view=fmt(a);cal()}
-  document.getElementById('prev').addEventListener('click',function(){shift(-1)});
-  document.getElementById('mode').addEventListener('click',function(){mode=mode==='week'?'month':'week';cal()});
-  document.getElementById('next').addEventListener('click',function(){shift(1)});
+  function step(k){var i=index.findIndex(function(x){return x.date===cur});if(i>-1&&index[i-k])go(index[i-k].date,true)}
+  document.getElementById('prev').addEventListener('click',function(){mode==='month'?shift(-1):step(-1)});
+  document.getElementById('mode').addEventListener('click',function(){mode=mode==='week'?'month':'week';if(mode==='month')view=cur;cal()});
+  document.getElementById('next').addEventListener('click',function(){mode==='month'?shift(1):step(1)});
   window.addEventListener('hashchange',function(){var h=location.hash.slice(1);if(dates[h]){if(h!==cur)go(h,true);openD()}});
   fetch('briefs/index.json',{cache:'no-cache'}).then(function(r){return r.json()}).then(function(list){
     index=list.sort(function(a,b){return a.date<b.date?1:-1});index.forEach(function(x){dates[x.date]=1});
@@ -755,16 +794,21 @@ var index=[],dates={},view=null,cur=null,full=false,data=null;
     if(jump){void track.offsetWidth;track.classList.remove('jump');list.forEach(function(e){e.style.transition=''})}}
   function step(){if(paused)return;idx++;place(false);if(idx>=per*2){setTimeout(function(){idx-=per;place(true)},950)}}
   function start(){if(reduce)return;clearInterval(timer);timer=setInterval(function(){if(!paused&&!document.hidden)step()},2800)}
-  var lastPT='mouse';
-  function openOnly(e){list.forEach(function(x){if(x!==e&&x!==list[idx])x.classList.remove('on')});e.classList.add('on')}
-  function closeHover(e){if(e!==list[idx])e.classList.remove('on')}
+  var lastPT='mouse',host=document.getElementById('shelf-top'),pk=document.createElement('div'),pkOf=null;pk.className='peek';pk.setAttribute('aria-hidden','true');host.append(pk);
+  function openOnly(e){if(pkOf===e)return;closeHover(pkOf);if(e.classList.contains('on'))return;
+    var cov=e.querySelector('.cov');if(!cov)return;pkOf=e;e.classList.add('peeked');
+    pk.style.setProperty('--bg',e.style.getPropertyValue('--bg'));pk.style.setProperty('--fg',e.style.getPropertyValue('--fg'));
+    pk.replaceChildren(cov.cloneNode(true));var hr=host.getBoundingClientRect(),r=e.getBoundingClientRect(),h=Math.max(r.height+14,230),w=190;
+    pk.style.height=h+'px';pk.style.left=Math.max(8,Math.min(hr.width-w-8,r.left-hr.left+r.width/2-w/2))+'px';pk.style.top=(r.bottom-hr.top-h)+'px';
+    pk.classList.remove('on');void pk.offsetWidth;pk.classList.add('on')}
+  function closeHover(e){if(!e||e!==pkOf)return;e.classList.remove('peeked');pk.classList.remove('on');pkOf=null}
   list.forEach(function(e,i){
     e.addEventListener('pointerdown',function(ev){lastPT=ev.pointerType});
     e.addEventListener('pointerenter',function(ev){if(ev.pointerType==='touch')return;paused=true;openOnly(e)});
     e.addEventListener('pointerleave',function(ev){if(ev.pointerType==='touch')return;paused=false;closeHover(e)});
     e.addEventListener('focus',function(){paused=true;openOnly(e)});
     e.addEventListener('blur',function(){paused=false;closeHover(e)});
-    e.addEventListener('click',function(ev){if(lastPT==='touch'&&!e.classList.contains('on')){ev.preventDefault();paused=true;openOnly(e);clearTimeout(window.__tp);window.__tp=setTimeout(function(){paused=false;closeHover(e)},6000)}});
+    e.addEventListener('click',function(ev){if(lastPT==='touch'&&!e.classList.contains('on')&&pkOf!==e){ev.preventDefault();paused=true;openOnly(e);clearTimeout(window.__tp);window.__tp=setTimeout(function(){paused=false;closeHover(e)},6000)}});
   });
   window.addEventListener('resize',function(){place(true)});
   requestAnimationFrame(function(){place(true);start()});
@@ -783,8 +827,9 @@ var index=[],dates={},view=null,cur=null,full=false,data=null;
 
   var wrap=el('div','cst'),stage=el('div','cst-stage'),tip=el('div','cst-tip'),card=el('aside','cst-card');card.setAttribute('aria-live','polite');
   stage.append(tip);wrap.append(stage,card);
-  var key=el('div','cst-key');key.innerHTML='<span><i></i>出现在今天的早报</span><span>越大，最近 7 期出现越多</span><span>悬停看人，点击固定</span>';
-  sec.append(wrap,key);
+  var key=el('div','cst-key');key.innerHTML='<span><i></i>出现在今天的早报</span><span>头像越大，最近 7 期出现越多</span>';
+  var chips=sec.querySelector('.wchips');if(chips)chips.remove();
+  sec.querySelector('.shead').after(key);sec.append(wrap);
 
   P.forEach(function(p,i){var b=el('button','cst-av');b.type='button';b.setAttribute('aria-label',p.name+'，'+p.role);
     var im=el('img');im.src=p.img;im.alt='';im.loading='lazy';b.append(im);p.el=b;stage.append(b);
