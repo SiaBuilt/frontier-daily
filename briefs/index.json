@@ -1,5 +1,20 @@
 [
  {
+  "date": "2026-10-26",
+  "headline": "算力融资收紧、模型商打折抢客，builder 在重新定义“会用 AI”",
+  "count": 11
+ },
+ {
+  "date": "2026-10-25",
+  "headline": "Agent 的瓶颈从能力转向上下文与安全，科技圈外却还没见到回报",
+  "count": 15
+ },
+ {
+  "date": "2026-10-24",
+  "headline": "Agent 默认放手：Claude 全端改为 auto mode，安全从“靠藏”转向“钥匙会自毁”",
+  "count": 13
+ },
+ {
   "date": "2026-10-23",
   "headline": "个人 agent 从“你问它答”走向“它先动手”：Anthropic 发布常驻 agent Duet，一线测评却说“精致≠会被想起”；与此同时，agent 挖漏洞把安全变成 token 大户，而判断型 API 和便宜小模型正在成为 agent 的神经末梢",
   "count": 16

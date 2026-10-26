@@ -1,0 +1,188 @@
+{
+  "date": "2026-10-24",
+  "generatedAt": "2026-10-23T23:58:00+00:00",
+  "headline": "Agent 默认放手：Claude 全端改为 auto mode，安全从“靠藏”转向“钥匙会自毁”",
+  "question": "agent 默认自己动手后，用户还需要看见哪一步？",
+  "sections": [
+    {
+      "id": "x",
+      "items": [
+        {
+          "id": "claude-auto-mode",
+          "quote": "an automated check blocks risky actions",
+          "quoteZh": "由自动检查来拦截高风险动作",
+          "soWhat": "确认弹窗退场，分类器成了新的“确定”按钮。",
+          "sourceLabel": "X",
+          "summary": "面向 Pro、Max、Team 套餐，会话不再逐步请求批准，而是由自动检查拦截高风险动作，用户可随时切回手动。帖子获得约 1.47 万点赞，是当天 feed 互动最高的一条。",
+          "tag": "默认自主",
+          "title": "下周起 Claude 网页、桌面和手机端默认进入 auto mode",
+          "url": "https://x.com/claudeai/status/2113360845409583307",
+          "who": "Claude（Anthropic 官方账号）"
+        },
+        {
+          "id": "claude-gcp-ga",
+          "quote": "",
+          "quoteZh": "",
+          "soWhat": "云厂商成了模型货架，企业采购预算才是真入口。",
+          "sourceLabel": "X",
+          "summary": "Google Cloud 客户可用 GCP 的 IAM 凭证、账单和消费承诺抵扣使用完整 Claude Platform 功能。官方称新功能与原生平台同日上线，Opus 5.5 快速模式、代码执行、Skills API 当天即可用。",
+          "tag": "分发",
+          "title": "Anthropic 托管的 Claude 在 Google Cloud 正式可用",
+          "url": "https://x.com/claudeai/status/2113380122468454765",
+          "who": "Claude（Anthropic 官方账号）"
+        },
+        {
+          "id": "thsottiaux-day18",
+          "quote": "",
+          "quoteZh": "",
+          "soWhat": "标准捐得越快，越说明谁都不想被锁进别人的协议。",
+          "sourceLabel": "X",
+          "summary": "他列出当天进展：Decisions API 正式可用，OpenResponses 加入 Linux 基金会，Uber 全面采用 Codex 与 Work。与 Anthropic 同周把 Agent Skills 捐给 AAIF 形成呼应。",
+          "tag": "开放标准",
+          "title": "OpenResponses 加入 Linux 基金会，Decisions API 转正式版",
+          "url": "https://x.com/thsottiaux/status/2113492187770175603",
+          "who": "Thibault Sottiaux（OpenAI Codex & ChatGPT）"
+        },
+        {
+          "id": "swyx-estimator",
+          "quote": "Opus 5.5 is the best work estimator model i've ever used.",
+          "quoteZh": "Opus 5.5 是我用过最好的工作量估算模型。",
+          "soWhat": "agent 按人类节奏报工期，等于自废并行性。",
+          "sourceLabel": "X",
+          "summary": "他认为随着委派给 AI 的工作越来越多，估算校准变得关键：AI 不该按人类节奏报“2-3 个工作日”，因为它不知疲倦、可大规模并行，实际可能 2-3 小时就能完成。",
+          "tag": "工期估算",
+          "title": "Swyx：Opus 5.5 是他用过最会估工期的模型",
+          "url": "https://x.com/swyx/status/2113283272130412684",
+          "who": "Swyx（Latent Space）"
+        },
+        {
+          "id": "levie-obscurity",
+          "quote": "Any form of security through obscurity is fully over.",
+          "quoteZh": "任何形式的“靠隐蔽求安全”都彻底结束了。",
+          "soWhat": "AI 扩散的瓶颈，可能是三十年技术债而不是模型。",
+          "sourceLabel": "X",
+          "summary": "自主系统会翻遍每条缝隙、尝试所有攻击组合，多年积累的企业基础设施、权限管控和数据管道都要升级。agent 能加速防守，但他认为这条路很长，也是 AI 扩散慢于预期的部分原因。",
+          "tag": "安全",
+          "title": "Levie：靠隐蔽求安全的时代彻底结束",
+          "url": "https://x.com/levie/status/2113499900399034689",
+          "who": "Aaron Levie（Box CEO）"
+        },
+        {
+          "id": "rauchg-credentials",
+          "quote": "It’s time to kill “static credentials”.",
+          "quoteZh": "是时候干掉“静态凭证”了。",
+          "soWhat": "偷了也会过期的钥匙，比更高的墙更适合 agent 时代。",
+          "sourceLabel": "X",
+          "summary": "他认为攻击和泄露无法杜绝，但如果小偷只能偷到会自毁的短时密钥，损失就可控。他把这比作当年行业合力让每个网站都用上 HTTPS。",
+          "tag": "安全",
+          "title": "Rauch 呼吁淘汰静态凭证，像普及 TLS 一样普及 OIDC",
+          "url": "https://x.com/rauchg/status/2113399539227136084",
+          "who": "Guillermo Rauch（Vercel CEO）"
+        },
+        {
+          "id": "alexalbert-smb",
+          "quote": "products like Claude Duet could end up being bigger for these businesses",
+          "quoteZh": "像 Claude Duet 这样的产品，对这些商家的意义可能更大",
+          "soWhat": "小商家缺的不是软件，是一个替他盯店的人。",
+          "sourceLabel": "X",
+          "summary": "他说很想试着在 AI 帮助下经营一批本地小生意，并认为 Duet 这类产品对小商家的影响可能超过 Square 或 Google 地图。他在征集用 Claude 经营小生意的案例。注意他是 Anthropic 员工。",
+          "tag": "小商家",
+          "title": "Alex Albert：个人 agent 对小商家可能比 Square 更重要",
+          "url": "https://x.com/alexalbert__/status/2113386454907007444",
+          "who": "Alex Albert（Anthropic Research）"
+        },
+        {
+          "id": "aditya-pi07",
+          "quote": "Robotics is going through the same shift LLMs did",
+          "quoteZh": "机器人正在经历大模型经历过的同样转变",
+          "soWhat": "机器人听得懂教练，示教数据就不再是护城河。",
+          "sourceLabel": "X",
+          "summary": "他转述 Physical Intelligence 联合创始人 Sergey Levine 在 SPC 的分享：机器人正在重复大模型走过的路，从微调到提示，再到直接告诉模型你要什么。完整对话已放出。",
+          "tag": "机器人",
+          "title": "π0.7 能靠自然语言“教练”学会新技能",
+          "url": "https://x.com/adityaag/status/2113385971844518124",
+          "who": "Aditya Agarwal（SPC 合伙人）"
+        },
+        {
+          "id": "nikunj-squeeze",
+          "quote": "Never been easier to dream, never been harder to scale.",
+          "quoteZh": "做梦从没这么容易，做大从没这么难。",
+          "soWhat": "做出来不难，长大才难，小团队的终局越来越像被收购。",
+          "sourceLabel": "X",
+          "summary": "他说自己见过的种子公司里，约 10% 在首次见面后几个月内就被收购，并判断种子到 A 轮的挤压短期不会缓解。下周会发长文展开。",
+          "tag": "创投",
+          "title": "种子轮到 A 轮的挤压创历史新高",
+          "url": "https://x.com/nikunj/status/2113405034826477910",
+          "who": "Nikunj Kothari（FPV Ventures 合伙人）"
+        }
+      ],
+      "title": "Builders 在说什么"
+    },
+    {
+      "id": "pod",
+      "items": [
+        {
+          "id": "mad-mistral",
+          "quote": "Mistral is SO back",
+          "quoteZh": "Mistral 真的回来了",
+          "soWhat": "自建机房加三千多张卡，就是开源前沿的门票价。",
+          "sourceLabel": "MAD Podcast",
+          "summary": "据节目章节：Le Chonk 在 Mistral 自有数据中心用 3800 张 GPU 训练、仍在训练中；话题包括 10 万亿参数模型将至、借鉴 DeepSeek 的做法、RL 训练覆盖代码、网络安全、金融和芯片，以及即将推出的 Mistral Large 5。（仅抓到章节目录。）",
+          "tag": "开源模型",
+          "title": "Mistral 研究负责人谈西方最大开源模型 Le Chonk",
+          "url": "https://x.com/mattturck/status/2113311361639829673",
+          "who": "Pierre Stock（Mistral 研究负责人），Matt Turck 主持"
+        },
+        {
+          "id": "simon-armin",
+          "quote": "built so much bad software over the last 30 years",
+          "quoteZh": "过去 30 年造了太多烂软件",
+          "soWhat": "AI 没制造漏洞，只是把旧账一次性翻了出来。",
+          "sourceLabel": "博客",
+          "summary": "Simon 引用 Ronacher 的判断：行业过去 30 年造了大量糟糕的软件，在 AI 加速发现漏洞的这一周，这些后果集中显现。条目归在安全与 AI 安全研究标签下。（短引述条目。）",
+          "tag": "软件债",
+          "title": "Armin Ronacher：三十年的烂软件，后果正随 AI 一起到来",
+          "url": "https://simonwillison.net/2026/Oct/22/armin-ronacher/",
+          "who": "Armin Ronacher（经 Simon Willison 引述）"
+        }
+      ],
+      "title": "一手长文与播客"
+    },
+    {
+      "id": "industry",
+      "items": [
+        {
+          "id": "oai-training-security",
+          "quote": "",
+          "quoteZh": "",
+          "soWhat": "模型越会找漏洞，训练它的机房就越得像金库。",
+          "sourceLabel": "OpenAI",
+          "summary": "官方文章介绍对前沿模型训练与评测环境的更强隔离措施，包括离线环境和高算力红队演练。（仅抓到标题与摘要，正文未能读取。）",
+          "tag": "模型安全",
+          "title": "OpenAI 加固前沿模型训练环境：离线隔离加高算力红队",
+          "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+          "who": "OpenAI"
+        },
+        {
+          "id": "oai-storage",
+          "quote": "",
+          "quoteZh": "",
+          "soWhat": "十亿用户之后，记忆功能拼的是存储架构而不是模型。",
+          "sourceLabel": "OpenAI",
+          "summary": "工程博客介绍 Habitat 存储系统如何加入多租户、全局缓存并接入 Azure Cosmos DB，官方称 ChatGPT 读取速度大幅提升。（仅抓到摘要，具体数字未读取。）",
+          "tag": "工程扩容",
+          "title": "为超 10 亿 ChatGPT 用户扩容在线存储（下篇）",
+          "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+          "who": "OpenAI"
+        }
+      ],
+      "title": "典型事实"
+    }
+  ],
+  "stats": "X：9 位 builder · 9 条 ｜ 一手长文：Simon Willison（引述 Armin Ronacher）｜ 播客：MAD Podcast（Mistral）1 集 ｜ 事实新闻：2 条（OpenAI 官方公告，仅抓到标题与摘要）｜ 失败的源：抓取工具间歇性无响应，Mollick、Import AI、Hamel、Eugene Yan、SemiAnalysis、Lenny、Latent Space、Dwarkesh、DeepMind 未能读取，All-In/BG2/Acquired 及硬科技检索未执行；Interconnects、Anthropic 官网无窗口内新内容",
+  "themes": [
+    "审批弹窗退场：分类器替用户把关，agent 默认自主执行",
+    "AI 扫遍每条缝隙，“靠隐蔽求安全”失效，技术债成扩散瓶颈",
+    "模型上云货架、标准争相捐基金会，竞争转向分发与生态"
+  ]
+}

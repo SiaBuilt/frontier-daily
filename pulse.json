@@ -1,9 +1,55 @@
 {
- "updatedAt": "2026-10-23",
+ "updatedAt": "2026-10-26",
  "metrics": [
-  {"id":"openrouter","name":"OpenRouter 周 token 量","sub":"Top 10 模型合计","unit":"T tokens","cadence":"每周","desc":"开发者真实调用量的公开窗口，看推理需求和开源/闭源份额。","points":[
-   {"date":"2026-10-12","value":103.8,"note":"第一名 DeepSeek V4.1 Flash 25.7T","src":"OpenRouter Rankings","url":"https://openrouter.ai/rankings"}]},
-  {"id":"nvda","name":"NVIDIA 市值","sub":"美股收盘","unit":"$T","cadence":"每个交易日","desc":"算力投入的资本市场温度计。","points":[]},
-  {"id":"capex","name":"四大云厂商资本开支","sub":"微软 + 谷歌 + 亚马逊 + Meta，单季合计","unit":"$B","cadence":"每季度财报","desc":"AI 基建投入的最硬指标，来自财报。","points":[]}
+  {
+   "id": "openrouter",
+   "name": "OpenRouter 周 token 量",
+   "sub": "Top 10 模型合计",
+   "unit": "T tokens",
+   "cadence": "每周",
+   "desc": "开发者真实调用量的公开窗口，看推理需求和开源/闭源份额。",
+   "points": [
+    {
+     "date": "2026-10-12",
+     "value": 103.8,
+     "note": "第一名 DeepSeek V4.1 Flash 25.7T",
+     "src": "OpenRouter Rankings",
+     "url": "https://openrouter.ai/rankings"
+    },
+    {
+     "date": "2026-10-18",
+     "value": 118.1,
+     "note": "截至 10/24 的 7 日；第一名 DeepSeek V4.1 Flash 1017 30.8T",
+     "src": "OpenRouter Rankings",
+     "url": "https://openrouter.ai/rankings"
+    }
+   ]
+  },
+  {
+   "id": "nvda",
+   "name": "NVIDIA 市值",
+   "sub": "美股收盘",
+   "unit": "$T",
+   "cadence": "每个交易日",
+   "desc": "算力投入的资本市场温度计。",
+   "points": [
+    {
+     "date": "2026-10-23",
+     "value": 5.09,
+     "note": "收盘价 210.96 美元",
+     "src": "StockAnalysis",
+     "url": "https://stockanalysis.com/stocks/nvda/market-cap/"
+    }
+   ]
+  },
+  {
+   "id": "capex",
+   "name": "四大云厂商资本开支",
+   "sub": "微软 + 谷歌 + 亚马逊 + Meta，单季合计",
+   "unit": "$B",
+   "cadence": "每季度财报",
+   "desc": "AI 基建投入的最硬指标，来自财报。",
+   "points": []
+  }
  ]
 }
