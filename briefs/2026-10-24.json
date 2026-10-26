@@ -17,7 +17,8 @@
           "tag": "默认自主",
           "title": "下周起 Claude 网页、桌面和手机端默认进入 auto mode",
           "url": "https://x.com/claudeai/status/2113360845409583307",
-          "who": "Claude（Anthropic 官方账号）"
+          "who": "Claude（Anthropic 官方账号）",
+          "weight": 3
         },
         {
           "id": "claude-gcp-ga",
@@ -29,7 +30,8 @@
           "tag": "分发",
           "title": "Anthropic 托管的 Claude 在 Google Cloud 正式可用",
           "url": "https://x.com/claudeai/status/2113380122468454765",
-          "who": "Claude（Anthropic 官方账号）"
+          "who": "Claude（Anthropic 官方账号）",
+          "weight": 2
         },
         {
           "id": "thsottiaux-day18",
@@ -41,7 +43,8 @@
           "tag": "开放标准",
           "title": "OpenResponses 加入 Linux 基金会，Decisions API 转正式版",
           "url": "https://x.com/thsottiaux/status/2113492187770175603",
-          "who": "Thibault Sottiaux（OpenAI Codex & ChatGPT）"
+          "who": "Thibault Sottiaux（OpenAI Codex & ChatGPT）",
+          "weight": 2
         },
         {
           "id": "swyx-estimator",
@@ -53,7 +56,9 @@
           "tag": "工期估算",
           "title": "Swyx：Opus 5.5 是他用过最会估工期的模型",
           "url": "https://x.com/swyx/status/2113283272130412684",
-          "who": "Swyx（Latent Space）"
+          "who": "Swyx（Latent Space）",
+          "weight": 1,
+          "gist": "委派给 AI 的工作越多，估算校准就越关键。AI 不该按人类节奏报“2-3 个工作日”：它不知疲倦、可以大规模并行，实际可能 2-3 小时就做完。"
         },
         {
           "id": "levie-obscurity",
@@ -65,7 +70,9 @@
           "tag": "安全",
           "title": "Levie：靠隐蔽求安全的时代彻底结束",
           "url": "https://x.com/levie/status/2113499900399034689",
-          "who": "Aaron Levie（Box CEO）"
+          "who": "Aaron Levie（Box CEO）",
+          "weight": 2,
+          "gist": "自主系统会翻遍每条缝隙、尝试所有攻击组合，多年积累的企业基础设施、权限管控和数据管道都得升级。agent 能加速防守，但这条路很长，也是 AI 扩散慢于预期的原因之一。"
         },
         {
           "id": "rauchg-credentials",
@@ -77,7 +84,9 @@
           "tag": "安全",
           "title": "Rauch 呼吁淘汰静态凭证，像普及 TLS 一样普及 OIDC",
           "url": "https://x.com/rauchg/status/2113399539227136084",
-          "who": "Guillermo Rauch（Vercel CEO）"
+          "who": "Guillermo Rauch（Vercel CEO）",
+          "weight": 1,
+          "gist": "攻击和泄露无法杜绝，但如果小偷只能偷到会自毁的短时密钥，损失就可控。淘汰静态凭证、普及 OIDC，应该像当年行业合力让每个网站都用上 HTTPS 一样。"
         },
         {
           "id": "alexalbert-smb",
@@ -89,7 +98,9 @@
           "tag": "小商家",
           "title": "Alex Albert：个人 agent 对小商家可能比 Square 更重要",
           "url": "https://x.com/alexalbert__/status/2113386454907007444",
-          "who": "Alex Albert（Anthropic Research）"
+          "who": "Alex Albert（Anthropic Research）",
+          "weight": 1,
+          "gist": "很想在 AI 帮助下经营一批本地小生意。Duet 这类产品对小商家的影响，可能超过 Square 或 Google 地图；正在征集用 Claude 经营小生意的案例。（说话人是 Anthropic 员工。）"
         },
         {
           "id": "aditya-pi07",
@@ -101,7 +112,9 @@
           "tag": "机器人",
           "title": "π0.7 能靠自然语言“教练”学会新技能",
           "url": "https://x.com/adityaag/status/2113385971844518124",
-          "who": "Aditya Agarwal（SPC 合伙人）"
+          "who": "Aditya Agarwal（SPC 合伙人）",
+          "weight": 1,
+          "gist": "转述 Physical Intelligence 联合创始人 Sergey Levine 在 SPC 的分享：机器人正在重复大模型走过的路，从微调到提示，再到直接告诉模型你要什么；π0.7 已能靠自然语言“教练”学会新技能。"
         },
         {
           "id": "nikunj-squeeze",
@@ -113,7 +126,9 @@
           "tag": "创投",
           "title": "种子轮到 A 轮的挤压创历史新高",
           "url": "https://x.com/nikunj/status/2113405034826477910",
-          "who": "Nikunj Kothari（FPV Ventures 合伙人）"
+          "who": "Nikunj Kothari（FPV Ventures 合伙人）",
+          "weight": 2,
+          "gist": "见过的种子公司里，约 10% 在首次见面后几个月内就被收购。种子到 A 轮的挤压创历史新高，短期不会缓解。"
         }
       ],
       "title": "Builders 在说什么"
@@ -131,7 +146,8 @@
           "tag": "开源模型",
           "title": "Mistral 研究负责人谈西方最大开源模型 Le Chonk",
           "url": "https://x.com/mattturck/status/2113311361639829673",
-          "who": "Pierre Stock（Mistral 研究负责人），Matt Turck 主持"
+          "who": "Pierre Stock（Mistral 研究负责人），Matt Turck 主持",
+          "weight": 2
         },
         {
           "id": "simon-armin",
@@ -143,7 +159,9 @@
           "tag": "软件债",
           "title": "Armin Ronacher：三十年的烂软件，后果正随 AI 一起到来",
           "url": "https://simonwillison.net/2026/Oct/22/armin-ronacher/",
-          "who": "Armin Ronacher（经 Simon Willison 引述）"
+          "who": "Armin Ronacher（经 Simon Willison 引述）",
+          "weight": 2,
+          "gist": "行业过去 30 年造了大量糟糕的软件；在 AI 加速发现漏洞的这一周，这些后果正在集中显现。"
         }
       ],
       "title": "一手长文与播客"
@@ -161,7 +179,8 @@
           "tag": "模型安全",
           "title": "OpenAI 加固前沿模型训练环境：离线隔离加高算力红队",
           "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
-          "who": "OpenAI"
+          "who": "OpenAI",
+          "weight": 2
         },
         {
           "id": "oai-storage",
@@ -173,7 +192,8 @@
           "tag": "工程扩容",
           "title": "为超 10 亿 ChatGPT 用户扩容在线存储（下篇）",
           "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
-          "who": "OpenAI"
+          "who": "OpenAI",
+          "weight": 1
         }
       ],
       "title": "典型事实"

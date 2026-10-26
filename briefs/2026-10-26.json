@@ -23,7 +23,9 @@
      "summary": "他说用 AI 时会时而过度指导——模型其实更懂；时而指导不足——它会跑偏、带偏见或缺上下文。在两者之间拿捏好，是他招人时最看重的能力。",
      "quote": "How well you manage this superpower is the #0 skill I look for.",
      "quoteZh": "你怎么驾驭这种超能力，是我招人时看的第 0 号技能。",
-     "soWhat": "未来的资深，是知道什么时候闭嘴。"
+     "soWhat": "未来的资深，是知道什么时候闭嘴。",
+     "weight": 2,
+     "gist": "用 AI 时容易两头犯错。管得太多，可模型其实比你更懂；管得太少：它会跑偏、带进偏见，或者缺了做对这件事所需的上下文。分寸在两者之间，而这种分寸感，是招人时最先看的能力。"
     },
     {
      "id": "x2",
@@ -35,7 +37,9 @@
      "summary": "他注意到模型爱用 gate、evidence、culprit、provenance 等词，源于工程多是调试和理解旧系统。简化技术英语标准约 900 个词，他猜高效协作所需的词更少。",
      "quote": "I suspect we need far fewer.",
      "quoteZh": "我猜我们需要的远比这少。",
-     "soWhat": "模型的口头禅，就是它被训练出的职业身份。"
+     "soWhat": "模型的口头禅，就是它被训练出的职业身份。",
+     "weight": 1,
+     "gist": "模型爱用 gate、evidence、culprit、provenance 这类词，因为工程的大部分工作是调试和理解旧系统，本质上是在做取证。简化技术英语的标准词表约 900 个词，人和模型高效协作需要的词可能更少。"
     },
     {
      "id": "x3",
@@ -47,7 +51,9 @@
      "summary": "他回顾自己靠尝试、失败、重来学会编程与设计：撞墙就拆东西、读看不懂的资料、求助。多轮之后，费力的事变成直觉，能在说清原因前就感到哪里不对。",
      "quote": "many things i made weren’t very good. but after enough rounds, something stuck.",
      "quoteZh": "我做的很多东西并不好，但轮数够了，总有些留了下来。",
-     "soWhat": "把挣扎全外包给 AI，也就外包掉了直觉。"
+     "soWhat": "把挣扎全外包给 AI，也就外包掉了直觉。",
+     "weight": 1,
+     "gist": "编程和设计都是靠尝试、失败、重来学会的：撞墙就拆东西、读看不懂的资料、开口求助。很多做出来的东西并不好，但轮数够了，费力的事会变成直觉，能在说清原因之前就感到哪里不对。"
     },
     {
      "id": "x4",
@@ -59,7 +65,9 @@
      "summary": "他总结 Once 留得住人的三点：要求家长每天陪学形成习惯；每课后和孩子拍搞怪合照的轻量游戏化；30 课后寄实体书让孩子自己读，带来成就感。",
      "quote": "It builds a habit where you need to learn with your kid daily",
      "quoteZh": "它让你养成每天和孩子一起学的习惯。",
-     "soWhat": "留存最好的设计，是把两个人绑进同一个仪式。"
+     "soWhat": "留存最好的设计，是把两个人绑进同一个仪式。",
+     "weight": 1,
+     "gist": "Once 留得住人靠三点：要求家长每天陪学，形成习惯；每课后和孩子拍一张搞怪合照，做轻量游戏化；30 课后寄一本实体书让孩子自己读，给出成就感。"
     },
     {
      "id": "x5",
@@ -71,7 +79,9 @@
      "summary": "Swyx 宣布为 Latent Space 新编辑团队招聘写手、审稿人与记者，并欢迎兼职和一次性客座稿件。一个 AI 工程师社区播客正在转向专业媒体编制。",
      "quote": "we are hiring writers, reviewers and reporters",
      "quoteZh": "我们在招写手、审稿人和记者。",
-     "soWhat": "AI 信息过载时，策展本身就是产品。"
+     "soWhat": "AI 信息过载时，策展本身就是产品。",
+     "weight": 1,
+     "gist": "Latent Space 组建编辑团队，招写手、审稿人和记者，也欢迎兼职和一次性客座稿件。一个 AI 工程师社区播客，正在转成专业媒体的编制。"
     },
     {
      "id": "x6",
@@ -83,7 +93,9 @@
      "summary": "他说深度拥抱 AI 的一个怪副作用是更珍惜与家人朋友的线下时光：跳舞、带孩子去公园，让 agent 去干活。",
      "quote": "But dear god, celebrate humans.",
      "quoteZh": "但看在老天的份上，为人类庆祝吧。",
-     "soWhat": "agent 越能干，人与人的时间越稀缺。"
+     "soWhat": "agent 越能干，人与人的时间越稀缺。",
+     "weight": 1,
+     "gist": "深度拥抱 AI 的一个意外副作用，是更珍惜和家人朋友的线下时光：跳舞、带孩子去公园，把活儿交给 agent。"
     }
    ]
   },
@@ -101,7 +113,9 @@
      "summary": "Kimi K3.1 跑分高但口碑分化，单副本要一整台 B300。Florian 用 Muse 办搬家杂事和网购；Nathan 认为 Anthropic 少招初级员工是实验室文化警讯。",
      "quote": "I am somewhat annoyed how good Muse is.",
      "quoteZh": "Muse 好用到让我有点恼火。",
-     "soWhat": "个人 agent 赢在杂事，而不是炫技。"
+     "soWhat": "个人 agent 赢在杂事，而不是炫技。",
+     "weight": 2,
+     "gist": "Kimi K3.1 跑分高但口碑分化，单副本要一整台 B300。Muse 已经好用到能办搬家杂事和网购。Anthropic 少招初级员工，是实验室文化的一个警讯。"
     },
     {
      "id": "p2",
@@ -113,7 +127,8 @@
      "summary": "正文付费，仅读到简介：PULL 指项目、不可回避、备选清单、现有方案局限四要素；节目谈找想法、冷外联、首次销售电话，及他为何反对找设计合作伙伴。",
      "quote": "",
      "quoteZh": "",
-     "soWhat": "需求不是被说服出来的，是被拽出来的。"
+     "soWhat": "需求不是被说服出来的，是被拽出来的。",
+     "weight": 1
     },
     {
      "id": "p3",
@@ -125,7 +140,8 @@
      "summary": "他用一条提示词让 Claude Opus 5.5 为网页 RTS 游戏加了四向对称的四人地图，并改好 WebSocket 联机，四名真人可扫码加入，空位由 AI 补齐。",
      "quote": "",
      "quoteZh": "",
-     "soWhat": "需求写得够具体，网络层也只是一句话。"
+     "soWhat": "需求写得够具体，网络层也只是一句话。",
+     "weight": 1
     }
    ]
   },
@@ -143,7 +159,9 @@
      "summary": "Musk 称 SpaceX 已借 400 亿美元债买 GPU，明年上半年到货。他说近几周债市几乎对没有 AI 以外收入的公司关门，200 多家 neocloud 将出局或整合。",
      "quote": "debt markets have almost entirely shut off access to money",
      "quoteZh": "债市几乎完全切断了资金通道。",
-     "soWhat": "算力战的下半场，比的是资产负债表。"
+     "soWhat": "算力战的下半场，比的是资产负债表。",
+     "weight": 3,
+     "gist": "SpaceX 已借 400 亿美元债买 GPU，明年上半年到货。近几周债市几乎对没有 AI 以外收入的公司关上了门，200 多家 neocloud 将出局或被整合。"
     },
     {
      "id": "i2",
@@ -155,7 +173,8 @@
      "summary": "据消息人士，Anthropic 取消折扣后，OpenAI 给 Replit 30% 以上折扣，合同年值据称超 1 亿美元，Replit 随即转移大部分模型支出；三方未公开确认。",
      "quote": "",
      "quoteZh": "",
-     "soWhat": "模型层没有忠诚度，只有当季报价。"
+     "soWhat": "模型层没有忠诚度，只有当季报价。",
+     "weight": 2
     }
    ]
   }

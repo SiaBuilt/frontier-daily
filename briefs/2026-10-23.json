@@ -21,7 +21,8 @@
      "tag": "新品",
      "title": "Anthropic 发布常驻型个人 agent Claude Duet，以研究预览+候补名单形式上线",
      "url": "https://x.com/claudeai/status/2112984666437546104",
-     "who": "Claude（Anthropic 官方账号）"
+     "who": "Claude（Anthropic 官方账号）",
+     "weight": 3
     },
     {
      "id": "catwu-proactive",
@@ -33,7 +34,9 @@
      "tag": "主动性",
      "title": "Cat Wu：Duet 的方向是“在你开口前把活干了”",
      "url": "https://x.com/_catwu/status/2112988751576330487",
-     "who": "Cat Wu"
+     "who": "Cat Wu",
+     "weight": 1,
+     "gist": "用户反馈最集中的诉求，是让 Claude 主动多揽一些活。Duet 就是朝这个方向迈的一大步：它会察觉需要做的事，并在你开口之前完成。"
     },
     {
      "id": "shipper-duet",
@@ -45,7 +48,9 @@
      "tag": "一线测评",
      "title": "Every 实测两周：Duet 是第一个称得上“专业工具”的个人 agent，但还当不了幕僚长",
      "url": "https://x.com/danshipper/status/2112997559463506059",
-     "who": "Dan Shipper"
+     "who": "Dan Shipper",
+     "weight": 2,
+     "gist": "测试两周后，从主要用 ChatGPT 变成和 Claude 大约五五开。做对了的：独立 App（iOS、Android、Web）、按领域分频道而不是单一对话、常驻待办清单能看到所有任务状态、可直接写改文档和幻灯片。短板也很具体：能看到电脑上的 Claude 会话却无法指挥它们，邮件草稿不如竞品 dot，语音只能转写不能对话。"
     },
     {
      "id": "steipete-php",
@@ -57,7 +62,9 @@
      "tag": "AI 挖漏洞",
      "title": "本周将引发大面积修补的 PHP 漏洞，是用 GPT‑5.6 Sol 发现的",
      "url": "https://x.com/steipete/status/2112913060709228764",
-     "who": "Peter Steinberger"
+     "who": "Peter Steinberger",
+     "weight": 2,
+     "gist": "本周将引发大面积修补的 PHP 严重漏洞，是用 GPT‑5.6 Sol 找到的。前沿模型已经在真实世界里批量产出高危漏洞。"
     },
     {
      "id": "levie-cyber",
@@ -69,7 +76,9 @@
      "tag": "安全",
      "title": "Box CEO Levie：网络安全会成为 AI 最深远的领域之一，token 消耗会远超想象",
      "url": "https://x.com/levie/status/2112964214818283917",
-     "who": "Aaron Levie"
+     "who": "Aaron Levie",
+     "weight": 1,
+     "gist": "攻防双方都将拥有“不知疲倦的劳动力”：防守方用 agent 排查陈年风险、识别异常，攻击方用 agent 加速找漏洞。因为可以扫描每一行日志、每一行代码和全部流量，这个循环的 token 消耗可能是现在预想的 100 倍。工作更自主了，仍需要更多人来指方向、复核结果、打补丁和处置事件。"
     },
     {
      "id": "rauchg-waf",
@@ -81,7 +90,9 @@
      "tag": "安全响应",
      "title": "Vercel 在官方补丁发布前，就为当天的 Node.js RCE 漏洞上线防火墙级缓解",
      "url": "https://x.com/rauchg/status/2113050053724221732",
-     "who": "Guillermo Rauch"
+     "who": "Guillermo Rauch",
+     "weight": 2,
+     "gist": "Vercel 已为所有部署的流量主动开启防火墙层缓解，并在推进托管运行时升级；此前针对 PHP 源站的攻击尝试也被 WAF 拦下。之后还会有更多漏洞，要把“打补丁→重新部署”练成肌肉记忆。"
     },
     {
      "id": "rauchg-deepseek",
@@ -93,7 +104,8 @@
      "tag": "模型选型",
      "title": "Vercel 把 DeepSeek v4.1 Flash 纳入 Token Pass，定位是“执行计划的子 agent”",
      "url": "https://x.com/rauchg/status/2113010010766913815",
-     "who": "Guillermo Rauch"
+     "who": "Guillermo Rauch",
+     "weight": 1
     },
     {
      "id": "aditya-making",
@@ -105,7 +117,9 @@
      "tag": "创作乐趣",
      "title": "孩子看了 3 小时星战，却花 20 小时用 AI 做相关游戏，做完反而不怎么玩",
      "url": "https://x.com/adityaag/status/2112923959176106056",
-     "who": "Aditya Agarwal"
+     "who": "Aditya Agarwal",
+     "weight": 1,
+     "gist": "孩子看完《星球大战》第四部约 3 小时，随后花约 20 小时用 AI 做相关游戏，做完却不怎么玩，享受的是“做”的过程。用 AI 做东西可能和“用”AI 一样有趣，编程的乐趣也许第一次会普及到所有人。"
     }
    ],
    "title": "Builders 在说什么"
@@ -123,7 +137,9 @@
      "tag": "一线测评",
      "title": "Claire Vo 测 Duet：最精致的 agent 发布，但她还是忘了用它",
      "url": "https://www.lennysnewsletter.com/p/claude-duet-is-beautiful-i-still",
-     "who": "Claire Vo"
+     "who": "Claire Vo",
+     "weight": 1,
+     "gist": "Duet 的设计和上手流程比其他个人 agent 都更精致，任务清单、artifacts、频道这些基础原语也打得很稳。拿收件箱和 Slack、销售管线、销售 deck、发布视频、给孩子找球赛票等真实任务测试，deck 和视频是明显短板，模型响应慢让同步协作很难受。主动性不够、缺桌面端和多人协作，所以还进不了日常工作栈。"
     },
     {
      "id": "shipper-frontier",
@@ -135,7 +151,9 @@
      "tag": "组织方法",
      "title": "Every 的“前沿团队”：一部分人专门追模型，其余人只用他们的结论",
      "url": "https://x.com/danshipper/status/2113010761786175970",
-     "who": "Dan Shipper（AI & I 播客）"
+     "who": "Dan Shipper（AI & I 播客）",
+     "weight": 1,
+     "gist": "Every 的前沿团队运行几个月后效果显著：把“追新”和“把活干完”拆开，避免全员被每个新模型分心。团队需要两类人：快速试一大堆东西的“海盗”，和把混乱实验收敛成可维护系统的“建筑师”。评测负责人帮同事建个人 benchmark，还用最高强度模式调度上百个 agent，翻 Slack 和会议纪要，自动剪出一条带出处的产品讲解视频。"
     },
     {
      "id": "modal-erik",
@@ -147,7 +165,9 @@
      "tag": "算力生意",
      "title": "Modal 年化收入据报道超 10 亿美元，sandbox 已占约三分之一",
      "url": "https://www.latent.space/p/modal-d",
-     "who": "Erik Bernhardsson（Modal CEO）"
+     "who": "Erik Bernhardsson（Modal CEO）",
+     "weight": 2,
+     "gist": "Modal 据报道年化收入超过 10 亿美元，刚完成 7.5 亿美元 D 轮、估值 160 亿美元。真实负载一天之内会涨、会冲高、会回落，固定容量合同要么闲置要么缺货，汇聚数千客户的需求才能把波动抹平。原本不起眼的 sandbox 现在约占收入三分之一，增长来自编程 agent、后台 agent 和强化学习；更大的风险反而是 GPU 价格崩盘时手里锁着高价容量。"
     },
     {
      "id": "semi-huawei",
@@ -159,7 +179,9 @@
      "tag": "芯片",
      "title": "华为与 DeepSeek 互相成就：硬件仍落后，但软件已接近前沿",
      "url": "https://newsletter.semianalysis.com/p/huawei-deepseek",
-     "who": "SemiAnalysis"
+     "who": "SemiAnalysis",
+     "weight": 2,
+     "gist": "华为有硬件和原生软件栈却缺前沿实验室背书，DeepSeek 有强模型却缺算力，两者正在互相成就：9 月 30 日 DeepSeek 在 6 个仓库发布 Ascend 支持，预计 2027-2028 年主要依赖华为栈。实测在 1055 种 BF16 矩阵乘形状上，华为最佳 kernel 能达到上限的 99.7%；计算密集形状的中位达成率 Ascend 41.5%、H100 46.8%。绝对性能上 950PR 介于 A100 和 MI300X 之间，6 个仓库里目前只有 TileLang 真正可用。"
     }
    ],
    "title": "一手长文与播客"
@@ -177,7 +199,8 @@
      "tag": "财报",
      "title": "Tesla Q3：营收持平，FSD 订阅 174 万，无人监督 Robotaxi 里程季度环比增长 8 倍",
      "url": "https://www.sec.gov/Archives/edgar/data/0001318605/000162828026066738/exhibit9914.htm",
-     "who": "Tesla"
+     "who": "Tesla",
+     "weight": 2
     },
     {
      "id": "skills-aaif",
@@ -189,7 +212,8 @@
      "tag": "开放标准",
      "title": "Anthropic 把 Agent Skills 标准捐给 Linux 基金会旗下的 AAIF",
      "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
-     "who": "Anthropic"
+     "who": "Anthropic",
+     "weight": 2
     },
     {
      "id": "oai-decisions",
@@ -201,7 +225,8 @@
      "tag": "新 API",
      "title": "OpenAI 推出 Decisions API：专做分类、路由、下一步选择，输入每百万 token 0.1 美元、不收输出费",
      "url": "https://openai.com/index/decisions-api",
-     "who": "OpenAI"
+     "who": "OpenAI",
+     "weight": 2
     },
     {
      "id": "meta-commit",
@@ -213,7 +238,8 @@
      "tag": "基建承诺",
      "title": "Meta 披露未来支出承诺约 8250 亿美元，三个月内增加约 1250 亿",
      "url": "https://www.bloomberg.com/news/articles/2026-10-22/meta-reports-825-billion-in-future-spending-commitments",
-     "who": "Meta（据 Bloomberg）"
+     "who": "Meta（据 Bloomberg）",
+     "weight": 3
     }
    ],
    "title": "典型事实"

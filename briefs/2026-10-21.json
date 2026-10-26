@@ -21,7 +21,9 @@
      "tag": "Agent 基建",
      "title": "Codex 缓存改为长期保留，隔几小时再回到老对话也不付重算成本",
      "url": "https://x.com/thsottiaux/status/2112712984644784534",
-     "who": "Thibault Sottiaux · OpenAI Codex"
+     "who": "Thibault Sottiaux · OpenAI Codex",
+     "weight": 2,
+     "gist": "API 缓存延长到 12 小时；登录用户在 Codex 和 Work 里的对话缓存永久保留，隔几小时再回到老会话也保证命中缓存，不再付重算成本。"
     },
     {
      "id": "x-rauchg-durability",
@@ -33,7 +35,9 @@
      "tag": "Agent 基建",
      "title": "Vercel 把工作流持久化能力开放给所有 agent harness",
      "url": "https://x.com/rauchg/status/2112658577110520122",
-     "who": "Guillermo Rauch · Vercel"
+     "who": "Guillermo Rauch · Vercel",
+     "weight": 1,
+     "gist": "Vercel Workflows 背后的持久化基础设施将开源，且与运行时无关：Pi、OpenCode 等 harness 都能接，本地、Vercel 或自建都能跑。Claude Code 和 Codex 也能做持久化和可观测，但不是为嵌入设计的，效率和可移植性都更差。"
     },
     {
      "id": "x-rauchg-learning",
@@ -45,7 +49,9 @@
      "tag": "AI × 教育",
      "title": "AI 能算出“你懂的”和“你不懂的”之间的差，逐步带你学会任何东西",
      "url": "https://x.com/rauchg/status/2112638107749355867",
-     "who": "Guillermo Rauch · Vercel"
+     "who": "Guillermo Rauch · Vercel",
+     "weight": 1,
+     "gist": "AI 能精确算出“你懂的”和“你不懂的”之间的差，再一步步把你带过去，把个人学习推到能力上限，而且几乎免费。"
     },
     {
      "id": "x-levie-agents",
@@ -57,7 +63,9 @@
      "tag": "产品形态",
      "title": "AI 的形态正在收敛为“专注某个领域的自主系统”",
      "url": "https://x.com/levie/status/2112769686798832013",
-     "who": "Aaron Levie · Box"
+     "who": "Aaron Levie · Box",
+     "weight": 1,
+     "gist": "工具调用、电脑操作和模型通用智能在同时变强，复杂工作可以整段交给 agent 并信任结果，人只留在关键回路上。这已经远远超出了 LLM 套壳时代。"
     },
     {
      "id": "x-steipete-workflow",
@@ -69,7 +77,9 @@
      "tag": "工作流",
      "title": "一个 agent 规划、一个写代码，再让第二个 agent 专门“唱反调”",
      "url": "https://x.com/steipete/status/2112605703219347503",
-     "who": "Peter Steinberger"
+     "who": "Peter Steinberger",
+     "weight": 1,
+     "gist": "规划 agent 在 git worktree 里直接调用 codex cli，比依赖子 agent 效果好得多；再加一个 agent 专门盯进度、提出挑战，而不是让同一个 agent 对照文本自查。整套做法已做成插件。"
     },
     {
      "id": "x-adityaag-swarms",
@@ -81,7 +91,9 @@
      "tag": "类比",
      "title": "推理时扩展 → 子 agent → agent 集群，正在重演 线程 → 多核 → 分布式",
      "url": "https://x.com/adityaag/status/2112579526379401408",
-     "who": "Aditya Agarwal"
+     "who": "Aditya Agarwal",
+     "weight": 1,
+     "gist": "agent 的演进路径，正是计算机体系结构走过的路：推理时扩展对应单线程，子 agent 对应多核，agent 集群对应分布式系统。"
     },
     {
      "id": "x-swyx-refusal",
@@ -93,7 +105,9 @@
      "tag": "风险",
      "title": "模型误拒成了内容生产业务的关键路径风险",
      "url": "https://x.com/swyx/status/2112772374823407870",
-     "who": "Swyx · Latent Space"
+     "who": "Swyx · Latent Space",
+     "weight": 1,
+     "gist": "Opus 写作很好，但提示词里碰到某些敏感词就会出问题。一个 AI 媒体业务没法把关键路径押在这种不确定性上：要的是稳定的生产工具，不是喜怒无常的神。"
     },
     {
      "id": "x-zara-signals",
@@ -105,7 +119,9 @@
      "tag": "增长",
      "title": "早期产品自带受众，最大价值不是分发",
      "url": "https://x.com/zarazhangrui/status/2112530473994072225",
-     "who": "Zara Zhang"
+     "who": "Zara Zhang",
+     "weight": 1,
+     "gist": "对最早期的产品人，自带受众最大的价值不是分发，而是信号：能快速测试不同想法和角度，看哪个打动人，并找到最早的 100 个用户。"
     },
     {
      "id": "x-sama-safety",
@@ -117,7 +133,9 @@
      "tag": "行业",
      "title": "OpenAI 请 Aleksander 接手安全与安全防护方向",
      "url": "https://x.com/sama/status/2112652656602923366",
-     "who": "Sam Altman · OpenAI"
+     "who": "Sam Altman · OpenAI",
+     "weight": 2,
+     "gist": "Aleksander 接手 OpenAI 的安全与安全防护方向。面对超级智能，这一块的挑战是巨大的。"
     },
     {
      "id": "x-mattturck-capital",
@@ -129,7 +147,8 @@
      "tag": "资本",
      "title": "FirstMark 领投 Daytona B 轮；小型端侧开源 TTS 模型发布",
      "url": "https://x.com/mattturck/status/2112570721499042246",
-     "who": "Matt Turck · FirstMark"
+     "who": "Matt Turck · FirstMark",
+     "weight": 1
     }
    ],
    "title": "Builders 在说什么"
@@ -147,7 +166,9 @@
      "tag": "趋势数据",
      "title": "30 个月回看：AI 的进步是指数级的，但分布极不均匀",
      "url": "https://www.oneusefulthing.org/p/30-months-on-the-exponential-in-charts",
-     "who": "Ethan Mollick · One Useful Thing"
+     "who": "Ethan Mollick · One Useful Thing",
+     "weight": 2,
+     "gist": "GPT-4 之后约 20 个模型、来自 3 家公司先后登顶，如今已有 180 个模型超过 GPT-4 发布时的水平。按 METR 的口径，AI 能以过半成功率完成的任务时长从 2024 年的约 4 分钟涨到 2026 年 4 月的约 17 小时；一道研究生考题的调用成本从 30 美分降到约万分之四美元。重心正从聊天机器人转向真正干活的自主 agent，但进步在不同任务上极不均匀。"
     },
     {
      "id": "long-hamel-evals",
@@ -159,7 +180,9 @@
      "tag": "评估方法",
      "title": "用“决策模型”替代一部分 LLM 评审：更便宜、更快，但阈值要自己调",
      "url": "https://hamel.dev/blog/posts/decision-model-evals/",
-     "who": "Hamel Husain"
+     "who": "Hamel Husain",
+     "weight": 1,
+     "gist": "决策模型是一个专门的分类器：读一条运行记录，输出 0 到 1 的失败概率。先准备人工标注过的记录，在交叉验证下挑一个兼顾漏报和误报的阈值，并按业务设最低精确率和召回率，不要直接用 0.5。比较候选模型时看成本与效果的取舍，把分数当置信度之前先检查校准。"
     },
     {
      "id": "long-semianalysis-dc",
@@ -171,7 +194,9 @@
      "tag": "算力基建",
      "title": "数据中心 2027：一年新增约 43GW，建设速度超出怀疑者预期",
      "url": "https://newsletter.semianalysis.com/p/datacenters-2027-the-year-of-acceleration",
-     "who": "SemiAnalysis"
+     "who": "SemiAnalysis",
+     "weight": 2,
+     "gist": "约 40 个园区、超过 24GW 的容量已进入后期施工，多数在 2027 年交付；2027 年预计新增约 43GW，怀疑方只估约 25GW。超大厂自建开工量创新高，2026 年签下的长约租赁接近 1 万亿美元。模块化和预制设计把工期压到 10 个月以内，电力约束多靠现场发电解决。"
     },
     {
      "id": "pod-latent-deepinfer",
@@ -183,7 +208,8 @@
      "tag": "推理成本",
      "title": "DeepSeek 开源推理框架 DeepInfer，并公开单集群每天约 155 万亿 token 的吞吐",
      "url": "https://www.latent.space/p/ainews-deepseek-deepinfer-open-source",
-     "who": "Latent Space · AINews"
+     "who": "Latent Space · AINews",
+     "weight": 3
     },
     {
      "id": "pod-lenny-interp",
@@ -195,7 +221,8 @@
      "tag": "播客",
      "title": "访谈 Anthropic 的 Emmanuel Ameisen：AI 模型内部到底如何“思考”",
      "url": "https://www.lennysnewsletter.com/p/a-mind-expanding-conversation-on",
-     "who": "Lenny's Podcast"
+     "who": "Lenny's Podcast",
+     "weight": 1
     },
     {
      "id": "pod-lenny-howiai",
@@ -207,7 +234,8 @@
      "tag": "创作者",
      "title": "创作者 Brooke Lacey 用 AI 规模化做短视频，连剪辑都交给 Claude",
      "url": "https://www.lennysnewsletter.com/p/claude-cuts-my-tiktok-how-this-creator",
-     "who": "How I AI · Lenny"
+     "who": "How I AI · Lenny",
+     "weight": 1
     }
    ],
    "title": "一手长文与播客"
@@ -225,7 +253,8 @@
      "tag": "监管文件",
      "title": "Tesla 新代理声明被解读为在为可能的 SpaceX 合并做准备",
      "url": "https://electrek.co/2026/10/19/tesla-tsla-proxy-annual-meeting-spacex-merger/",
-     "who": "Electrek"
+     "who": "Electrek",
+     "weight": 2
     },
     {
      "id": "fact-openai-orchestra",
@@ -237,7 +266,8 @@
      "tag": "收购",
      "title": "OpenAI 收购药物开发协同平台 Orchestra Bio",
      "url": "https://openai.com/index/openai-to-acquire-orchestra-bio",
-     "who": "OpenAI 官方"
+     "who": "OpenAI 官方",
+     "weight": 2
     }
    ],
    "title": "典型事实"

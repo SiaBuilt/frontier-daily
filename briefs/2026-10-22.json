@@ -21,7 +21,9 @@
      "tag": "计费事故",
      "title": "约 4 万个账户的用量额度按错了套餐计算，OpenAI 公开认错并补发额度",
      "url": "https://x.com/thsottiaux/status/2112592264686149749",
-     "who": "Thibault Sottiaux（OpenAI Codex & ChatGPT）"
+     "who": "Thibault Sottiaux（OpenAI Codex & ChatGPT）",
+     "weight": 2,
+     "gist": "周末有用户反映额度消耗异常快。排查发现约 4 万个账户实际执行的用量限制与所选套餐不一致；已修复，并逐一联系受影响用户补发 credits。"
     },
     {
      "id": "woodward-trusted-tester",
@@ -33,7 +35,9 @@
      "tag": "早期用户",
      "title": "Gemini App 的 Trusted Tester 社区跨过一个大里程碑，覆盖 Web、Android、iOS",
      "url": "https://x.com/joshwoodward/status/2112676777290248675",
-     "who": "Josh Woodward（Google VP，Labs / Gemini App）"
+     "who": "Josh Woodward（Google VP，Labs / Gemini App）",
+     "weight": 1,
+     "gist": "想提前试用新功能的人很多，之前报名的用户已全部入组，报名重新开放。“抢先体验”正在变成覆盖 Web、Android、iOS 的常设社区，而不是一次性内测。"
     },
     {
      "id": "shipper-approval-deadlock",
@@ -45,7 +49,9 @@
      "tag": "权限设计",
      "title": "agent 需要审批才能继续，但审批策略设成了“从不询问”，结果卡死",
      "url": "https://x.com/danshipper/status/2112550542837002419",
-     "who": "Dan Shipper（Every CEO）"
+     "who": "Dan Shipper（Every CEO）",
+     "weight": 1,
+     "gist": "一个 agent 的自相矛盾：任务需要用户批准才能继续，可审批策略设成了 never，所以它没法请求批准；agent 自己也不知道用户该去哪儿改这个策略。"
     }
    ],
    "title": "Builders 在说什么"
@@ -63,7 +69,9 @@
      "tag": "实践复盘",
      "title": "几乎不看代码，用 coding agent 做出一款浏览器 RTS：12 个大版本、321 次提交",
      "url": "https://simonwillison.net/2026/Oct/20/battledrones/",
-     "who": "Simon Willison"
+     "who": "Simon Willison",
+     "weight": 1,
+     "gist": "从 7 月起主要用 Claude Code 做了一款浏览器即时战略游戏 Battle Drones：TypeScript 代码几乎没审，靠大量试玩来把关。3D 移植、“好玩度”重做这类大改动通常让 agent 通宵跑；一句“Make it a LOT more fun”带来了 v4 大改，agent 还自己跑了 1200 局 AI 对战调平衡，25 分钟仍分不出胜负的对局从 14% 降到 0.9%。在自己不懂的领域靠 agent 做出作品，也会有“没真正挣来”的不安。"
     },
     {
      "id": "latent-claude-mods",
@@ -75,7 +83,9 @@
      "tag": "交互范式",
      "title": "Claude Mods：把 agent harness 翻过来，做面向人的“注意力界面”",
      "url": "https://www.latent.space/p/claude-mods",
-     "who": "Dan McAteer（Latent Space 撰稿）"
+     "who": "Dan McAteer（Latent Space 撰稿）",
+     "weight": 1,
+     "gist": "模型吸收的 harness 功能越多，剩下的部分就越会转向人：决定 agent 何时打断你、给你看什么、要你做哪些决定。Claude Mods 是 Claude Code 的 TS/JS 插件，可挂在 prompt、工具调用、渲染等事件上，官方自带 6 个。一个“下一步建议”mod 在 111 轮里触发了 99 次，频繁到开始被略读；每次检查还要多花约 5-6k token，且 mod 不在沙箱里运行。"
     },
     {
      "id": "interconnects-open-25",
@@ -87,7 +97,9 @@
      "tag": "开源格局",
      "title": "开源模型月报：DeepSeek 开源推理栈，中美同时收紧对开源权重的管控",
      "url": "https://www.interconnects.ai/p/latest-open-artifacts-25-deepseek",
-     "who": "Florian Brand、Nathan Lambert（Interconnects）"
+     "who": "Florian Brand、Nathan Lambert（Interconnects）",
+     "weight": 2,
+     "gist": "中美同时收紧开源权重：中国商务部征求意见稿拟要求前沿模型对外共享前须经审批（开源技术可自动获批），美国国土安全部禁止 DeepSeek 成为联邦民用采购供应商。DeepSeek 开源内部推理栈 DeepInfer，外部估算其卖 token 毛利可达 90%；新的 V4.1-Flash-1017 为 552B-A16B、支持图像输入、MIT 许可。美国侧有 Reflection 的 Beam-1.0（Apache 2.0）、NVIDIA Nemotron 3.5 和 Meta 的开放版 Muse。"
     },
     {
      "id": "importai-477-imf",
@@ -99,7 +111,9 @@
      "tag": "宏观判断",
      "title": "Jack Clark 在 IMF 演讲：奇点已经开始，政府和机构要提前准备",
      "url": "https://importai.substack.com/p/import-ai-477-in-which-i-tell-the",
-     "who": "Jack Clark（Import AI）"
+     "who": "Jack Clark（Import AI）",
+     "weight": 2,
+     "gist": "10 月 17 日曼谷 IMF 会议演讲全文。基准曲线显示 AI 已能做前沿研究：Humanity's Last Exam 最高分从约 8% 升到 67.7%，FrontierMath 从约 2% 升到 94%；Anthropic 研究员的代码产出接近公司前四年的 10 倍。该投资机器人和实验室自动化，它们可能成为新瓶颈；生物、网络滥用和“AI 做 AI 研究”都需要提前建立治理。"
     }
    ],
    "title": "一手长文与播客"
@@ -117,7 +131,8 @@
      "tag": "分发渠道",
      "title": "OpenAI 前沿模型和 Codex 将上架 Google Cloud Model Garden",
      "url": "https://openai.com/index/openai-models-google-cloud",
-     "who": "OpenAI"
+     "who": "OpenAI",
+     "weight": 2
     },
     {
      "id": "openai-patch-the-planet",
@@ -129,7 +144,8 @@
      "tag": "AI 安全",
      "title": "AI 发现 PHP 两个严重漏洞，OpenAI 牵头“Patch the Planet”协同披露",
      "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities",
-     "who": "OpenAI"
+     "who": "OpenAI",
+     "weight": 2
     },
     {
      "id": "openai-agents-biology",
@@ -141,7 +157,8 @@
      "tag": "agent 科研",
      "title": "数千个 agent 并行，32 分钟分析完覆盖数百万细胞的小鼠全脑 CRISPR 图谱",
      "url": "https://openai.com/index/scaling-ai-research-for-complex-biological-data",
-     "who": "OpenAI、PerturbAI、Scripps Research"
+     "who": "OpenAI、PerturbAI、Scripps Research",
+     "weight": 2
     },
     {
      "id": "openai-ads-stack",
@@ -153,7 +170,8 @@
      "tag": "商业化",
      "title": "ChatGPT 广告上线不到 200 天年化收入破 10 亿美元，并扩展到 89 个国家",
      "url": "https://openai.com/index/building-chatgpt-ad-stack",
-     "who": "OpenAI"
+     "who": "OpenAI",
+     "weight": 3
     },
     {
      "id": "nvidia-dsx-pod",
@@ -165,7 +183,8 @@
      "tag": "算力基建",
      "title": "NVIDIA 推出集装箱化的 Vera Rubin 数据中心 DSX POD，部署时间从 6 个月降到 14 天",
      "url": "https://www.datacenterdynamics.com/en/news/nvidia-launches-dsx-pod-claims-the-vera-rubin-reference-architecture-will-make-ai-data-centers-more-water-and-energy-efficient/",
-     "who": "NVIDIA"
+     "who": "NVIDIA",
+     "weight": 2
     }
    ],
    "title": "典型事实"
