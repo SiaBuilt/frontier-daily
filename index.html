@@ -615,6 +615,22 @@ h2{font-weight:600!important;letter-spacing:-.03em!important}
   .dnn{display:none}
   .drawer .item.voice .q .en{font-size:18px}
 }
+/* drawer v5: who line with face and role; context lead; pulse back in the top bar */
+.drawer .who{display:flex;align-items:center;gap:10px;flex-wrap:nowrap}
+.drawer .who .av{flex:none;width:30px;height:30px;border-radius:50%;overflow:hidden;background:var(--paper);display:grid;place-items:center;font-size:12px;font-weight:600;color:var(--c)}
+.drawer .who .av img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1)}
+.drawer .who .nb{display:flex;align-items:baseline;gap:8px;min-width:0;flex:1}
+.drawer .who .nb .role{font-size:12px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.drawer .who .src{flex:none;margin-left:auto}
+.drawer .gist .ctx{display:block;font-size:12px;line-height:1.6;color:var(--mute);margin-bottom:4px}
+.dbar{row-gap:0}
+.drawer .dbar .ticker{grid-column:1/-1;min-width:0;max-width:100%;margin:10px 0 0;padding:8px 0 0;border-top:1px solid var(--line);border-bottom:0}
+.drawer .dbar .tk{padding:0 14px}
+.drawer .dbar .tk:first-child{padding-left:0}
+.drawer .dbar .tk .v{font-size:15px}
+.drawer .tk .new{display:none;font-style:normal;margin-left:6px;padding:1px 5px;border-radius:4px;background:#E8642C;color:#fff;font-size:9px;letter-spacing:.04em;vertical-align:1px}
+.drawer .tk.fresh .new{display:inline-block}
+@media (max-width:700px){.drawer .who .nb{flex-direction:column;gap:0}.drawer .dbar .tk{padding:0 10px}.drawer .dbar .tk svg{display:none}}
 </style>
 
 </head>
@@ -675,11 +691,11 @@ h2{font-weight:600!important;letter-spacing:-.03em!important}
       <div class="dow cap" id="dow" hidden></div>
     </div>
     <button type="button" class="xbtn" id="dclose" aria-label="关闭">✕</button>
+    <div class="ticker" id="ticker" aria-label="AI 温度计"></div>
   </div>
   <div class="dwrap">
       <div class="dmain" id="dmain"><div class="dstate"><b>Loading</b>正在取出这一期</div></div>
     </div>
-  <div class="ticker" id="ticker" aria-label="AI 温度计"></div>
 
 </aside>
 <script>
@@ -745,11 +761,17 @@ var index=[],dates={},view=null,cur=null,full=false,data=null;
   function item(it,sid){var a=el('article','item'),p=SEC[sid]||PAL[0];a.style.setProperty('--c',p[0]);a.style.setProperty('--t',p[1]);
     /* a voice item is someone's own words: name, the original quote, its translation, then the argument */
     var voice=!!it.quote;if(voice)a.classList.add('voice');
-    var w=el('div','who');w.append(el('b',null,voice?(it.who||'').split(/[，,·（(]/)[0].trim():(it.who||'')));
+    var who=it.who||'',cut=who.search(/[，,·（(]/),nm=(cut>-1?who.slice(0,cut):who).trim(),role=cut>-1?who.slice(cut+1).replace(/[）)]\s*$/,'').trim():'';
+    var hm=/x\.com\/([A-Za-z0-9_]+)/.exec(it.url||'')||/@([A-Za-z0-9_]+)/.exec(it.sourceLabel||''),pp=window.BLD&&((hm&&BLD[hm[1].toLowerCase()])||BLD['n:'+nm.toLowerCase()]);
+    if(pp&&pp.name.toLowerCase()!==nm.toLowerCase()&&!BLD['n:'+nm.toLowerCase()])pp=null;
+    if(!role&&pp)role=pp.role;
+    var w=el('div','who'),av=el('span','av');
+    if(pp){var im=el('img');im.src=pp.img;im.alt='';av.append(im)}else av.textContent=nm.slice(0,1);
+    var nb=el('span','nb');nb.append(el('b',null,nm));if(role)nb.append(el('span','role',role));w.append(av,nb);
     var u=safe(it.url);if(u){var l=el('a','src',(voice?(it.sourceLabel||'原文').split(/\s/)[0]:(it.sourceLabel||'原文'))+' ↗');l.href=u;l.target='_blank';l.rel='noopener';w.append(l)}a.append(w);
     if(voice){var q=el('div','q'),en=el('span','en');en.append(el('i','qm','“'),document.createTextNode(it.quote),el('i','qm','”'));q.append(en);if(it.quoteZh)q.append(el('span','zh',it.quoteZh));a.append(q);
-      if(it.gist||it.summary)a.append(el('p','gist',it.gist||it.summary))}
-    else{if(it.title)a.append(el('h4',null,it.title));if(it.summary)a.append(el('p','gist',it.summary))}
+      if(it.gist||it.summary){var gp=el('p','gist');if(it.ctx)gp.append(el('span','ctx',it.ctx));gp.append(document.createTextNode(it.gist||it.summary));a.append(gp)}}
+    else{if(it.title)a.append(el('h4',null,it.title));if(it.summary){var sp=el('p','gist');if(it.ctx)sp.append(el('span','ctx',it.ctx));sp.append(document.createTextNode(it.summary));a.append(sp)}}
     if(it.soWhat&&(it.weight||1)>=2)a.append(el('p','sw',it.soWhat));return a}
   function render(){var d=data,m=document.getElementById('dmain');m.replaceChildren();var dt=parse(d.date);
     var no=index.length-index.findIndex(function(x){return x.date===d.date});
@@ -767,9 +789,10 @@ var index=[],dates={},view=null,cur=null,full=false,data=null;
   }
   function go(ds,scroll){cur=ds;full=false;if(!view||mode!=='week'||ds>view||ds<fmt(new Date(parse(view).getTime()-6*864e5)))view=ds;cal();
     if(scroll&&location.hash!=='#'+ds)history.replaceState(null,'','#'+ds);state('Loading','正在取出这一期');
-    fetch('briefs/'+ds+'.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){if(cur!==ds)return;data=d;render();document.getElementById('daily').scrollTop=0}).catch(function(){state('Not found','这一期暂时取不到，刷新再试')})}
+    fetch('briefs/'+ds+'.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){if(cur!==ds)return;data=d;render();marks();document.getElementById('daily').scrollTop=0}).catch(function(){state('Not found','这一期暂时取不到，刷新再试')})}
   function shift(k){var a=parse(view);if(mode==='week')a=new Date(a.getTime()+k*7*864e5);else a=new Date(Date.UTC(a.getUTCFullYear(),a.getUTCMonth()+k,1));view=fmt(a);cal()}
   function step(k){var i=index.findIndex(function(x){return x.date===cur});if(i>-1&&index[i-k])go(index[i-k].date,true)}
+  function marks(){document.querySelectorAll('#ticker .tk').forEach(function(t){t.classList.toggle('fresh',!!cur&&t.dataset.added===cur)})}window.tkMarks=marks;
   document.getElementById('prev').addEventListener('click',function(){mode==='month'?shift(-1):step(-1)});
   document.getElementById('mode').addEventListener('click',function(){mode=mode==='week'?'month':'week';if(mode==='month')view=cur;cal()});
   document.getElementById('next').addEventListener('click',function(){mode==='month'?shift(1):step(1)});
@@ -795,14 +818,15 @@ var index=[],dates={},view=null,cur=null,full=false,data=null;
     if(!l){a.append(el('span','v','—'),el('span','c na','待更新'),spark([],col));return a}
     a.href=l.url;a.target='_blank';a.rel='noopener';a.title=label+' · '+l.date+' · '+l.src;
     var v=el('span','v',pre+l.value);v.append(el('small',null,unit));a.append(v);
-    if(n>1){var q=pts[n-2],ch=(l.value-q.value)/q.value*100;a.append(el('span','c '+(ch>=0?'up':'dn2'),(ch>=0?'▲':'▼')+Math.abs(ch).toFixed(Math.abs(ch)>=100?0:1)+'% · '+l.date.slice(2)))}
+    if(n>1){var q=pts[n-2],ch=(l.value-q.value)/q.value*100;a.append(el('span','c '+(ch>=0?'up':'dn2'),(ch>=0?'▲':'▼')+Math.abs(ch).toFixed(Math.abs(ch)>=100?0:1)+'% 较 '+q.date.slice(2)))}
     else a.append(el('span','c na',l.date.slice(2)));
+    if(l.addedAt){a.dataset.added=l.addedAt;a.querySelector('.l').append(el('i','new','更新'))}
     a.append(spark(pts.map(function(q){return q.value}),col));return a}
   Promise.all([fetch('revenue.json',{cache:'no-cache'}).then(function(r){return r.json()}),fetch('pulse.json',{cache:'no-cache'}).then(function(r){return r.json()})]).then(function(x){
     var S={},M={};x[0].series.forEach(function(s){S[s.id]=s.points});x[1].metrics.forEach(function(m){M[m.id]=m.points||[]});
     var tiles=[
       tile('ANTHROPIC 年化营收',S.anthropic||[],'$','B','#E8642C'),tile('OPENAI 年化营收',S.openai||[],'$','B','#2F55B5'),
-      tile('OPENROUTER 周 TOKENS',M.openrouter||[],'','T','#2E5A3F'),tile('NVIDIA 市值',M.nvda||[],'$','T','#141110'),tile('云厂商 CAPEX/季',M.capex||[],'$','B','#9B6FC0')].filter(function(t){return t.href&&t.querySelector('svg path')});box.style.gridTemplateColumns='repeat('+tiles.length+',minmax(0,1fr))';box.replaceChildren.apply(box,tiles);
+      tile('OPENROUTER 周 TOKENS',M.openrouter||[],'','T','#2E5A3F'),tile('NVIDIA 市值',M.nvda||[],'$','T','#141110'),tile('云厂商 CAPEX/季',M.capex||[],'$','B','#9B6FC0')].filter(function(t){return t.href&&t.querySelector('svg path')});box.style.gridTemplateColumns='repeat('+tiles.length+',minmax(0,1fr))';box.replaceChildren.apply(box,tiles);if(window.tkMarks)tkMarks();
   }).catch(function(){box.hidden=true});
 })();
 </script>
@@ -894,6 +918,7 @@ var index=[],dates={},view=null,cur=null,full=false,data=null;
     g.querySelectorAll('.pc').forEach(function(a){var pn=a.querySelector('.pn'),p={href:a.href,img:a.querySelector('img').src,name:pn.firstChild.textContent.trim(),
       role:(a.querySelector('.po')||{}).textContent||'',note:(a.querySelector('.pb')||{}).textContent||'',g:k,hits:[]};k.ps.push(p);P.push(p)});
     G.push(k);g.remove()});
+  window.BLD={};P.forEach(function(p){var m=/x\.com\/([A-Za-z0-9_]+)/.exec(p.href);if(m)BLD[m[1].toLowerCase()]=p;BLD['n:'+p.name.toLowerCase()]=p});
   var h2=sec.querySelector('h2');if(h2)h2.textContent=P.length+' Builders';
 
   var wrap=el('div','cst'),stage=el('div','cst-stage'),tip=el('div','cst-tip'),card=el('aside','cst-card');card.setAttribute('aria-live','polite');
