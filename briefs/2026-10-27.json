@@ -1,0 +1,206 @@
+{
+ "date": "2026-10-27",
+ "generatedAt": "2026-10-27T16:40:00+08:00",
+ "headline": "Anthropic 递交 S-1 摊开账本，builder 读出的是：企业用 AI 才刚开头",
+ "themes": [
+  "S-1 公开：高增长、高毛利，收入按用量、算力按年锁",
+  "企业渗透不到 0.1%，agent 重构流程才是大头",
+  "便宜模型接管电脑操作，agent 隔离出现新漏洞"
+ ],
+ "stats": "X：11 位 builder · 12 条 ｜ 一手长文：Simon Willison 2 篇（其余源 36 小时内无新文或未抓到） ｜ 播客：窗口内无新集（Latent Space 一集文字稿获取失败） ｜ 事实新闻：3 条（Anthropic 官方公告 1、X 一手 2）｜ 失败的源：OpenAI 官网 403",
+ "sections": [
+  {
+   "id": "x",
+   "title": "Builders 在说什么",
+   "items": [
+    {
+     "id": "x1",
+     "who": "Aaron Levie，Box CEO",
+     "tag": "企业渗透",
+     "url": "https://x.com/levie/status/2114761816199098587",
+     "sourceLabel": "X @levie",
+     "title": "Levie：财富 500 强花在 Anthropic 上的钱不到总支出的 0.1%",
+     "summary": "他读 S-1 抓出的关键数字：财富 500 强客户平均只把不到 0.1% 的支出给了 Anthropic，目前多是写代码和员工提效；他认为企业为 agent 重构流程后，可涨 10 到 50 倍。",
+     "quote": "there’s no reason it can’t be 10-50X higher than this",
+     "quoteZh": "没有理由不能比现在高 10 到 50 倍。",
+     "soWhat": "前沿用户和其他人之间的鸿沟，就是下一轮的增量。",
+     "weight": 3,
+     "gist": "S-1 里最关键的一个数：财富 500 强客户平均只把不到 0.1% 的支出花在 Anthropic 上，而且主要是写代码和员工提效。真正的跃升要等企业为 agent 重构底层流程：后台批量处理数据、agent 群做代码与生物研究、无人触发的工作流。这类用法的 token 消耗高 100 倍，也更接近直接 ROI。即便涨到支出的 1% 到 5%，也只是多数创业公司现在的零头。"
+    },
+    {
+     "id": "x2",
+     "who": "Nikunj Kothari，FPV Ventures 合伙人",
+     "tag": "算力合同",
+     "url": "https://x.com/nikunj/status/2114761204333998427",
+     "sourceLabel": "X @nikunj",
+     "title": "拆 S-1 算力合同：5870 亿美元承诺，每美元算力收入翻近 4 倍",
+     "summary": "他用 Opus 5.5 拆了 S-1 的算力条款：6 月底未开始的采购承诺与租约合计 5870 亿美元；谷歌、亚马逊要求保底消费，SpaceXAI 合同可 90 天通知取消；每美元算力收入从 0.57 升到 2.08 美元。",
+     "quote": "It’s a substantial improvement in monetizing the compute base.",
+     "quoteZh": "这是算力变现效率的大幅提升。",
+     "soWhat": "收入按用量走，成本按年锁死，这道剪刀差值得盯。",
+     "weight": 2,
+     "gist": "截至 6 月 30 日，尚未开始的采购承诺 2656 亿美元、租约 3214 亿美元，合计 5870 亿美元，分多年支付。谷歌和亚马逊要求无论用不用都保底消费；SpaceXAI 合同潜在价值 1205 亿美元，但锁定期过后双方可提前 90 天取消。博通 420 亿美元的融资工具不给现金，只抵设备租金，票据年息 9%，上市后可按九折转股。每美元算力与基建支出带来的收入，从 2025 年二季度的 0.57 美元升到 2026 年二季度的 2.08 美元。上半年约 80% 收入按用量计费，而算力合同大多是多年期。"
+    },
+    {
+     "id": "x3",
+     "who": "Dan Shipper，Every CEO",
+     "tag": "S-1",
+     "url": "https://x.com/danshipper/status/2114714881312305542",
+     "sourceLabel": "X @danshipper",
+     "title": "Shipper 划重点：收入同比 +1300%，毛利率 85%",
+     "summary": "他列出 S-1 的几个数字：2026 上半年收入同比增长 1300%，GAAP 口径经营盈利，毛利率 85%，收入留存 900%，80% 的收入来自近 6 个月发布的模型。",
+     "quote": "we are so back!",
+     "quoteZh": "我们又回来了！",
+     "soWhat": "模型半年一换，收入也半年一换。",
+     "weight": 2,
+     "gist": "2026 上半年收入同比增长 1300%，GAAP 口径已经经营盈利，毛利率 85%，收入留存 900%。最值得注意的是 80% 的收入来自最近 6 个月发布的模型：收入高度依赖新模型的节奏。"
+    },
+    {
+     "id": "x4",
+     "who": "Guillermo Rauch，Vercel CEO",
+     "tag": "agent 安全",
+     "url": "https://x.com/rauchg/status/2114770919436808572",
+     "sourceLabel": "X @rauchg",
+     "title": "Rauch 复现 agent 隐蔽通信：共享硬件就能互相“说悄悄话”",
+     "summary": "他做了 cpu-chat，复现 OpenAI 关于 CPU 隐蔽通信的发现：在断网的 Firecracker 微虚拟机之间，靠 CPU 争用、缓存驱逐时序、内存带宽争用三种方式通信。闭源模型拒绝帮忙，开源模型做成了。",
+     "quote": "if shared hardware is involved, there's a good chance your agents can communicate covertly.",
+     "quoteZh": "只要涉及共享硬件，你的 agent 很可能就能隐蔽地互相通信。",
+     "soWhat": "沙箱隔离挡得住偷数据，挡不住串通。",
+     "weight": 2,
+     "gist": "在两台以上断网的 Firecracker 微虚拟机之间，靠 CPU 争用、缓存驱逐时序和内存带宽争用三种方式都能聊天，绕过了 Firecracker 的全部生产建议，x86 和 M5 芯片上都能跑。这不同于 Meltdown、Spectre 那类窃取数据的侧信道攻击，在真实环境里也更难做到、更容易靠硬件计数器监测。讽刺的是 OpenAI 和 Anthropic 的模型都拒绝做这项工作，开源模型做成了；实验室的拒答立场可能反而妨碍开发者构建安全系统。"
+    },
+    {
+     "id": "x5",
+     "who": "Amjad Masad，Replit CEO",
+     "tag": "组织形态",
+     "url": "https://x.com/amasad/status/2114760898225299721",
+     "sourceLabel": "X @amasad",
+     "title": "Masad：公司会变成“自动驾驶”，Replit 在做 Agent Habitat",
+     "summary": "他说几百年来公司架构几乎没变：按部门组织的层级，靠官僚流程协调。agent 将颠覆这一点，走向人做判断、agent 执行大部分工作的“自动驾驶公司”，Replit 为此做 Agent Habitat。",
+     "quote": "humans exercise judgment and agents execute most of the work.",
+     "quoteZh": "人负责判断，agent 执行大部分工作。",
+     "soWhat": "组织架构图的下一版，可能要画上 agent。",
+     "weight": 2,
+     "gist": "几百年来公司的架构几乎没变：按部门组织的层级，靠官僚流程协调。agent 会颠覆这一点，走向“自动驾驶公司”，人负责判断，agent 执行大部分工作。Replit 把为这种公司打的地基叫作 Agent Habitat。每次计算革命开头都是混乱，之后企业才学会驾驭它。"
+    },
+    {
+     "id": "x6",
+     "who": "Peter Yang，AI 教程与访谈作者",
+     "tag": "agent 入口",
+     "url": "https://x.com/petergyang/status/2114927195332460940",
+     "sourceLabel": "X @petergyang",
+     "title": "Peter Yang：以后上网不读也不做，直接 @ 自己的 agent",
+     "summary": "他认为不久之后人们在网上不再自己读或做任何事，而是直接 @ 自己的 agent 去办；他也说，比起第九个管邮件的个人 agent，更期待真正新的用法。",
+     "quote": "people are just going to tag their agent to do it.",
+     "quoteZh": "人们会直接 @ 自己的 agent 去做。",
+     "weight": 1,
+     "gist": "不久之后，人们在网上不再自己阅读或动手，而是直接 @ 自己的 agent 去办。让人兴奋的不是第九个帮你管邮件的个人 agent，而是这种入口层的变化。"
+    },
+    {
+     "id": "x7",
+     "who": "Peter Steinberger",
+     "tag": "工具链",
+     "url": "https://x.com/steipete/status/2114879798434758905",
+     "sourceLabel": "X @steipete",
+     "title": "Steinberger 实测 Bun AOT 编译：性能 2 到 3 倍，内存减半",
+     "summary": "他周末测了 Bun 的 AOT 编译器，性能提升 2 到 3 倍，内存占用不到原来一半。",
+     "quote": "Performance up 2-3x, memory use less than half.",
+     "quoteZh": "性能提升 2 到 3 倍，内存占用不到一半。",
+     "weight": 1,
+     "gist": "周末测了 Bun 的 AOT 编译器，结果惊人：性能提升 2 到 3 倍，内存占用不到原来的一半。"
+    },
+    {
+     "id": "x8",
+     "who": "Aditya Agarwal，South Park Commons 合伙人",
+     "tag": "科学",
+     "url": "https://x.com/adityaag/status/2114907777957245033",
+     "sourceLabel": "X @adityaag",
+     "title": "Agarwal：科学的边界，曾被“人能看懂”限制住",
+     "summary": "他越来越接受一个看法：过去对科学的理解，受限于人只想要自己能理解的解法。",
+     "quote": "our understanding of the sciences were but limited by our desire to have solutions that we could understand.",
+     "quoteZh": "我们对科学的理解，不过是受限于想要自己能看懂的解法。",
+     "weight": 1,
+     "gist": "过去对科学的理解，受限于人只愿意接受自己能看懂的解法。AI 给出的解可能对，却未必可被人理解。"
+    }
+   ]
+  },
+  {
+   "id": "pod",
+   "title": "一手长文与播客",
+   "items": [
+    {
+     "id": "p1",
+     "who": "Simon Willison，独立开发者",
+     "tag": "模型实测",
+     "url": "https://simonwillison.net/2026/Oct/26/gpt-61-terra/",
+     "sourceLabel": "simonwillison.net",
+     "title": "Willison 测 GPT-6.1 Terra：中档模型，适合跑电脑操作",
+     "summary": "他注意到 OpenAI 发布稿主打视觉推理和电脑操作；Terra 定位类似 Anthropic 的 Sonnet，价格每百万 token 输入 1 美元、输出 5 美元，约为 GPT-5.6 Terra 与 6.1 Sol 的一半。",
+     "quote": "Computer use is a good example of a task that benefits from a less expensive model",
+     "quoteZh": "电脑操作正是适合用便宜模型来做的任务。",
+     "soWhat": "电脑操作是重复劳动，拼的是单价而不是智商上限。",
+     "weight": 2,
+     "gist": "发布稿强调什么，本身就是信号：这次 OpenAI 主打视觉推理和电脑操作。Terra 是中档，类似 Anthropic 的 Sonnet，也因此最难判断何时该用它。电脑操作多是自动化、重复的活，天然适合便宜模型。价格每百万 token 输入 1 美元、输出 5 美元，约为 GPT-5.6 Terra 和 GPT-6.1 Sol 的一半；最高推理档跑一次鹈鹕测试花了 11 美分、4 分 11 秒。"
+    },
+    {
+     "id": "p2",
+     "who": "Simon Willison，独立开发者",
+     "tag": "工具",
+     "url": "https://simonwillison.net/2026/Oct/26/webframe-evaluation/",
+     "sourceLabel": "simonwillison.net",
+     "title": "Willison 让 Opus 5.5 评测 webframe：能当爬虫也能当沙箱",
+     "summary": "webframe 是 Jeff Lindsay 做的工具，在隐藏浏览器视图里把网页当程序运行。他让 Claude Opus 5.5 评估它做沙箱和爬虫的可行性，并和自己的 shot-scraper 对比。",
+     "quote": "",
+     "quoteZh": "",
+     "weight": 1
+    }
+   ]
+  },
+  {
+   "id": "industry",
+   "title": "典型事实",
+   "items": [
+    {
+     "id": "i1",
+     "who": "Anthropic",
+     "tag": "IPO",
+     "url": "https://www.anthropic.com/news/s1-sec",
+     "sourceLabel": "Anthropic 官方公告",
+     "title": "Anthropic 公开递交 S-1，拟在纳斯达克以 ANT 上市",
+     "summary": "10 月 26 日 Anthropic 向 SEC 递交 S-1，拟在纳斯达克全球精选市场上市 A 类普通股，代码 ANT，高盛与摩根士丹利牵头；发行股数和价格区间未定，注册声明尚未生效。",
+     "quote": "",
+     "quoteZh": "",
+     "soWhat": "第一家前沿实验室的账本，第一次全部摊开。",
+     "weight": 3
+    },
+    {
+     "id": "i2",
+     "who": "Sam Altman，OpenAI CEO",
+     "tag": "模型发布",
+     "url": "https://x.com/sama/status/2114818620782248024",
+     "sourceLabel": "X @sama",
+     "title": "OpenAI 发布 GPT-6.1 Terra，主打电脑操作",
+     "summary": "Altman 宣布 6.1 Terra 上线，称最兴奋的是电脑操作的新阶段。Codex 负责人 Thibault Sottiaux 称它是首个在写作、个性和理解细微需求上明显更好的模型，用量是 6.1 Sol 的 2 倍。",
+     "quote": "we are especially excited for this new era of computer use.",
+     "quoteZh": "我们尤其期待电脑操作的新时代。",
+     "soWhat": "同一天，一家摊开账本，一家降价抢量。",
+     "weight": 2,
+     "gist": "6.1 Terra 什么都不错，最值得期待的是电脑操作进入新阶段。它是第一个在写作、个性和理解细微需求上明显更好的模型，电脑操作很强，API 和订阅中的可用量是 6.1 Sol 的 2 倍。"
+    },
+    {
+     "id": "i3",
+     "who": "Claude（Anthropic 官方账号）",
+     "tag": "公益",
+     "url": "https://x.com/claudeai/status/2114780227465338985",
+     "sourceLabel": "X @claudeai",
+     "title": "2.5 万家非营利组织在用 Claude，新增公益插件",
+     "summary": "已有超过 2.5 万家非营利组织使用 Claude，多数是小型本地团队。Anthropic 与约 30 家机构共建插件，加入筹款、营销、招聘技能，按各团队的情况和 AI 政策定制。",
+     "quote": "More than 25,000 nonprofits now use Claude.",
+     "quoteZh": "已有超过 2.5 万家非营利组织在用 Claude。",
+     "weight": 1
+    }
+   ]
+  }
+ ],
+ "question": "如果企业只把 0.1% 的钱花在 AI 上，你的产品是在等它涨，还是在逼它涨？"
+}
