@@ -133,7 +133,8 @@
      "summary": "webframe 是 Jeff Lindsay 做的工具，在隐藏浏览器视图里把网页当程序运行。他让 Claude Opus 5.5 评估它做沙箱和爬虫的可行性，并和自己的 shot-scraper 对比。",
      "quote": "",
      "quoteZh": "",
-     "weight": 1
+     "weight": 1,
+     "ctx": "Simon 试用 Jeff Lindsay 新做的工具 webframe。"
     }
    ]
   },
@@ -152,7 +153,8 @@
      "quote": "",
      "quoteZh": "",
      "soWhat": "第一家前沿实验室的账本，第一次全部摊开。",
-     "weight": 3
+     "weight": 3,
+     "ctx": "Anthropic 10 月 26 日官方公告。"
     },
     {
      "id": "i2",
@@ -179,7 +181,8 @@
      "summary": "已有超过 2.5 万家非营利组织使用 Claude，多数是小型本地团队。Anthropic 与约 30 家机构共建插件，加入筹款、营销、招聘技能，按各团队的情况和 AI 政策定制。",
      "quote": "More than 25,000 nonprofits now use Claude.",
      "quoteZh": "已有超过 2.5 万家非营利组织在用 Claude。",
-     "weight": 1
+     "weight": 1,
+     "ctx": "Anthropic 官方账号发布公益方向的新进展。"
     }
    ]
   }

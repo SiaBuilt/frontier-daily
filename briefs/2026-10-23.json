@@ -22,7 +22,8 @@
      "title": "Anthropic 发布常驻型个人 agent Claude Duet，以研究预览+候补名单形式上线",
      "url": "https://x.com/claudeai/status/2112984666437546104",
      "who": "Claude（Anthropic 官方账号）",
-     "weight": 3
+     "weight": 3,
+     "ctx": "Anthropic 发布常驻型个人 agent Claude Duet。"
     },
     {
      "id": "catwu-proactive",
@@ -36,7 +37,8 @@
      "url": "https://x.com/_catwu/status/2112988751576330487",
      "who": "Cat Wu",
      "weight": 1,
-     "gist": "用户反馈最集中的诉求，是让 Claude 主动多揽一些活。Duet 就是朝这个方向迈的一大步：它会察觉需要做的事，并在你开口之前完成。"
+     "gist": "个人 agent 的下一步是主动：察觉需要做的事，在你开口前做完。用户反馈里最集中的诉求，就是让 Claude 多揽一些活。产品定位从“你问它答”的助手，转向会主动干活的同事。",
+     "ctx": "Cat Wu（Claude Code 产品负责人）在 Duet 发布当天解释产品方向。"
     },
     {
      "id": "shipper-duet",
@@ -50,7 +52,8 @@
      "url": "https://x.com/danshipper/status/2112997559463506059",
      "who": "Dan Shipper",
      "weight": 2,
-     "gist": "测试两周后，从主要用 ChatGPT 变成和 Claude 大约五五开。做对了的：独立 App（iOS、Android、Web）、按领域分频道而不是单一对话、常驻待办清单能看到所有任务状态、可直接写改文档和幻灯片。短板也很具体：能看到电脑上的 Claude 会话却无法指挥它们，邮件草稿不如竞品 dot，语音只能转写不能对话。"
+     "gist": "Duet 是第一个称得上专业工具的个人 agent，但还当不了幕僚长。用了两周，Claude 和 ChatGPT 的使用变成五五开。做对的是独立 App、按领域分频道、常驻待办清单；短板是指挥不了电脑上的 Claude、邮件草稿不如竞品、语音不能对话。",
+     "ctx": "Every 团队测试 Duet 两周后，Shipper 写下测评。"
     },
     {
      "id": "steipete-php",
@@ -64,7 +67,8 @@
      "url": "https://x.com/steipete/status/2112913060709228764",
      "who": "Peter Steinberger",
      "weight": 2,
-     "gist": "本周将引发大面积修补的 PHP 严重漏洞，是用 GPT‑5.6 Sol 找到的。前沿模型已经在真实世界里批量产出高危漏洞。"
+     "gist": "这个让全网忙着打补丁的 PHP 漏洞，是用 OpenAI 的 GPT-5.6 Sol 找到的。前沿模型已经在真实世界里批量挖出高危漏洞。这条帖子超过 1.1 万赞，是当天互动最高的一条。",
+     "ctx": "这周 PHP 曝出严重漏洞，各家都在紧急修补。"
     },
     {
      "id": "levie-cyber",
@@ -78,7 +82,8 @@
      "url": "https://x.com/levie/status/2112964214818283917",
      "who": "Aaron Levie",
      "weight": 1,
-     "gist": "攻防双方都将拥有“不知疲倦的劳动力”：防守方用 agent 排查陈年风险、识别异常，攻击方用 agent 加速找漏洞。因为可以扫描每一行日志、每一行代码和全部流量，这个循环的 token 消耗可能是现在预想的 100 倍。工作更自主了，仍需要更多人来指方向、复核结果、打补丁和处置事件。"
+     "gist": "网络安全会是 AI 影响最深的领域之一，token 用量会远超想象。攻防双方都有了不知疲倦的劳动力，agent 能扫遍每行日志、每行代码和全部流量，这个循环的消耗可能是现在预想的 100 倍。工作更自动，反而需要更多人指方向、做复核。",
+     "ctx": "PHP 漏洞由 AI 发现之后，Levie 谈 AI 对网络安全的影响。"
     },
     {
      "id": "rauchg-waf",
@@ -92,7 +97,8 @@
      "url": "https://x.com/rauchg/status/2113050053724221732",
      "who": "Guillermo Rauch",
      "weight": 2,
-     "gist": "Vercel 已为所有部署的流量主动开启防火墙层缓解，并在推进托管运行时升级；此前针对 PHP 源站的攻击尝试也被 WAF 拦下。之后还会有更多漏洞，要把“打补丁→重新部署”练成肌肉记忆。"
+     "gist": "在官方补丁出来之前，Vercel 已为所有部署开启防火墙层的缓解，并推进运行时升级；前一天针对 PHP 的攻击也被拦下。漏洞会越来越多，团队要把“打补丁、重新部署”练成肌肉记忆。",
+     "ctx": "Node.js 当天曝出远程代码执行漏洞，官方补丁还没发布。"
     },
     {
      "id": "rauchg-deepseek",
@@ -105,7 +111,8 @@
      "title": "Vercel 把 DeepSeek v4.1 Flash 纳入 Token Pass，定位是“执行计划的子 agent”",
      "url": "https://x.com/rauchg/status/2113010010766913815",
      "who": "Guillermo Rauch",
-     "weight": 1
+     "weight": 1,
+     "ctx": "Vercel 的 Token Pass（统一调用多家模型的服务）新增 DeepSeek v4.1 Flash。"
     },
     {
      "id": "aditya-making",
@@ -119,7 +126,8 @@
      "url": "https://x.com/adityaag/status/2112923959176106056",
      "who": "Aditya Agarwal",
      "weight": 1,
-     "gist": "孩子看完《星球大战》第四部约 3 小时，随后花约 20 小时用 AI 做相关游戏，做完却不怎么玩，享受的是“做”的过程。用 AI 做东西可能和“用”AI 一样有趣，编程的乐趣也许第一次会普及到所有人。"
+     "gist": "用 AI 做东西，可能和用 AI 一样有趣。孩子看电影 3 小时，却花 20 小时用 AI 做相关游戏，做完反而不怎么玩，享受的是做的过程。编程的乐趣也许第一次会普及到所有人。",
+     "ctx": "看儿子用 AI 做《星球大战》游戏后的观察。"
     }
    ],
    "title": "Builders 在说什么"
@@ -139,7 +147,8 @@
      "url": "https://www.lennysnewsletter.com/p/claude-duet-is-beautiful-i-still",
      "who": "Claire Vo",
      "weight": 1,
-     "gist": "Duet 的设计和上手流程比其他个人 agent 都更精致，任务清单、artifacts、频道这些基础原语也打得很稳。拿收件箱和 Slack、销售管线、销售 deck、发布视频、给孩子找球赛票等真实任务测试，deck 和视频是明显短板，模型响应慢让同步协作很难受。主动性不够、缺桌面端和多人协作，所以还进不了日常工作栈。"
+     "gist": "Duet 是做得最精致的个人 agent，但精致不够，她还是忘了用它。任务清单、频道这些基础打得稳，但做 deck 和视频是短板，响应慢让实时协作难受；主动性不够、缺桌面端和多人协作，所以进不了日常工作。",
+     "ctx": "Claire Vo（ChatPRD 创始人）在 Lenny 的节目里实测 Duet。"
     },
     {
      "id": "shipper-frontier",
@@ -153,7 +162,8 @@
      "url": "https://x.com/danshipper/status/2113010761786175970",
      "who": "Dan Shipper（AI & I 播客）",
      "weight": 1,
-     "gist": "Every 的前沿团队运行几个月后效果显著：把“追新”和“把活干完”拆开，避免全员被每个新模型分心。团队需要两类人：快速试一大堆东西的“海盗”，和把混乱实验收敛成可维护系统的“建筑师”。评测负责人帮同事建个人 benchmark，还用最高强度模式调度上百个 agent，翻 Slack 和会议纪要，自动剪出一条带出处的产品讲解视频。"
+     "gist": "把“追新模型”和“把活干完”分给不同的人。少数人组成前沿团队专门跟进模型变化，其余人只用他们的结论，避免全员被每个新模型分心。这个团队需要两种人：快速乱试的“海盗”，和把实验收成可维护系统的“建筑师”。",
+     "ctx": "Shipper 在 AI & I 播客里讲 Every 内部的“前沿团队”做法。"
     },
     {
      "id": "modal-erik",
@@ -167,7 +177,8 @@
      "url": "https://www.latent.space/p/modal-d",
      "who": "Erik Bernhardsson（Modal CEO）",
      "weight": 2,
-     "gist": "Modal 据报道年化收入超过 10 亿美元，刚完成 7.5 亿美元 D 轮、估值 160 亿美元。真实负载一天之内会涨、会冲高、会回落，固定容量合同要么闲置要么缺货，汇聚数千客户的需求才能把波动抹平。原本不起眼的 sandbox 现在约占收入三分之一，增长来自编程 agent、后台 agent 和强化学习；更大的风险反而是 GPU 价格崩盘时手里锁着高价容量。"
+     "gist": "做算力生意，核心是把很多客户的波动汇聚抹平：单个客户的负载一天之内忽高忽低，固定合同要么闲置要么缺货。Modal 年化收入据报道超 10 亿美元，原本不起眼的沙箱已占约三分之一，增长来自编程 agent 和强化学习。最大的风险是 GPU 降价时手里锁着高价容量。",
+     "ctx": "Latent Space 专访 Modal（云端 GPU 算力平台）CEO。"
     },
     {
      "id": "semi-huawei",
@@ -181,7 +192,8 @@
      "url": "https://newsletter.semianalysis.com/p/huawei-deepseek",
      "who": "SemiAnalysis",
      "weight": 2,
-     "gist": "华为有硬件和原生软件栈却缺前沿实验室背书，DeepSeek 有强模型却缺算力，两者正在互相成就：9 月 30 日 DeepSeek 在 6 个仓库发布 Ascend 支持，预计 2027-2028 年主要依赖华为栈。实测在 1055 种 BF16 矩阵乘形状上，华为最佳 kernel 能达到上限的 99.7%；计算密集形状的中位达成率 Ascend 41.5%、H100 46.8%。绝对性能上 950PR 介于 A100 和 MI300X 之间，6 个仓库里目前只有 TileLang 真正可用。"
+     "gist": "华为和 DeepSeek 正在互相成就：一个有芯片缺顶级模型背书，一个有模型缺算力。硬件仍落后，950PR 性能介于 A100 和 MI300X 之间；但软件已接近前沿，最佳 kernel 能跑到理论上限的 99.7%。预计 2027 到 2028 年 DeepSeek 主要依赖华为。",
+     "ctx": "SemiAnalysis 分析华为昇腾芯片与 DeepSeek 的合作。"
     }
    ],
    "title": "一手长文与播客"
@@ -200,7 +212,8 @@
      "title": "Tesla Q3：营收持平，FSD 订阅 174 万，无人监督 Robotaxi 里程季度环比增长 8 倍",
      "url": "https://www.sec.gov/Archives/edgar/data/0001318605/000162828026066738/exhibit9914.htm",
      "who": "Tesla",
-     "weight": 2
+     "weight": 2,
+     "ctx": "Tesla 向 SEC 提交 2026 年三季度业绩更新。"
     },
     {
      "id": "skills-aaif",
@@ -213,7 +226,8 @@
      "title": "Anthropic 把 Agent Skills 标准捐给 Linux 基金会旗下的 AAIF",
      "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
      "who": "Anthropic",
-     "weight": 2
+     "weight": 2,
+     "ctx": "继 MCP 之后，Anthropic 再把一项 agent 标准交给中立基金会。"
     },
     {
      "id": "oai-decisions",
@@ -226,7 +240,8 @@
      "title": "OpenAI 推出 Decisions API：专做分类、路由、下一步选择，输入每百万 token 0.1 美元、不收输出费",
      "url": "https://openai.com/index/decisions-api",
      "who": "OpenAI",
-     "weight": 2
+     "weight": 2,
+     "ctx": "OpenAI 推出新 API，专做判断类的小任务。"
     },
     {
      "id": "meta-commit",
@@ -239,7 +254,8 @@
      "title": "Meta 披露未来支出承诺约 8250 亿美元，三个月内增加约 1250 亿",
      "url": "https://www.bloomberg.com/news/articles/2026-10-22/meta-reports-825-billion-in-future-spending-commitments",
      "who": "Meta（据 Bloomberg）",
-     "weight": 3
+     "weight": 3,
+     "ctx": "Bloomberg 报道 Meta 最新披露的远期支出承诺。"
     }
    ],
    "title": "典型事实"
