@@ -1,0 +1,192 @@
+{
+ "date": "2026-10-30",
+ "generatedAt": "2026-10-30T18:10:00+08:00",
+ "headline": "Gemini 4 Carbon 登顶榜单却只给防御方，builder 在谈追不上的差距",
+ "themes": [
+  "Google 新模型领跑独立评测，先开放给网络安全防御者",
+  "前沿用户与其他人的差距在拉大，coding agent 也会让人空忙",
+  "订阅额度成为模型商的竞争筹码：OpenAI 翻倍、API 额度互赠"
+ ],
+ "stats": "X：15 位 builder · 36 条（入选 5 条）｜ 一手长文：Simon Willison 2 篇、Latent Space 2 篇（oneusefulthing、interconnects、SemiAnalysis、Lenny、Dwarkesh 等未逐一检查）｜ 播客：The MAD Podcast 对谈 Nathan Benaich 1 集（含文字稿）；其余播客未确认到新集 ｜ 事实新闻：3 条（Latent Space 转述 Google 发布 1、Anthropic 官方 1、Latent Space 简报 1）｜ 失败的源：feed-blogs 为空；openai.com、deepmind.google、hamel.dev、eugeneyan.com 未检查；Cloudflare「前沿实验室」、Google Jules 停用、Particle-1 等推文背景查不到，未收",
+ "sections": [
+  {
+   "id": "x",
+   "title": "Builders 在说什么",
+   "items": [
+    {
+     "id": "x1",
+     "who": "Aaron Levie，Box CEO",
+     "tag": "能力差距",
+     "url": "https://x.com/levie/status/2116029912243184006",
+     "sourceLabel": "X @levie",
+     "title": "Levie：AI 前沿用户与其他人的差距在拉大而不是收敛",
+     "summary": "他认为 AI 进步曲线近乎垂直，三到六个月前固化下来的流程可能已经落后，大公司能否跟上是关键。",
+     "ctx": "同日 Gemini 4 Carbon 等新模型接连发布，他谈企业如何跟上节奏。",
+     "quote": "The curve of AI progress is basically going vertical right now",
+     "quoteZh": "AI 进步的曲线现在基本上是在垂直上升。",
+     "gist": "如果技术进步放缓，大家会用同样方式使用它，竞争优势被抹平；现实相反，进步越快差距越大。三到六个月前定型的流程可能已经过时，所以要不断回头重试几个月前行不通的事。AI 原生公司因此占优，大公司的组织变革速度是真正的考验。",
+     "weight": 2,
+     "soWhat": "「做完一次 AI 转型」不成立，更像是一个需要反复复查的习惯。"
+    },
+    {
+     "id": "x2",
+     "who": "Thariq，前 Claude Code 成员",
+     "tag": "agent 使用",
+     "url": "https://x.com/trq212/status/2115937378674372783",
+     "sourceLabel": "X @trq212",
+     "title": "Thariq：用 coding agent 可能上头，忙了一天却什么都没发生",
+     "summary": "他说 coding agent 会让人进入一种狂热，感觉做了很多事，实际没有进展，常常是在逃避生活中的别的事。",
+     "ctx": "他转引 Chris Lakin 的说法，回应 coding agent 重度用户的状态。",
+     "quote": "There’s 100% a kind of mania you can get into with coding agents, where it feels like you’re getting a lot done and working all the time but nothing is really happening.",
+     "quoteZh": "用 coding agent 肯定会进入一种狂热：感觉做了很多事、一直在工作，但其实什么都没发生。",
+     "gist": "agent 把产出的成本压得很低，也让“在忙”变得廉价：不停地提需求、看输出，会产生做成事的错觉。判断标准不是忙不忙，而是有没有东西真的交付。他认为这种空忙常是对生活中别的事的回避。",
+     "weight": 2,
+     "soWhat": "工具越快，越需要自己定义什么叫完成。"
+    },
+    {
+     "id": "x3",
+     "who": "Thibault Sottiaux，OpenAI Codex",
+     "tag": "用量额度",
+     "url": "https://x.com/thsottiaux/status/2115850175868727621",
+     "sourceLabel": "X @thsottiaux",
+     "title": "OpenAI 把 Pro 与 Business Premium 各档用量上限全部翻倍",
+     "summary": "Pro 100/200/500 和 Business Premium 即日起额度翻倍，Pro 200 不会被下调，「dots」的延长额度继续保留。",
+     "ctx": "他此前被用户集中抱怨额度，这条帖子获 3.5 万点赞、6500 多条回复。",
+     "quote": "We are doubling all usage limits for all Pro 100/200/500 tiers and Business Premium, effective today.",
+     "quoteZh": "我们将所有 Pro 100/200/500 档和 Business Premium 的用量上限全部翻倍，即日生效。",
+     "gist": "额度正在成为订阅产品的主要卖点。OpenAI 在用户反馈后撤回了对 Pro 200 的下调，并承诺靠更好的模型和效率提升继续增加实际可用量。",
+     "weight": 2,
+     "soWhat": "高价订阅比拼的已是每月能跑多少活，而不是模型名字。"
+    },
+    {
+     "id": "x4",
+     "who": "Guillermo Rauch，Vercel CEO",
+     "tag": "agent 协作",
+     "url": "https://x.com/rauchg/status/2115874115118834153",
+     "sourceLabel": "X @rauchg",
+     "title": "Rauch：软件工程的未来是 agent 之间跨公司对话",
+     "summary": "他说 Vercel 每天从 agent 发来的反馈里学习，建议在 AGENTS.md 里写上：遇到问题就向 Vercel 反馈。",
+     "ctx": "他转发了同日一条帖子，Vercel 邀请 agent 通过 AGENTS.md 提交产品反馈。",
+     "quote": "The future of software engineering is agents talking to other agents. Even across different companies.",
+     "quoteZh": "软件工程的未来是 agent 与 agent 对话，甚至跨公司。",
+     "gist": "产品反馈的提交者从人变成了 agent：它们在真实任务中遇到摩擦，最清楚哪里不好用。把反馈渠道写进 AGENTS.md（给 coding agent 读的项目说明文件），就让这类反馈变成常规动作。",
+     "weight": 1
+    },
+    {
+     "id": "x5",
+     "who": "Josh Woodward，Google 副总裁",
+     "tag": "教育内容",
+     "url": "https://x.com/joshwoodward/status/2115953461108023400",
+     "sourceLabel": "X @joshwoodward",
+     "title": "Gemini Notebook 开放 700 多本教材，免费使用",
+     "summary": "Notebook 接入来自头部出版商的 700 多本教材，全部免费。他称这是「Expert Intelligence」计划的一部分，后续还有更新。",
+     "ctx": "NotebookLM 本月已更名为 Gemini Notebook，并接入 Gemini 应用。",
+     "quote": "Notebook has just unlocked over 700 textbooks from the world’s leading publishers.",
+     "quoteZh": "Notebook 刚刚开放了来自全球顶级出版商的 700 多本教材。",
+     "gist": "授权的专业内容正在成为模型应用的差异化来源：通用模型人人都有，正版教材只在这里可用。具体出版商与使用方式帖子里未列出。",
+     "weight": 1
+    }
+   ]
+  },
+  {
+   "id": "pod",
+   "title": "一手长文与播客",
+   "items": [
+    {
+     "id": "p1",
+     "who": "Simon Willison，独立开发者",
+     "tag": "vibe 游戏",
+     "url": "https://simonwillison.net/2026/Oct/28/vibe-game-development/",
+     "sourceLabel": "simonwillison.net",
+     "title": "Willison：2026 年 10 月是 vibe coding 做游戏的拐点",
+     "summary": "他只靠对话用 Opus 5.5 做出四款好玩的浏览器游戏，称该模型的游戏设计感明显强过 GPT-6 Astra。",
+     "ctx": "Opus 5.5 近期发布，他在 3D 建模、音乐和游戏设计上做了实测。",
+     "quote": "I think we've reached a new inflection point in October 2026, and this time it's for vibe coding computer games.",
+     "quoteZh": "我认为我们在 2026 年 10 月到了一个新的拐点，这次是用 vibe coding 做电脑游戏。",
+     "gist": "游戏设计曾被认为是模型够不着的能力，这次 Opus 5.5 补上了，让能玩的游戏变得容易做。新的难点从实现转为想出新颖的玩法。他也承认不少人反对游戏里的 AI 美术、音乐和代码，受众会分化。",
+     "weight": 2,
+     "soWhat": "实现变便宜之后，稀缺的是创意，而不是工程。"
+    },
+    {
+     "id": "p2",
+     "who": "Simon Willison，独立开发者",
+     "tag": "订阅福利",
+     "url": "https://simonwillison.net/2026/Oct/29/api-credits/",
+     "sourceLabel": "simonwillison.net",
+     "title": "OpenAI 向 100/200/500 美元订阅者赠送等额 API 额度",
+     "summary": "此举跟进 Anthropic 本月早些时候对 Max 和 Team 订阅者的同类福利，Willison 两家都订阅，称可用来免费发布公开演示。",
+     "ctx": "Anthropic 本月先给订阅者赠 API 额度，OpenAI 随后推出同样方案。",
+     "quote": "OpenAI have now launched pretty much exactly the same deal.",
+     "quoteZh": "OpenAI 现在推出了几乎完全一样的方案。",
+     "gist": "两家把订阅与 API 打通：订阅者每月拿到与订阅费相当的 API 额度，用于 API 账号。模型商都在争夺同一批重度个人开发者，福利会随竞争越来越相似。",
+     "weight": 1
+    },
+    {
+     "id": "p3",
+     "who": "Nathan Benaich，Air Street Capital",
+     "tag": "AI 安全",
+     "url": "https://www.youtube.com/@DataDrivenNYC/videos",
+     "sourceLabel": "The MAD Podcast",
+     "title": "State of AI 2026：Claude 主导了 Anthropic 26% 的研究，网络风险盖过灭绝论",
+     "summary": "Benaich 对谈 Matt Turck，谈 AGI 或在 2027 年、AI 参与研发的占比、模型权重失窃的预测，以及追平 OpenAI 要花约一万亿美元。",
+     "ctx": "他每年发布 250 页《State of AI》报告，此集是年度复盘。",
+     "quote": "cyber risk is like much more real than like AI exterminating humanity",
+     "quoteZh": "网络安全风险比 AI 灭绝人类要现实得多。",
+     "gist": "安全讨论已从“失控”转向更近的网络攻击：无论你信不信安全论，都需要安全防护。报告里 Claude 主导 Anthropic 26% 的模型研发（8 月数据，两个月前仅约 1%），说明 AI 参与研发的占比在快速上升。",
+     "weight": 2,
+     "soWhat": "更值得盯的是被攻破的实验室，而不是失控的模型。"
+    },
+    {
+     "id": "p4",
+     "who": "Felix Rieseberg，Anthropic",
+     "tag": "招聘",
+     "url": "https://latent.space/p/ainews-anthropic-ends-coding-interviews-hunger-beats-tenure/",
+     "sourceLabel": "latent.space",
+     "title": "Anthropic 招聘经理：不再做传统编程面试",
+     "summary": "他改为看业务影响、激进想法和快速原型，并据此给初级工程师建议。Latent Space 以《资历不如饥饿感》为题转述。",
+     "ctx": "Latent Space 10 月 28 日简报转述其帖子，并非 Anthropic 官方政策。",
+     "quote": "This month, I laid the traditional coding interview to rest.",
+     "quoteZh": "这个月，我让传统编程面试寿终正寝了。",
+     "gist": "当 agent 能写出多数代码，笔试式编程题就测不出有价值的差异。他转向看候选人能否做出有业务影响的东西、有没有激进想法。这是个人招聘实践，不代表公司整体。",
+     "weight": 1
+    }
+   ]
+  },
+  {
+   "id": "industry",
+   "title": "典型事实",
+   "items": [
+    {
+     "id": "i1",
+     "who": "Google DeepMind",
+     "tag": "新模型",
+     "url": "https://latent.space/p/ainews-gemini-4-carbon/",
+     "sourceLabel": "Latent Space 转述（未直接核对官方公告）",
+     "title": "Gemini 4 Carbon 发布，独立评测第一，先只给网络安全防御者",
+     "summary": "Artificial Analysis 智能指数 v5 得分 59 排第一，Text Arena 1528 分居首。上下文 100 万 token，首先通过 Fairwind 计划开放给可信防御者。",
+     "ctx": "Google 10 月 29 日发布，距 Gemini 4 Argon 约三周。",
+     "quote": "Google's new frontier model leads independent evals, with access initially limited to trusted defenders.",
+     "quoteZh": "Google 的新前沿模型在独立评测中领先，初期访问仅限可信防御者。",
+     "gist": "模型能力上来后，发布方式开始按风险分级：最强的网络能力先给防守方，更广泛的开发者访问承诺“尽快”。漏洞发现 88.2%、利用 54.8%、修复 71.0% 的成绩为厂商自报，评测第一来自独立机构。",
+     "weight": 3,
+     "soWhat": "榜首模型不是人人能用，能力与开放程度开始脱钩。"
+    },
+    {
+     "id": "i2",
+     "who": "Anthropic",
+     "tag": "AI 科研",
+     "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
+     "sourceLabel": "Anthropic 官方公告",
+     "title": "Anthropic 科研计划扩到基金会与研究机构，gnomAD 等在列",
+     "summary": "AI for Science 计划新增 Sloan、Simons、美国 NSF 等资助方，以及 Sanger 研究所、Crick 研究所等机构；并推出面向科学家的折扣 Team 套餐。",
+     "ctx": "该计划 2025 年 5 月起向研究者提供免费 Claude 额度，10 月 28 日扩围。",
+     "quote": "AI for Science began by supporting individual scientists.",
+     "quoteZh": "AI for Science 最初是为支持个体科学家而设。",
+     "gist": "计划从资助个人转向与资助方、研究机构和大型数据项目合作。官方称文中提到 20 家合作方，但实际点名 18 家。这条是机构合作与渠道铺设，不是新能力发布。",
+     "weight": 1
+    }
+   ]
+  }
+ ],
+ "question": "如果最强的模型先只给防御方，你的团队用的是第几梯队的 AI？"
+}
