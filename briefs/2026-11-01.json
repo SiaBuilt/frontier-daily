@@ -1,0 +1,134 @@
+{
+ "date": "2026-11-01",
+ "generatedAt": "2026-11-01T09:00:00+08:00",
+ "headline": "Google 承认 AI Mode 拖累搜索收入，Anthropic 给 Ultra 去掉 5 小时限额",
+ "themes": [
+  "AI 回答吃掉搜索广告，Google 股价单日大跌",
+  "订阅额度成为模型商的竞争筹码",
+  "agent 越自主，企业越需要边界与沙箱"
+ ],
+ "stats": "X：约 15 位 builder · 约 30 条（入选 4 条）｜ 一手长文：Simon Willison 1 篇、Latent Space 简报 1 篇 ｜ 播客：No Priors 1 集（含文字稿）｜ 事实新闻：1 条（Latent Space 转述，未核对 Google 财报原文）｜ 失败的源：feed-blogs 为空；Anthropic news 无新增；openai.com、deepmind.google、oneusefulthing、interconnects、SemiAnalysis、Lenny、Dwarkesh 等未逐一检查；Steinberger、Sottiaux 等推文背景查不到，未收；Simon 文中第二句赏金引文未能逐字核对，只用已核对句；当天来源偏少，仅收 7 条",
+ "sections": [
+  {
+   "id": "x",
+   "title": "Builders 在说什么",
+   "items": [
+    {
+     "id": "x1",
+     "who": "Claude，Anthropic 官方账号",
+     "tag": "订阅套餐",
+     "url": "https://x.com/claudeai/status/2116220869479428500",
+     "sourceLabel": "X @claudeai",
+     "title": "Anthropic 把 Max 20x 改名 Ultra，并取消 Ultra 的 5 小时限额",
+     "summary": "Max 5x 改叫 Max，Max 20x 改叫 Ultra，价格仍为每月 100 / 200 美元；已验证的 Ultra 账号不再有 5 小时限制，周限额不变。",
+     "ctx": "订阅额度近期是模型商争夺重度用户的筹码，Codex 等同类产品也在反复重置额度。",
+     "quote": "We’re also removing the 5-hour limit for verified Ultra accounts, starting today with most existing subscribers.",
+     "quoteZh": "我们同时取消已验证 Ultra 账号的 5 小时限制，今天起先覆盖大部分现有订阅用户。",
+     "gist": "Anthropic 不涨价，改用「去掉短周期限额」给最贵的一档加量。5 小时窗口最伤的是长时间跑 agent 的重度用户，取消后 Ultra 更像包月不限时段。新账号保留临时限制直到验证，是为了防欺诈滥用；周限额不变，总量天花板仍在。",
+     "weight": 3,
+     "soWhat": "竞争从模型榜单转向谁的额度更能撑得住 agent 长跑。"
+    },
+    {
+     "id": "x2",
+     "who": "Thariq，前 Claude Code 成员",
+     "tag": "AGI 与经济",
+     "url": "https://x.com/trq212/status/2116212324696777073",
+     "sourceLabel": "X @trq212",
+     "title": "Thariq：「AI 让一切变贵并让所有人失业」其实不够 AGI-pilled",
+     "summary": "他认为没人能预测更强的智能如何进入经济，悲观的简单答案不该被说成现实。",
+     "ctx": "近期关于 AI 导致失业与成本上升的悲观讨论升温，他在 X 上回应。",
+     "quote": "basically everyone is bad at predicting how more intelligence will actually show up in the economy",
+     "quoteZh": "基本上所有人都很不擅长预测，更多的智能究竟会以什么方式出现在经济中。",
+     "gist": "对经济的预测普遍不可靠，而「很贵且让所有人失业」只是最省力的一种答案。如果真相信强 AI，就应该相信它能解释自己的工作、带着人一起走。把悲观叙事反复说出口，反而可能让它成真。",
+     "weight": 2,
+     "soWhat": "叙事本身会影响结果，说「会怎样」之前先问是否真有依据。"
+    },
+    {
+     "id": "x3",
+     "who": "Aditya Agarwal，SPC 合伙人",
+     "tag": "Anthropic IPO",
+     "url": "https://x.com/adityaag/status/2116249251651215822",
+     "sourceLabel": "X @adityaag",
+     "title": "Agarwal：别盯着最后一轮私募估值，Anthropic 的价值多半在上市后产生",
+     "summary": "他说无论 Anthropic 上市估值 1.2 万亿还是 2 万亿美元，六年做到这一步都极其亮眼。",
+     "ctx": "Anthropic 10 月 26 日向 SEC 递交 S-1，媒体正在争论它的上市估值。",
+     "quote": "most of the value of companies ends up getting created after they are public",
+     "quoteZh": "公司的大部分价值最终是在上市之后创造出来的。",
+     "gist": "投资人和媒体过度关注最后一轮私募价格，但这不是衡量企业的好尺度。更重要的是，大多数公司的价值是在上市后才积累起来的，所以估值高低之争不改变这家公司六年成长的事实。",
+     "weight": 1
+    },
+    {
+     "id": "x4",
+     "who": "Amjad Masad，Replit CEO",
+     "tag": "agent 安全",
+     "url": "https://x.com/amasad/status/2116183233784394039",
+     "sourceLabel": "X @amasad",
+     "title": "Replit 发布 agent 沙箱白皮书",
+     "summary": "Replit 写了一份如何给 agent 做沙箱、在提高效率的同时降低风险的白皮书。",
+     "ctx": "agent 获得越来越多系统权限，企业最担心的就是越权与失控。",
+     "quote": "We wrote a whitepaper on how to properly sandbox agents to maximize productivity and reduce risk.",
+     "quoteZh": "我们写了一份白皮书，讲怎样正确地给 agent 做沙箱，以最大化效率并降低风险。",
+     "gist": "agent 能力越强，权限边界越要做在系统层而不是靠提示词。沙箱把能做的事框住，才敢放手让 agent 自主跑。这与企业软件的采购门槛直接相关。",
+     "weight": 1
+    }
+   ]
+  },
+  {
+   "id": "pod",
+   "title": "一手长文与播客",
+   "items": [
+    {
+     "id": "p1",
+     "who": "Simon Willison，独立开发者",
+     "tag": "安全漏洞",
+     "url": "https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/",
+     "sourceLabel": "simonwillison.net",
+     "title": "ChatGPT 的 HTML 预览被串联漏洞接管账号，OpenAI 赔 5000 美元赏金",
+     "summary": "Parameter Labs 利用 MathLive 的 postMessage、innerHTML 和 YouTube oEmbed 绕过 CSP，访问恶意分享链接即可接管登录用户会话。",
+     "ctx": "ChatGPT 的 HTML 预览会在沙箱 iframe 里运行用户生成的小应用，Parameter Labs 披露了攻击链。",
+     "quote": "Parameter found quite a complex attack chain.",
+     "quoteZh": "Parameter 找到了一条相当复杂的攻击链。",
+     "gist": "漏洞不是单点，而是三处各自合理的设计叠加：沙箱页能向父页面发消息，父页面用 innerHTML 渲染且不限来源，CSP 又放行了会反射脚本的 YouTube 接口。结果是别人发来的分享链接就能读你的私人数据。OpenAI 已修复，Simon 认为 5000 美元赏金偏低。",
+     "weight": 2,
+     "soWhat": "能运行别人生成代码的产品，每个跨框架通道都要当作攻击面。"
+    },
+    {
+     "id": "p2",
+     "who": "Jake Stauch，Serval 联创 CEO",
+     "tag": "企业 agent",
+     "url": "https://www.youtube.com/@NoPriorsPodcast",
+     "sourceLabel": "No Priors 播客",
+     "title": "Serval CEO：企业要的是给自主 agent 加边界，而不是更多自主",
+     "summary": "No Priors 本集对谈 Serval，一家用代码生成攻击 ServiceNow 的 IT 自动化创业公司，他称自己是企业采用 agent 的护栏。",
+     "ctx": "10 月 29 日 No Priors 新一集，Elad 与主持人访谈 Serval 联创 Jake Stauch。",
+     "quote": "autonomy is very scary in the enterprise.",
+     "quoteZh": "自主性在企业里是很吓人的。",
+     "gist": "企业既想要不用人盯的 agent，又怕它写出能操作所有系统的代码，这是无边界的安全风险。Serval 把自己定位成这条边界：在大企业的规则、审批和流程之内，让 agent 安全落地。",
+     "weight": 1
+    }
+   ]
+  },
+  {
+   "id": "industry",
+   "title": "典型事实",
+   "items": [
+    {
+     "id": "i1",
+     "who": "Latent Space AINews",
+     "tag": "搜索营收",
+     "url": "https://latent.space/p/ainews-google-admits-ai-mode-hurts-search-revenue-15-500b-drop-worst-since-2004-ipo-ai-bear-market-c/",
+     "sourceLabel": "latent.space（转述，报道）",
+     "title": "Google 承认 AI Mode 拖累搜索收入，股价单日跌约 15%",
+     "summary": "据 Latent Space 转述，Google 称 AI Mode 查询增长强劲但变现更差；股价跌约 15%，市值蒸发约 5000 亿美元，为 2004 年上市以来最差。",
+     "ctx": "Alphabet 发布财报后，Google 管理层解释搜索收入受压的原因；数字为媒体转述，未核对财报原文。",
+     "quote": "the strong growth in AI Mode queries had an impact because of the lower monetization we were seeing in AI Mode",
+     "quoteZh": "AI Mode 查询的强劲增长产生了影响，因为我们看到 AI Mode 的变现更低。",
+     "gist": "AI 回答越好用，用户越少点击广告，搜索巨头的赚钱方式随之被稀释。Google 公开承认，等于给「AI 吃掉搜索利润」做了定论。Google 未披露 AI Mode 明细，外界还没法严格测算它到底拖累多少。",
+     "weight": 3,
+     "soWhat": "分发入口被 AI 重塑，最先付出代价的是广告模式，而不是流量。"
+    }
+   ]
+  }
+ ],
+ "question": "当 AI 回答让搜索广告变现变差，下一个被稀释的入口会是什么？"
+}
