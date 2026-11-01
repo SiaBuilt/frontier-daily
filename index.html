@@ -6,6 +6,13 @@
 <meta name="description" content="Frontier 早报的全部信源：一线 AI builder、一手长文、播客与官方渠道。">
 <title>Frontier 早报</title>
 <link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Frontier">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#ECEAE5">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -631,6 +638,18 @@ h2{font-weight:600!important;letter-spacing:-.03em!important}
 .drawer .tk .new{display:none;font-style:normal;margin-left:6px;padding:1px 5px;border-radius:4px;background:#E8642C;color:#fff;font-size:9px;letter-spacing:.04em;vertical-align:1px}
 .drawer .tk.fresh .new{display:inline-block}
 @media (max-width:700px){.drawer .who .nb{flex-direction:column;gap:0}.drawer .dbar .tk{padding:0 10px}.drawer .dbar .tk svg{display:none}}
+/* phone: full-bleed drawer, three tiles that fit, home-screen app */
+html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+@media (max-width:700px){
+  .drawer{width:100%;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .drawer .dbar .ticker{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;overflow:visible}
+  .drawer .dbar .tk{display:flex;flex-direction:column;min-width:0;padding:0 8px}
+  .drawer .dbar .tk:first-child{padding-left:0}
+  .drawer .dbar .tk .l{letter-spacing:0}
+  .drawer .dbar .tk .c{overflow:hidden;text-overflow:ellipsis}
+  .drawer .q .en{font-size:17px}
+  .drawer .wk .wnav,.xbtn{min-width:40px;min-height:40px}
+}
 </style>
 
 </head>
@@ -801,7 +820,7 @@ var index=[],dates={},view=null,cur=null,full=false,data=null;
     index=list.sort(function(a,b){return a.date<b.date?1:-1});index.forEach(function(x){dates[x.date]=1});
     if(!index.length){view=today();cal();state('Soon','第一期明早 07:41 出刊');return}
     var t=document.getElementById('teaser');if(t){t.href='#daily';t.querySelector('.tl').textContent=md(index[0].date)+' · '+index[0].headline;t.hidden=false}
-    var h=location.hash.slice(1);go(dates[h]?h:index[0].date,false);if(dates[h]||h==='daily')openD();
+    var h=location.hash.slice(1);go(dates[h]?h:index[0].date,false);if(dates[h]||h==='daily'||(!h&&(navigator.standalone||matchMedia('(display-mode: standalone)').matches)))openD();
   }).catch(function(){state('Offline','目录读取失败，刷新再试')});
 })();
 

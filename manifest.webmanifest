@@ -1,0 +1,13 @@
+{
+  "name": "Frontier 早报",
+  "short_name": "Frontier",
+  "start_url": "./#daily",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ECEAE5",
+  "theme_color": "#ECEAE5",
+  "icons": [
+    {"src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}
