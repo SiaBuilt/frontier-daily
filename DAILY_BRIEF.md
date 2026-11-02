@@ -3,7 +3,7 @@
 定时任务每次运行都会先读这份文件。想改规则，直接改这里即可。
 
 ## 0. 位置
-- 仓库：`~/Desktop/Cowork/PLAYGROUND/frontier-daily`（GitHub `Charleyxx1209/frontier-daily`，分支 main，GitHub Pages）
+- 仓库：`~/Desktop/Cowork/PLAYGROUND/frontier-daily`（GitHub `SiaBuilt/frontier-daily`，分支 main，GitHub Pages）
 - 线上：https://frontier.siabuilt.com
 - 只改 `briefs/YYYY-MM-DD.json`、`briefs/index.json`，必要时改 `pulse.json`、`revenue.json`。不动 index.html 等其他文件。
 - 提交身份：`git -c user.name="Charleyxx1209" -c user.email="chengxi1209@gmail.com"`，提交信息用中文，如「新增 2026-10-28 早报」；由 Codex 执行，不添加 Claude 署名。
