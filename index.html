@@ -645,6 +645,7 @@ h2{font-weight:600!important;letter-spacing:-.03em!important}
 .drawer .item .byline{font-size:12px;color:var(--mute)}
 .drawer .story-source{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:6px;align-items:baseline}
 .drawer .story-source .src{margin:0;white-space:normal;overflow-wrap:anywhere;text-transform:none;letter-spacing:0;font-size:11px}
+.drawer .explanation-label{font-weight:600;color:var(--ink)}
 .drawer .verification{font-size:11px;color:var(--mute)}
 .drawer .takeaways{margin:0;padding-left:20px;font-size:14px;line-height:1.75;color:#3D3835}
 @media(max-width:700px){.drawer .item:not(.voice) h4{font-size:18px}.drawer .item.voice .who{flex-wrap:wrap}.drawer .item.voice .who .src{max-width:100%;overflow-wrap:anywhere;white-space:normal}}
@@ -812,9 +813,10 @@ var index=[],dates={},view=null,cur=null,full=false,data=null;
     }
     var body=voice?(it.gist||it.summary):kind==='fact'?it.summary:(it.gist||it.summary);
     if(body){var gp=el('p','gist');if(it.ctx)gp.append(el('span','ctx',it.ctx));gp.append(document.createTextNode(body));a.append(gp)}
+    if(kind==='fact'&&Array.isArray(it.explanation)){it.explanation.forEach(function(part){var ep=el('p','gist explanation');ep.append(el('b','explanation-label',part.label+'：'),document.createTextNode(part.text));a.append(ep)})}
     if(kind==='podcast'&&Array.isArray(it.takeaways)&&it.takeaways.length){var ul=el('ul','takeaways');it.takeaways.forEach(function(t){ul.append(el('li',null,t))});a.append(ul)}
     if(it.soWhat&&(it.weight||1)>=2)a.append(el('p','sw',it.soWhat));
-    if(!voice){var foot=el('div','story-source'),ln=source((kind==='podcast'?(/youtube\.com\/@|youtube\.com\/channel\//i.test(it.url||'')?'节目频道 · ':'收听原集 · '):'来源 · ')+(it.sourceLabel||'原文'));if(ln)foot.append(ln);if(it.verification)foot.append(el('span','verification',it.verification));a.append(foot)}
+    if(!voice){var foot=el('div','story-source'),ln=source((kind==='podcast'?(/youtube\.com\/@|youtube\.com\/channel\//i.test(it.url||'')?'节目频道 · ':'收听原集 · '):'来源 · ')+(it.sourceLabel||'原文'));if(ln)foot.append(ln);(it.sources||[]).forEach(function(ref){var ru=safe(ref.url);if(ru){var rl=el('a','src',ref.label+' ↗');rl.href=ru;rl.target='_blank';rl.rel='noopener';foot.append(rl)}});if(it.verification)foot.append(el('span','verification',it.verification));a.append(foot)}
     return a}
   function render(){var d=data,m=document.getElementById('dmain');m.replaceChildren();var dt=parse(d.date);
     var no=index.length-index.findIndex(function(x){return x.date===d.date});

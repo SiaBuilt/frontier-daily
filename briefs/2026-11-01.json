@@ -1,13 +1,13 @@
 {
  "date": "2026-11-01",
  "generatedAt": "2026-11-01T09:00:00+08:00",
- "headline": "Google 承认 AI Mode 拖累搜索收入，Anthropic 给 Ultra 去掉 5 小时限额",
+ "headline": "Google 搜索增长受 AI 变现拖累，Anthropic 放宽限额",
  "themes": [
-  "AI 回答吃掉搜索广告，Google 股价单日大跌",
+  "AI Mode 使用增长与广告变现不同步，搜索收入仍同比增长",
   "订阅额度成为模型商的竞争筹码",
   "agent 越自主，企业越需要边界与沙箱"
  ],
- "stats": "X：约 15 位 builder · 约 30 条（入选 4 条）｜ 一手长文：Simon Willison 1 篇、Latent Space 简报 1 篇 ｜ 播客：No Priors 1 集（含文字稿）｜ 事实新闻：1 条（Latent Space 转述，未核对 Google 财报原文）｜ 失败的源：feed-blogs 为空；Anthropic news 无新增；openai.com、deepmind.google、oneusefulthing、interconnects、SemiAnalysis、Lenny、Dwarkesh 等未逐一检查；Steinberger、Sottiaux 等推文背景查不到，未收；Simon 文中第二句赏金引文未能逐字核对，只用已核对句；当天来源偏少，仅收 7 条",
+ "stats": "X：约 15 位 builder · 约 30 条（入选 4 条）｜ 一手长文：Simon Willison 1 篇、Latent Space 简报 1 篇 ｜ 播客：No Priors 1 集（含文字稿）｜ 事实新闻：1 条（11 月 2 日补核 Alphabet 官方三季报、Google 广告公告与 Search Engine Land 电话会报道；已修正收入与增速口径）｜ 失败的源：feed-blogs 为空；Anthropic news 无新增；openai.com、deepmind.google、oneusefulthing、interconnects、SemiAnalysis、Lenny、Dwarkesh 等未逐一检查；Steinberger、Sottiaux 等推文背景查不到，未收；Simon 文中第二句赏金引文未能逐字核对，只用已核对句；当天来源偏少，仅收 7 条",
  "sections": [
   {
    "id": "x",
@@ -114,21 +114,47 @@
    "items": [
     {
      "id": "i1",
-     "who": "Latent Space AINews",
+     "who": "Alphabet / Search Engine Land",
      "tag": "搜索营收",
-     "url": "https://latent.space/p/ainews-google-admits-ai-mode-hurts-search-revenue-15-500b-drop-worst-since-2004-ipo-ai-bear-market-c/",
-     "sourceLabel": "latent.space（转述，报道）",
-     "title": "Google 承认 AI Mode 拖累搜索收入，股价单日跌约 15%",
-     "summary": "据 Latent Space 转述，Google 称 AI Mode 查询增长强劲但变现更差；股价跌约 15%，市值蒸发约 5000 亿美元，为 2004 年上市以来最差。",
-     "ctx": "Alphabet 发布财报后，Google 管理层解释搜索收入受压的原因；数字为媒体转述，未核对财报原文。",
-     "quote": "the strong growth in AI Mode queries had an impact because of the lower monetization we were seeing in AI Mode",
-     "quoteZh": "AI Mode 查询的强劲增长产生了影响，因为我们看到 AI Mode 的变现更低。",
-     "gist": "AI 回答越好用，用户越少点击广告，搜索巨头的赚钱方式随之被稀释。Google 公开承认，等于给「AI 吃掉搜索利润」做了定论。Google 未披露 AI Mode 明细，外界还没法严格测算它到底拖累多少。",
+     "url": "https://searchengineland.com/google-earnings-call-q3-2026-499706",
+     "sourceLabel": "Search Engine Land · 财报电话会报道",
+     "title": "Google 搜索收入仍增 12%，AI Mode 的较低变现拖慢增长",
+     "summary": "Alphabet 三季度搜索及其他收入为 633.5 亿美元，同比增长 12%。据财报电话会报道，AI Mode 查询增长很快，但变现水平较低，是搜索收入增速放缓的因素之一。",
+     "ctx": "10 月 28 日发布三季报，管理层解释搜索量与收入增速的差异。",
+     "quote": "",
+     "quoteZh": "",
+     "gist": "",
      "weight": 3,
-     "soWhat": "分发入口被 AI 重塑，最先付出代价的是广告模式，而不是流量。"
+     "soWhat": "观察 AI 搜索的商业化，要同时看查询量和每次查询带来的收入，不能只看使用量。",
+     "kind": "fact",
+     "verification": "营收已核对官方财报；原因据电话会报道，AI Mode 影响幅度未披露。",
+     "explanation": [
+      {
+       "label": "为什么会拖慢",
+       "text": "可以把搜索广告收入粗略理解为查询量与平均每次查询收入共同决定。AI Mode 的新增查询如果赚得较少，使用量快速上升也未必带来同等幅度的收入增长；当这类查询占比变大，整体平均变现会承压。这是对商业机制的解释，不等于传统搜索收入已被等量替代。"
+      },
+      {
+       "label": "广告还在补齐",
+       "text": "Google 10 月 28 日宣布扩大 AI Mode 广告覆盖，并在美国推出支持后续追问的多轮广告。说明对话式搜索的广告覆盖和形式仍在扩展，不能简单沿用传统搜索的变现水平。不过，官方没有拆出广告覆盖、点击率和单次点击价格各自的影响。"
+      },
+      {
+       "label": "哪些还不能下结论",
+       "text": "据 Search Engine Land 转述，管理层称汇率才是相较二季度增速放缓的最大因素，零售与媒体广告支出变化也有影响。Google 未量化 AI Mode 的收入差距或拖累幅度，因此不能把整体放缓全归因于 AI，也不能直接断言用户减少广告点击。"
+      }
+     ],
+     "sources": [
+      {
+       "label": "Alphabet 官方三季报",
+       "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm"
+      },
+      {
+       "label": "Google：AI Mode 广告扩展",
+       "url": "https://blog.google/intl/en-africa/products/ads-in-ai-mode-expand-to-new-markets/"
+      }
+     ]
     }
    ]
   }
  ],
- "question": "当 AI 回答让搜索广告变现变差，下一个被稀释的入口会是什么？"
+ "question": "当 AI 查询增长快于变现，应该怎样判断搜索产品的商业化进展？"
 }
