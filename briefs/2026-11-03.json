@@ -1,0 +1,151 @@
+{
+  "date": "2026-11-03",
+  "generatedAt": "2026-11-03T07:48:32+08:00",
+  "headline": "AI 开始测生活任务，法律 agent 在保密约束下做评测",
+  "themes": [
+    "个人助手要证明能把日常任务办好",
+    "机密数据不能读取，评测仍须贴近业务",
+    "算力园区把灵活用电写入电网协议"
+  ],
+  "stats": "X：筛查 11 位 builder、22 条，入选 0 条；feed 更新于北京时间 11 月 2 日 14:35，多数已超 24 小时，候选原帖受限或背景未核实 ｜ 入选：长文 1 篇、播客 2 集、官方事实 2 条，共 5 条 ｜ 失败的源与缺口：feed-blogs 为空；One Useful Thing、Interconnects、Import AI、Dwarkesh、Lenny 正文或 RSS 读取受限；BG2 抓取受限；No Priors、MAD 频道未取得可靠的新集清单；All-In 只读到简介，视频受限；Unsupervised Learning feed 只有频道链接；Training Data 读到 Mecka 单集正文但未核实日期；SemiAnalysis 只取得订阅页。Acquired 最新集超 7 天；Anthropic、DeepMind、Hamel、Eugene Yan 列表未见时限内新内容。未将未收录等同于无更新。",
+  "sections": [
+    {
+      "id": "x",
+      "title": "Builders 在说什么",
+      "items": []
+    },
+    {
+      "id": "pod",
+      "title": "一手长文与播客",
+      "items": [
+        {
+          "id": "p1",
+          "kind": "podcast",
+          "who": "Jacob Lauritzen，Legora CTO",
+          "tag": "法律应用",
+          "url": "https://latent.space/p/building-ai-for-lawyers-jacob-lauritzen-cto-of-legora/",
+          "sourceLabel": "Latent Space · 单集文字稿",
+          "title": "看不到客户数据，Legora 怎样评测法律 agent？",
+          "summary": "Legora 无法直接读取客户的机密工作记录，因此让律师和工程师共同重建任务环境，再按业务领域检查模型的进退。",
+          "ctx": "11 月 2 日 Latent Space 访谈 Legora CTO。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 3,
+          "program": "Latent Space",
+          "gist": "保密要求让读取真实任务记录这条改进路径受限。评测必须贴近律师实际交付的成果，并分任务观察新模型；整体更强不代表每类法律工作都更可靠。",
+          "takeaways": [
+            "三名工程师与三名律师搭建模拟环境，例如让 agent 在一万份文件中尽调，检查报告是否找对风险。",
+            "把结果按业务领域和任务画成热力图，观察模型升级在哪些任务上进步、退步。",
+            "批量合同审阅先跑十行，让律师修正问题后再扩展，避免把错误批量放大。"
+          ],
+          "soWhat": "拿不到客户原始数据的垂直产品，也需要有领域专家参与的可重复任务评测。"
+        },
+        {
+          "id": "p2",
+          "kind": "article",
+          "who": "Simon Willison",
+          "tag": "统计口径",
+          "url": "https://simonwillison.net/2026/Nov/2/census-bureau-super-intelligence/",
+          "sourceLabel": "simonwillison.net · 作者分析",
+          "title": "企业 AI 采用率涨了多少？先看问卷是否换过口径",
+          "summary": "Simon 重算美国企业调查数据，提醒读者：从“用于生产商品或服务”改问“用于任意业务职能”，会让采用率序列出现不可直接比较的断点。",
+          "ctx": "11 月 2 日文章重算人口普查局 10 月 22 日公布的数据。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 2,
+          "gist": "采用率的变化既受真实使用影响，也受问法影响。图表把两种口径分别计算六期移动平均，并留出断点；不能把旧口径约 12% 与新口径约 40% 直接拼成增长倍数。",
+          "soWhat": "用行业采用率判断市场空间之前，先核对调查对象、问题范围和时间口径。"
+        },
+        {
+          "id": "p3",
+          "kind": "podcast",
+          "who": "Fred Graver，艾美奖获奖编剧、AI Writer’s Studio 创始人",
+          "tag": "创作流程",
+          "url": "https://every.to/podcast/transcript-fred-graver",
+          "sourceLabel": "Every · 单集文字稿",
+          "title": "先写清自己要表达什么，再让 AI 加入编剧室",
+          "summary": "Fred Graver 把 AI 用于讨论、反馈和协调创作流程。他建议先记录自己的创作取向与项目想法，再让模型介入，避免一开始就被模型的答案带走。",
+          "ctx": "10 月 28 日单集，文字稿于 11 月 2 日更新。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 2,
+          "program": "The Every Podcast",
+          "gist": "创作需要自己的判断起点。先留下个人经验和想表达的内容，再让 AI 帮忙讨论；构思、制作和面向观众的营销也应该更早互相反馈。",
+          "takeaways": [
+            "分别写下“我是什么样的创作者”和“我正在做什么”，把作品偏好、灵感与项目目标交给 AI。",
+            "用不同立场的虚拟读者帮助推敲想法；这是构思工具，不能代替真实观众的反应。",
+            "让制作与营销更早参与构思，而不是等作品完成后才讨论如何找到观众。"
+          ],
+          "soWhat": "AI 创作工具可以帮助保留作者的意图，并让反馈更早发生。"
+        }
+      ]
+    },
+    {
+      "id": "industry",
+      "title": "典型事实",
+      "items": [
+        {
+          "id": "i1",
+          "kind": "fact",
+          "who": "OpenAI",
+          "tag": "生活评测",
+          "url": "https://openai.com/index/lifeval/",
+          "sourceLabel": "OpenAI 官方研究公告",
+          "title": "OpenAI 推出 LifeVal，把日常生活任务纳入 AI 评测",
+          "summary": "OpenAI 11 月 2 日介绍 LifeVal：结合时间使用研究与 3,995 人调查，评测用户希望个人助手完成的照护、教育、购物和家庭事务。",
+          "ctx": "个人助手从回答问题走向浏览器操作和跨工具办事。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 3,
+          "verification": "已核对官方公告；展示分数未作独立复测。",
+          "explanation": [
+            {
+              "label": "为什么要测这些",
+              "text": "学科考试得分不能直接说明助手能否替用户办好生活中的事。OpenAI 先参考美国与跨国时间使用研究，再调查用户最想获得帮助的任务，把评测目标对齐照护、家庭行政等实际负担。"
+            },
+            {
+              "label": "评测方向变了什么",
+              "text": "公告举例包括比较幼儿园并整理报名事项、按预算和通勤要求找房。这些任务涉及收集资料、匹配约束和组织后续行动。OpenAI 将其与浏览器、电脑操作及连接器能力的改进联系起来。"
+            },
+            {
+              "label": "分数如何理解",
+              "text": "页面展示的是官方选择的任务实例和分数，不能据此推算每个用户的实际成功率，也不能等同于助手已替人完成所有后续手续。能否稳定交付，仍需在具体场景验证。"
+            }
+          ],
+          "soWhat": "个人助手的价值，需要用具体生活任务的完成质量来衡量。"
+        },
+        {
+          "id": "i2",
+          "kind": "fact",
+          "who": "OpenAI",
+          "tag": "算力电力",
+          "url": "https://openai.com/index/grid-protectors-program/",
+          "sourceLabel": "OpenAI 官方公告",
+          "title": "OpenAI 提出电网调峰计划，佐治亚项目约定最高 1,000 兆瓦灵活负荷",
+          "summary": "OpenAI 11 月 2 日公布 Grid Protectors，计划在电网紧张时降低算力园区取电；仍在开发中的 Effingham 园区拟作为试点。",
+          "ctx": "AI 园区新增用电也带来电网扩建与成本分摊问题。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 2,
+          "verification": "已核对 OpenAI 公告；属于协议与规划，非已实现的调峰成果。",
+          "explanation": [
+            {
+              "label": "为什么“少用电”有价值",
+              "text": "电网需要为最高峰准备容量，短时峰值也可能推动昂贵的扩建。园区若在紧张时降低取电，就能为其他用户腾出容量；平时的稳定用电则有助于分摊固定成本。这是公告提出的机制。"
+            },
+            {
+              "label": "这次承诺了什么",
+              "text": "OpenAI 称将承担 Effingham 项目所需的全部基础设施和供电服务成本，与 Georgia Power 的协议包含最高 1,000 兆瓦灵活需求响应。这个数字是协议规模，不是已向电网回送的电量。"
+            },
+            {
+              "label": "还要等哪些结果",
+              "text": "园区仍在开发，实际响应速度、持续时长和兑现效果尚待运行验证。公告也明确，灵活用电不能替代新电源和输电投资；不能把电力公司整体预计节省的费用，全归功于这一园区。"
+            }
+          ],
+          "soWhat": "评估 AI 基建要同时看新增负荷、峰时调节能力，以及扩建费用由谁承担。"
+        }
+      ]
+    }
+  ],
+  "question": "如果只能选三个真实任务来评估你的 AI 产品，你会要求它交付什么结果？"
+}
