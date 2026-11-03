@@ -325,6 +325,8 @@ body.lock{overflow:hidden}
 .tk .v{font-family:var(--f-display);font-size:19px;line-height:1.15;white-space:nowrap;font-variant-numeric:lining-nums tabular-nums}
 .tk .v small{font-family:var(--f-mono);font-size:9px;margin-left:2px}
 .tk .c{grid-column:1;font-family:var(--f-mono);font-size:10px;white-space:nowrap}
+.tk .acc{grid-column:1/-1;font-size:10px;line-height:1.5;margin-top:4px;overflow-wrap:anywhere}
+.tk .acc small{display:block;color:var(--mute);font-size:9px}
 .tk .up{color:#1F7A4A}.tk .dn2{color:#D9373B}.tk .na{color:var(--mute)}
 .tk svg{grid-row:2/4;grid-column:2;width:50px;height:22px;align-self:center}
 @media (max-width:900px){.ticker{grid-template-columns:repeat(3,minmax(0,1fr))}.tk-h{grid-column:1/-1;flex-direction:row;gap:8px;align-items:baseline;padding:6px 10px}.tk{border-top:1px solid var(--line)}}
@@ -859,12 +861,32 @@ var index=[],dates={},view=null,cur=null,full=false,data=null;
   function spark(pts,col){var s=document.createElementNS(NS,'svg');s.setAttribute('viewBox','0 0 50 22');s.setAttribute('preserveAspectRatio','none');if(pts.length<2)return s;
     var mx=Math.max.apply(null,pts),mn=Math.min.apply(null,pts),d=pts.map(function(v,i){return (i?'L':'M')+(i/(pts.length-1)*48+1).toFixed(1)+' '+(20-(v-mn)/((mx-mn)||1)*18).toFixed(1)}).join(' ');
     var a=document.createElementNS(NS,'path');a.setAttribute('d',d);a.setAttribute('fill','none');a.setAttribute('stroke',col);a.setAttribute('stroke-width','1.8');s.append(a);return s}
+  // Three-point second derivative on unequal intervals. Monthly disclosures use
+  // calendar months; daily observations use weeks. This is not % growth change.
+  function acceleration(pts){
+    if(pts.length<3)return null;
+    var p=pts.slice(-3),monthly=p.every(function(q){return /^\d{4}-\d{2}$/.test(q.date)});
+    if(!monthly&&!p.every(function(q){return /^\d{4}-\d{2}-\d{2}$/.test(q.date)}))return null;
+    var t=p.map(function(q){var d=q.date.split('-').map(Number);return monthly?d[0]*12+d[1]-1:Date.UTC(d[0],d[1]-1,d[2])/6048e5});
+    var h1=t[1]-t[0],h2=t[2]-t[1];
+    if(h1<=0||h2<=0||!p.every(function(q){return Number.isFinite(q.value)}))return null;
+    var value=2*((p[2].value-p[1].value)/h2-(p[1].value-p[0].value)/h1)/(h1+h2);
+    return {value:value,period:monthly?'月':'周',dates:p.map(function(q){return q.date}).join(' → ')};
+  }
   function tile(label,pts,pre,unit,col){var a=el('a','tk'),n=pts.length,l=pts[n-1];a.append(el('span','l',label));
     if(!l){a.append(el('span','v','—'),el('span','c na','待更新'),spark([],col));return a}
     a.href=l.url;a.target='_blank';a.rel='noopener';a.title=label+' · '+l.date+' · '+l.src;
     var v=el('span','v',pre+l.value);v.append(el('small',null,unit));a.append(v);
     if(n>1){var q=pts[n-2],ch=(l.value-q.value)/q.value*100;a.append(el('span','c '+(ch>=0?'up':'dn2'),(ch>=0?'▲':'▼')+Math.abs(ch).toFixed(Math.abs(ch)>=100?0:1)+'% 较 '+q.date.slice(2)))}
     else a.append(el('span','c na',l.date.slice(2)));
+    var acc=acceleration(pts),line=el('span','acc');
+    if(acc){
+      var rounded=Number(acc.value.toPrecision(3)),sign=rounded>0?'+':rounded<0?'−':'';
+      line.classList.add(rounded>0?'up':rounded<0?'dn2':'na');
+      line.append(document.createTextNode('加速度 '+sign+Math.abs(rounded)),el('small',null,pre+unit+' / '+acc.period+'² · '+(rounded>0?'增长提速':rounded<0?'增长放缓':'增量稳定')));
+      line.title='最近三个披露点的二阶差分：2 ×（后一段斜率 − 前一段斜率）÷ 两段总时长。'+acc.dates+'。反映这段观测区间，不是实时加速度；负值不等于总量下降。';
+    }else{line.classList.add('na');line.textContent='加速度 —';line.append(el('small',null,pts.length<3?'待第 3 个数据点':'数据间隔不可比较'))}
+    a.append(line);
     if(l.addedAt){a.dataset.added=l.addedAt;a.querySelector('.l').append(el('i','new','更新'))}
     a.append(spark(pts.map(function(q){return q.value}),col));return a}
   Promise.all([fetch('revenue.json',{cache:'no-cache'}).then(function(r){return r.json()}),fetch('pulse.json',{cache:'no-cache'}).then(function(r){return r.json()})]).then(function(x){
