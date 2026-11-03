@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-26",
+ "updatedAt": "2026-11-03",
  "metrics": [
   {
    "id": "openrouter",
@@ -22,6 +22,73 @@
      "note": "截至 10/24 的 7 日；第一名 DeepSeek V4.1 Flash 1017 30.8T",
      "src": "OpenRouter Rankings",
      "url": "https://openrouter.ai/rankings"
+    },
+    {
+     "date": "2026-10-27",
+     "value": 128.11,
+     "periodStart": "2026-10-27",
+     "periodEnd": "2026-11-02",
+     "timezone": "UTC",
+     "addedAt": "2026-11-03",
+     "note": "截至 2026-11-02 的完整 7 日；date 按既有序列记窗口起始日。官方 This Week 榜单前十项显示值求和，因原值已四舍五入，合计为近似值；不是全平台总量。",
+     "src": "OpenRouter Rankings · This Week",
+     "url": "https://openrouter.ai/rankings?view=week",
+     "retrievedAt": "2026-11-03",
+     "license": "CC BY 4.0",
+     "components": [
+      {
+       "model": "DeepSeek V4.1 Flash 1017",
+       "value": 50.4,
+       "unit": "T tokens"
+      },
+      {
+       "model": "GLM 5.3 Flash",
+       "value": 15.3,
+       "unit": "T tokens"
+      },
+      {
+       "model": "DeepSeek V4.1 Flash",
+       "value": 15.1,
+       "unit": "T tokens"
+      },
+      {
+       "model": "Hy4 preview",
+       "value": 9.25,
+       "unit": "T tokens"
+      },
+      {
+       "model": "GPT-6 Luna",
+       "value": 9.22,
+       "unit": "T tokens"
+      },
+      {
+       "model": "Claude Opus 5.5",
+       "value": 6.67,
+       "unit": "T tokens"
+      },
+      {
+       "model": "MiniMax M3.1 Flash",
+       "value": 6.46,
+       "unit": "T tokens"
+      },
+      {
+       "model": "Step 5 Preview",
+       "value": 6.46,
+       "unit": "T tokens"
+      },
+      {
+       "model": "GPT-5.6 Luna",
+       "value": 5.32,
+       "unit": "T tokens"
+      },
+      {
+       "model": "GPT-6.1 Sol",
+       "value": 3.93,
+       "unit": "T tokens"
+      }
+     ],
+     "calculation": "50.4 + 15.3 + 15.1 + 9.25 + 9.22 + 6.67 + 6.46 + 6.46 + 5.32 + 3.93 = 128.11 T tokens",
+     "comparability": "沿用已有 2026-10-12 与 2026-10-18 两个历史记录及其日期；本次独立核验的是新增窗口。三点加速度为历史快照估算，非实时值。"
     }
    ]
   },
