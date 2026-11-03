@@ -1,0 +1,107 @@
+{
+  "date": "2026-11-04",
+  "generatedAt": "2026-11-04T07:48:30+08:00",
+  "headline": "AI 走进硬件与化学工作台，生成方案之后仍要验证",
+  "themes": [
+    "跨专业设计开始交给 agent 协调",
+    "领域工具承担精确计算与数据处理",
+    "权重解读实验需要区分能力与推论"
+  ],
+  "stats": "X：筛查 12 位 builder、29 条，入选 0 条；feed 更新于北京时间 11 月 3 日 14:27，部分已超 24 小时，其他候选信息不足、背景未核实或主题重复 ｜ 入选：长文 1 篇、播客 0 集、官方事实 2 条，共 3 条 ｜ 失败的源与缺口：feed-blogs 为空；播客 feed 的 Legora 单集已收录。One Useful Thing、Import AI、Lenny、Dwarkesh 未取得可用正文；Interconnects、SemiAnalysis 只取得订阅页；BG2 抓取受限；No Priors、Unsupervised Learning、MAD 未取得可靠新集清单；All-In 仅有简介或已覆盖主题；Training Data 的 Mecka 单集日期未核实。Acquired 最新集超 7 天；Every 最新集已收录；Anthropic、Hamel、Eugene Yan 列表未见时限内新文。OpenAI Git 长文仅核到 11 月 2 日日期，无法确认在 36 小时内，未收录。未将抓取缺口等同于没有更新。",
+  "sections": [
+    {
+      "id": "x",
+      "title": "Builders 在说什么",
+      "items": []
+    },
+    {
+      "id": "pod",
+      "title": "一手长文与播客",
+      "items": [
+        {
+          "id": "p1",
+          "kind": "article",
+          "who": "Simon Willison",
+          "tag": "权重解读",
+          "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
+          "sourceLabel": "simonwillison.net · 作者实测",
+          "title": "笔记本上的 Qwen 从权重猜游戏，四个例子猜对三个",
+          "summary": "Simon 用本地 Qwen 3.8 27B 复现无工具的权重解读任务：识别出三种简化游戏，但把 Freeway 错认成吃豆人。成功的三次各耗时约 46–65 分钟。",
+          "ctx": "11 月 3 日实测回应前一天的权重空间编程研究。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 2,
+          "gist": "把神经网络的参数直接交给语言模型，也能推断出部分行为。四个简化游戏例子里三个答对，但耗时很长且有误判。这展示了有限任务中的分析能力，还不能证明模型能普遍读懂或自主改进自身。",
+          "soWhat": "评估“权重空间编程”时，应分开看无工具解读、代码辅助修改和实际效果验证。"
+        }
+      ]
+    },
+    {
+      "id": "industry",
+      "title": "典型事实",
+      "items": [
+        {
+          "id": "i1",
+          "kind": "fact",
+          "who": "OpenAI",
+          "tag": "硬件设计",
+          "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world/",
+          "sourceLabel": "OpenAI 官方公告",
+          "title": "OpenAI 展示 AI 硬件设计流程，制造公差仍需人工把关",
+          "summary": "OpenAI 11 月 3 日展示 Astra 协助设计语音设备的试验，并宣布与 Mazda 开展工程研究合作。原型设计更快，但送厂前仍需多轮审查。",
+          "ctx": "官方公布机械、电气与软件协同设计的早期进展。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 3,
+          "verification": "已核对官方公告；时间与能力为官方案例描述，未独立复测。",
+          "explanation": [
+            {
+              "label": "为什么有机会提速",
+              "text": "硬件设计需要同时协调外壳、线路板、软件和制造要求，一处修改可能牵动其他部分。试验让模型跨这些工具生成和调整设计，减少工程师在不同专业文件之间反复传递修改的工作。"
+            },
+            {
+              "label": "实际做到了哪一步",
+              "text": "官方称，两名成员把它作为业余项目，不到一周完成设备设计；代工厂不到一个月制成小批原型。这是单个试验的进度，没有对照组，不能直接换算成整个硬件开发周期的提速倍数。"
+            },
+            {
+              "label": "仍需人来验收什么",
+              "text": "公告承认模型未能稳定考虑生产限制、尺寸公差和装配细节，送厂前仍经历多轮审查。Mazda 合作将探索气动与碰撞安全模拟，目前属于研究合作，不能视为已实现的量产效率收益。"
+            }
+          ],
+          "soWhat": "设计稿生成得更快之后，可制造性与跨专业约束检查仍决定它能否成为实物。"
+        },
+        {
+          "id": "i2",
+          "kind": "fact",
+          "who": "Google DeepMind",
+          "tag": "科研工具",
+          "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/",
+          "sourceLabel": "Google DeepMind 官方技术演示",
+          "title": "Antigravity 加入化学技能，一小时演示从文献检索到分子方案",
+          "summary": "DeepMind 11 月 3 日介绍 Antigravity 化学信息学技能：官方演示约一小时完成化合物检索、结构对比和候选分子设计，结果仍须实验验证。",
+          "ctx": "新技能把化学数据库与确定性计算工具接入 agent。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 2,
+          "verification": "已核对官方技术演示；未独立复测，候选方案并非已验证药物。",
+          "explanation": [
+            {
+              "label": "原来慢在哪里",
+              "text": "同一分子可能以论文名称、专利图形或结构文件出现，研究者要先统一表示、清理数据，再分析性质。一个原子或化学键出错就会变成另一种物质，因此资料整理不能只靠语言模型生成看似合理的答案。"
+            },
+            {
+              "label": "工具怎样分工",
+              "text": "语言模型负责编排流程、查库和推理，RDKit 等确定性工具执行分子计算；ChEMBL、PubChem 提供数据。演示检索数千化合物、过滤无关条目并保留来源，再比较结构差异、训练预测模型和提出合成路线。"
+            },
+            {
+              "label": "一小时不等于新药诞生",
+              "text": "这是一段特定流程的官方演示，不能外推所有研发任务。数据稀疏、实验室间测量差异都会限制预测；公告明确要求把候选设计实际合成并实验验证。提速的是提出有依据的假设，不是跳过验证。"
+            }
+          ],
+          "soWhat": "专业 agent 的价值来自把模型判断与可检查的领域工具结合，并把证据留给专家复核。"
+        }
+      ]
+    }
+  ],
+  "question": "你的专业工作流里，哪些步骤适合让模型提出方案，哪些必须交给工具或实物实验验收？"
+}
