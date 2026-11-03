@@ -664,26 +664,27 @@ html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
   .drawer .wk .wnav,.xbtn{min-width:40px;min-height:40px}
 }
 
-/* Compact homepage metrics strip. */
-.market-hero{padding:0 clamp(16px,3vw,32px) 12px}
-.market-hero .ticker{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:0;border:1px solid var(--line);border-radius:6px;background:none}
-.market-hero .tk{display:flex;flex-direction:column;padding:10px 16px;border:0;border-right:1px solid var(--line);border-radius:0;background:none;box-shadow:none;min-width:0}
-.market-hero .tk:last-child{border-right:0}
-.market-hero .tk:hover{background:rgba(255,255,255,.3)}
-.market-hero .tk .l{color:var(--metric-color);font-size:10px;letter-spacing:0;white-space:normal;font-weight:600}
-.market-hero .tk .v{font-size:25px;line-height:1.25;margin:4px 0 2px;letter-spacing:-.04em!important}
-.market-hero .tk .v small{font-size:11px;margin-left:3px;font-weight:400}
-.market-hero .tk .c{font-size:10px;white-space:normal}
-.market-hero .tk .chart{display:none}
-.market-hero .tk .acc{font-size:10px;line-height:1.5;margin-top:3px;font-variant-numeric:tabular-nums}
-.market-hero .tk .acc small{display:inline;font-size:9px;margin-left:5px}
-.market-hero .tk .asof{color:var(--mute);font-size:9px;line-height:1.5;margin-top:4px}
-.market-hero .new{display:none}
-.market-loading{font-size:12px;padding:10px;color:var(--mute)}
-@media(max-width:700px){
-.market-hero .tk{padding:8px}.market-hero .tk .l{font-size:9px;min-height:27px}.market-hero .tk .v{font-size:22px}.market-hero .tk .c{font-size:9px;min-height:27px}.market-hero .tk .acc small{display:block;margin-left:0}.market-hero .tk .asof{font-size:8px}
-}
-
+/* Inline header signals; narrow screens keep them above the footer. */
+.market-hero{padding:0;min-width:0}
+.bar .market-hero{margin-left:auto;margin-right:auto}
+.market-hero .ticker{display:flex;gap:0;margin:0;border:0;border-radius:0;background:none}
+.market-hero .tk{display:grid;grid-template-columns:auto auto;gap:2px 9px;padding:0 16px;border:0;border-left:1px solid var(--line);border-radius:0;background:none;box-shadow:none;min-width:0;align-items:baseline}
+.market-hero .tk:first-child{border-left:0}
+.market-hero .tk .l{grid-column:1;grid-row:1;color:var(--metric-color);font-size:10px;letter-spacing:0;white-space:nowrap;font-weight:600}
+.market-hero .tk .v{grid-column:2;grid-row:1;font-size:18px;line-height:1.2;margin:0;letter-spacing:-.04em!important;text-align:right}
+.market-hero .tk .v small{font-size:9px;margin-left:2px;font-weight:400}
+.market-hero .tk .c{grid-column:1;grid-row:2;font-size:9px;white-space:nowrap}
+.market-hero .tk .acc{grid-column:2;grid-row:2;font-size:9px;line-height:1.5;margin:0;text-align:right;white-space:nowrap}
+.market-hero .tk .acc small,.market-hero .tk .chart,.market-hero .tk .asof,.market-hero .new{display:none}
+.market-loading{font-size:10px;color:var(--mute);margin:0}
+.metrics-footer:empty{display:none}
+.metrics-footer{padding:20px clamp(16px,3vw,32px);border-top:1px solid var(--line)}
+.metrics-footer .ticker{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.metrics-footer .tk{display:flex;flex-direction:column;align-items:flex-start;padding:0 12px;gap:3px}
+.metrics-footer .tk:first-child{padding-left:0}.metrics-footer .tk:last-child{padding-right:0}
+.metrics-footer .tk .acc small{display:block;font-size:9px;text-align:left}
+.metrics-footer .tk .acc{text-align:left}
+@media(min-width:1051px){.bar{gap:10px}.bar .brand{flex-shrink:0}.bar #sig{flex-shrink:0}}
 </style>
 
 </head>
@@ -693,12 +694,13 @@ html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
 <div class="panel">
   <header class="bar">
     <a class="brand" href="./" aria-label="Frontier 首页"><img src="logo.svg" alt="" width="28" height="28"><span>Frontier</span></a>
-    <a class="sig" id="sig" href="#daily" data-open="daily" aria-label="今日信息量" hidden></a>
-  </header>
-
   <section class="market-hero" aria-label="AI 增长指标">
     <div class="ticker" id="ticker" aria-label="AI 增长指标"><p class="market-loading">正在读取最新披露数据…</p></div>
   </section>
+    <a class="sig" id="sig" href="#daily" data-open="daily" aria-label="今日信息量" hidden></a>
+  </header>
+
+
   <div id="shelf-top" data-idx="01">
     <div class="hero">
       <h1>The Frontier<br>Curation</h1>
@@ -729,6 +731,7 @@ html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
   </section>
 
 
+  <div class="metrics-footer" id="metrics-footer"></div>
   <footer class="pf cap">
     <span>Maintained by Sia · Compiled with Claude · Core list via <a href="https://github.com/zarazhangrui/follow-builders" target="_blank" rel="noopener">follow-builders</a></span>
   </footer>
@@ -879,6 +882,9 @@ var index=[],dates={},view=null,cur=null,full=false,data=null;
 <script>
 (function(){
   var box=document.getElementById('ticker');if(!box)return;
+  var module=box.closest('.market-hero'),header=document.querySelector('.bar'),footer=document.getElementById('metrics-footer'),layout=matchMedia('(max-width:1050px)');
+  function positionMetrics(){if(layout.matches)footer.append(module);else header.insertBefore(module,document.getElementById('sig'))}
+  positionMetrics();layout.addEventListener('change',positionMetrics);
   function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
   var NS='http://www.w3.org/2000/svg';
   function spark(pts,col){var s=document.createElementNS(NS,'svg');s.classList.add('chart');s.setAttribute('viewBox','0 0 260 88');s.setAttribute('preserveAspectRatio','none');s.setAttribute('aria-label','历史披露趋势，各图独立刻度');s.setAttribute('role','img');if(pts.length<2)return s;
@@ -900,9 +906,9 @@ var index=[],dates={},view=null,cur=null,full=false,data=null;
   }
   function tile(label,pts,pre,unit,col){var a=el('a','tk'),n=pts.length,l=pts[n-1];a.style.setProperty('--metric-color',col);a.append(el('span','l',label));
     if(!l){a.append(el('span','v','—'),el('span','c na','待更新'),spark([],col));return a}
-    a.href=l.url;a.target='_blank';a.rel='noopener';a.title=label+' · '+l.date+' · '+l.src;
+    a.href=l.url;a.target='_blank';a.rel='noopener';a.title=label+' · '+(pre?'年化营收（十亿美元）':'Top 10 模型七日 token 量（万亿）')+' · '+(l.periodEnd?l.periodStart+' — '+l.periodEnd:l.date)+' · '+l.src;
     var v=el('span','v',pre+l.value);v.append(el('small',null,unit));a.append(v);
-    if(n>1){var q=pts[n-2],ch=(l.value-q.value)/q.value*100;a.append(el('span','c '+(ch>=0?'up':'dn2'),(ch>=0?'▲':'▼')+Math.abs(ch).toFixed(Math.abs(ch)>=100?0:1)+'% 较 '+q.date.slice(2)))}
+    if(n>1){var q=pts[n-2],ch=(l.value-q.value)/q.value*100;a.append(el('span','c '+(ch>=0?'up':'dn2'),(ch>=0?'▲':'▼')+Math.abs(ch).toFixed(Math.abs(ch)>=100?0:1)+'%'))}
     else a.append(el('span','c na',l.date.slice(2)));
     var acc=acceleration(pts),line=el('span','acc');
     if(acc){
@@ -911,14 +917,15 @@ var index=[],dates={},view=null,cur=null,full=false,data=null;
       line.append(document.createTextNode('加速度 '+sign+Math.abs(rounded)),el('small',null,pre+unit+' / '+acc.period+'² · '+(rounded>0?'增长提速':rounded<0?'增长放缓':'增量稳定')));
       line.title='最近三个披露点的二阶差分：2 ×（后一段斜率 − 前一段斜率）÷ 两段总时长。'+acc.dates+'。反映这段观测区间，不是实时加速度；负值不等于总量下降。';
     }else{line.classList.add('na');line.textContent='加速度 —';line.append(el('small',null,pts.length<3?'待第 3 个数据点':'数据间隔不可比较'))}
+    if(line.title)a.title+='\n'+line.textContent+'。'+line.title;
     a.append(line);
     if(l.addedAt){a.dataset.added=l.addedAt;a.querySelector('.l').append(el('i','new','更新'))}
     a.append(spark(pts,col),el('span','asof',(l.periodEnd?'Top 10 · '+l.periodStart+' — '+l.periodEnd:'披露月份 '+l.date)+' · 来源 ↗'));return a}
   Promise.all([fetch('revenue.json',{cache:'no-cache'}).then(function(r){return r.json()}),fetch('pulse.json',{cache:'no-cache'}).then(function(r){return r.json()})]).then(function(x){
     var S={},M={};x[0].series.forEach(function(s){S[s.id]=s.points});x[1].metrics.forEach(function(m){M[m.id]=m.points||[]});
     var tiles=[
-      tile('ANTHROPIC 年化营收',S.anthropic||[],'$','B','#E8642C'),tile('OPENAI 年化营收',S.openai||[],'$','B','#2F55B5'),
-      tile('OPENROUTER 周 TOKENS',M.openrouter||[],'','T','#2E5A3F')].filter(function(t){return t.href&&t.querySelector('svg path')});box.style.gridTemplateColumns='repeat('+tiles.length+',minmax(0,1fr))';box.replaceChildren.apply(box,tiles);if(window.tkMarks)tkMarks();
+      tile('Anthropic',S.anthropic||[],'$','B','#E8642C'),tile('OpenAI',S.openai||[],'$','B','#2F55B5'),
+      tile('OpenRouter',M.openrouter||[],'','T','#2E5A3F')].filter(function(t){return t.href&&t.querySelector('svg path')});box.style.gridTemplateColumns='repeat('+tiles.length+',minmax(0,1fr))';box.replaceChildren.apply(box,tiles);if(window.tkMarks)tkMarks();
   }).catch(function(){box.replaceChildren(el('p','market-loading','指标暂时无法读取，请刷新重试。'))});
 })();
 </script>
