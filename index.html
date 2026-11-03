@@ -663,6 +663,37 @@ html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
   .drawer .q .en{font-size:17px}
   .drawer .wk .wnav,.xbtn{min-width:40px;min-height:40px}
 }
+
+/* First-level growth observatory. */
+.market-hero{padding:28px clamp(20px,4vw,52px) 30px}
+.market-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin:16px 0 38px}
+.market-heading .cap{color:var(--forest);font-size:10px;letter-spacing:.16em}
+.market-heading h1{font-size:clamp(32px,4.6vw,60px);line-height:1.15;letter-spacing:-.055em;margin:16px 0 0;font-weight:600;text-align:left}
+.market-heading p{font-size:12px;color:var(--mute);margin:0 0 3px;line-height:1.8}
+.market-hero .ticker{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--line);border-radius:0;background:none}
+.market-hero .tk{display:flex;flex-direction:column;padding:23px 24px 20px;border:0;border-right:1px solid var(--line);border-radius:0;background:none;box-shadow:none;position:relative;min-width:0;transition:background .2s}
+.market-hero .tk:first-child{padding-left:0}.market-hero .tk:last-child{border-right:0;padding-right:0}
+.market-hero .tk:hover{background:rgba(255,255,255,.25)}
+.market-hero .tk .l{color:var(--metric-color);font-size:11px;letter-spacing:.04em;white-space:normal;min-height:20px;font-weight:600}
+.market-hero .tk .v{font-size:clamp(36px,4.5vw,62px);line-height:1.2;margin:14px 0 5px;letter-spacing:-.06em!important}
+.market-hero .tk .v small{font-size:18px;margin-left:5px;font-weight:400}
+.market-hero .tk .c{font-size:10px;white-space:normal}
+.market-hero .tk .chart{order:4;width:100%;height:88px;margin:19px 0 9px;flex:none}
+.market-hero .tk .chart path{vector-effect:non-scaling-stroke}
+.market-hero .tk .acc{order:5;border-top:1px solid var(--line);padding-top:12px;font-size:13px;font-variant-numeric:tabular-nums}
+.market-hero .tk .acc small{font-size:10px;margin-top:3px}
+.market-hero .tk .asof{order:6;color:var(--mute);font-size:9px;margin-top:14px;line-height:1.6}
+.market-hero .new{display:none}
+.market-foot{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-top:18px;font-size:10px;color:var(--mute)}
+.market-foot a{color:var(--ink);font-size:13px;font-weight:600}.market-foot a span{margin-left:14px;color:var(--forest)}
+.shelf-title{font-size:clamp(24px,3vw,40px);font-weight:500;letter-spacing:-.04em;margin:0}
+#shelf-top .hero{padding-top:32px;border-top:1px solid var(--line)}
+.market-loading{font-size:12px;padding:30px 0;color:var(--mute)}
+@media(max-width:700px){
+.market-hero{padding:8px 18px 24px}.market-heading{display:block;margin:12px 0 24px}.market-heading h1{font-size:36px;margin-top:12px}.market-heading p{margin-top:12px;font-size:11px}.market-heading p br{display:none}
+.market-hero .tk{padding:16px 9px 12px}.market-hero .tk .l{font-size:9px;letter-spacing:0;min-height:30px}.market-hero .tk .v{font-size:clamp(23px,6.8vw,38px);margin-top:8px}.market-hero .tk .v small{font-size:12px;margin-left:2px}.market-hero .tk .c{font-size:9px;min-height:28px}.market-hero .tk .chart{height:56px;margin:10px 0}.market-hero .tk .acc{font-size:10px}.market-hero .tk .acc small,.market-hero .tk .asof{font-size:9px}.market-foot{align-items:flex-start;font-size:9px}.market-foot a{font-size:12px;white-space:nowrap}
+}
+
 </style>
 
 </head>
@@ -675,9 +706,14 @@ html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
     <a class="sig" id="sig" href="#daily" data-open="daily" aria-label="今日信息量" hidden></a>
   </header>
 
+  <section class="market-hero" aria-labelledby="market-title">
+    <div class="market-heading"><div><span class="cap">THE FRONTIER / THREE SIGNALS</span><h1 id="market-title">看见 AI 的增长。</h1></div><p>收入，需求，以及增长的速度。<br>三个切面，持续观察 AI 走到哪里。</p></div>
+    <div class="ticker" id="ticker" aria-label="AI 增长指标"><p class="market-loading">正在读取最新披露数据…</p></div>
+    <div class="market-foot"><span>披露快照 · 图表独立刻度 · 加速度为三点估算</span><a href="#daily" data-open="daily">阅读最新早报 <span aria-hidden="true">↗</span></a></div>
+  </section>
   <div id="shelf-top" data-idx="01">
     <div class="hero">
-      <h1>The Frontier<br>Curation</h1>
+      <h2 class="shelf-title">The Frontier Curation</h2>
     </div>
     <div style="text-align:center"><a class="teaser" id="teaser" href="#daily" data-open="daily" hidden><span class="tl"></span><span class="tg">今日早报 →</span></a></div>
     <div class="shelf"><div class="bay one"><div class="books"><span class="bookend" aria-hidden="true"><span>Long Reads</span></span><a class="spine k-reads t-cond " style="--bg:#E8642C;--fg:#1B120D;--h:293px;--w:38px" href="https://simonwillison.net" target="_blank" rel="noopener" data-n="Simon Willison" data-d="新模型与工具的实测笔记" data-k="一手长文"><span class="mk mk-r"></span><span class="st">Simon Willison</span><span class="cov"><span class="ck">一手长文</span><span class="ct">Simon Willison</span><span class="cd">新模型与工具的实测笔记</span></span></a><a class="spine k-reads t-serif " style="--bg:#3E1E22;--fg:#E9B23A;--h:246px;--w:32px" href="https://www.oneusefulthing.org" target="_blank" rel="noopener" data-n="One Useful Thing" data-d="Ethan Mollick：AI 与工作，附数据" data-k="一手长文"><span class="mk mk-r"></span><span class="st">One Useful Thing</span><span class="cov"><span class="ck">一手长文</span><span class="ct">One Useful Thing</span><span class="cd">Ethan Mollick：AI 与工作，附数据</span></span></a><a class="spine k-reads t-serif " style="--bg:#1F2A55;--fg:#F3EFE6;--h:225px;--w:35px" href="https://www.interconnects.ai" target="_blank" rel="noopener" data-n="Interconnects" data-d="Nathan Lambert：开源模型与后训练" data-k="一手长文"><span class="mk mk-r"></span><span class="st">Interconnects</span><span class="cov"><span class="ck">一手长文</span><span class="ct">Interconnects</span><span class="cd">Nathan Lambert：开源模型与后训练</span></span></a><a class="spine k-reads t-serif " style="--bg:#F6F2EA;--fg:#1F2A55;--h:235px;--w:35px" href="https://importai.substack.com" target="_blank" rel="noopener" data-n="Import AI" data-d="Jack Clark：每周前沿研究" data-k="一手长文"><span class="mk mk-r"></span><span class="st">Import AI</span><span class="cov"><span class="ck">一手长文</span><span class="ct">Import AI</span><span class="cd">Jack Clark：每周前沿研究</span></span></a><a class="spine k-reads t-sans " style="--bg:#2F55B5;--fg:#FFFFFF;--h:245px;--w:32px" href="https://hamel.dev" target="_blank" rel="noopener" data-n="Hamel Husain" data-d="AI 产品评估方法" data-k="一手长文"><span class="mk mk-r"></span><span class="st">Hamel Husain</span><span class="cov"><span class="ck">一手长文</span><span class="ct">Hamel Husain</span><span class="cd">AI 产品评估方法</span></span></a><a class="spine k-reads t-serif " style="--bg:#C9A6E0;--fg:#1B120D;--h:203px;--w:38px" href="https://eugeneyan.com" target="_blank" rel="noopener" data-n="Eugene Yan" data-d="LLM 系统落地模式" data-k="一手长文"><span class="mk mk-r"></span><span class="st">Eugene Yan</span><span class="cov"><span class="ck">一手长文</span><span class="ct">Eugene Yan</span><span class="cd">LLM 系统落地模式</span></span></a><a class="spine k-reads t-serif " style="--bg:#E9B23A;--fg:#2A1D16;--h:238px;--w:32px" href="https://newsletter.semianalysis.com" target="_blank" rel="noopener" data-n="SemiAnalysis" data-d="芯片、数据中心、算力供应链" data-k="一手长文"><span class="mk mk-r"></span><span class="st">SemiAnalysis</span><span class="cov"><span class="ck">一手长文</span><span class="ct">SemiAnalysis</span><span class="cd">芯片、数据中心、算力供应链</span></span></a><a class="spine k-reads t-sans " style="--bg:#F2A7C3;--fg:#1B120D;--h:268px;--w:38px" href="https://www.lennysnewsletter.com" target="_blank" rel="noopener" data-n="Lenny&#x27;s Newsletter" data-d="产品方法论与 How I AI" data-k="一手长文"><span class="mk mk-r"></span><span class="st">Lenny&#x27;s Newsletter</span><span class="cov"><span class="ck">一手长文</span><span class="ct">Lenny&#x27;s Newsletter</span><span class="cd">产品方法论与 How I AI</span></span></a><a class="spine k-reads t-sans " style="--bg:#2E5A3F;--fg:#F1EBDD;--h:280px;--w:32px" href="https://www.latent.space" target="_blank" rel="noopener" data-n="Latent Space" data-d="AI 工程每日动态" data-k="一手长文"><span class="mk mk-r"></span><span class="st">Latent Space</span><span class="cov"><span class="ck">一手长文</span><span class="ct">Latent Space</span><span class="cd">AI 工程每日动态</span></span></a><a class="spine k-reads t-cond " style="--bg:#D9373B;--fg:#FFF3EA;--h:246px;--w:32px" href="https://www.dwarkesh.com" target="_blank" rel="noopener" data-n="Dwarkesh Podcast" data-d="长访谈，附完整文字稿" data-k="一手长文"><span class="mk mk-r"></span><span class="st">Dwarkesh Podcast</span><span class="cov"><span class="ck">一手长文</span><span class="ct">Dwarkesh Podcast</span><span class="cd">长访谈，附完整文字稿</span></span></a><span class="bookend" aria-hidden="true"><span>Podcasts</span></span><a class="spine k-pods t-cond " style="--bg:#222222;--fg:#F3EFE6;--h:280px;--w:32px" href="https://www.youtube.com/@LatentSpacePod" target="_blank" rel="noopener" data-n="Latent Space" data-d="AI 工程师的一线访谈" data-k="播客"><span class="mk mk-p"></span><span class="st">Latent Space</span><span class="cov"><span class="ck">播客</span><span class="ct">Latent Space</span><span class="cd">AI 工程师的一线访谈</span></span></a><a class="spine k-pods t-serif " style="--bg:#D6D4CE;--fg:#111111;--h:266px;--w:35px" href="https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8" target="_blank" rel="noopener" data-n="Training Data" data-d="红杉对话 AI 创始人" data-k="播客"><span class="mk mk-p"></span><span class="st">Training Data</span><span class="cov"><span class="ck">播客</span><span class="ct">Training Data</span><span class="cd">红杉对话 AI 创始人</span></span></a><a class="spine k-pods t-cond " style="--bg:#E8642C;--fg:#1B120D;--h:220px;--w:35px" href="https://www.youtube.com/@NoPriorsPodcast" target="_blank" rel="noopener" data-n="No Priors" data-d="Sarah Guo 与 Elad Gil 的 AI 访谈" data-k="播客"><span class="mk mk-p"></span><span class="st">No Priors</span><span class="cov"><span class="ck">播客</span><span class="ct">No Priors</span><span class="cd">Sarah Guo 与 Elad Gil 的 AI 访谈</span></span></a><a class="spine k-pods t-serif " style="--bg:#3E1E22;--fg:#E9B23A;--h:301px;--w:35px" href="https://www.youtube.com/@RedpointAI" target="_blank" rel="noopener" data-n="Unsupervised Learning" data-d="Redpoint 的 AI 创业者对话" data-k="播客"><span class="mk mk-p"></span><span class="st">Unsupervised Learning</span><span class="cov"><span class="ck">播客</span><span class="ct">Unsupervised Learning</span><span class="cd">Redpoint 的 AI 创业者对话</span></span></a><a class="spine k-pods t-serif " style="--bg:#1F2A55;--fg:#F3EFE6;--h:267px;--w:41px" href="https://www.youtube.com/@DataDrivenNYC" target="_blank" rel="noopener" data-n="The MAD Podcast" data-d="Matt Turck 聊数据与 AI" data-k="播客"><span class="mk mk-p"></span><span class="st">The MAD Podcast</span><span class="cov"><span class="ck">播客</span><span class="ct">The MAD Podcast</span><span class="cd">Matt Turck 聊数据与 AI</span></span></a><a class="spine k-pods t-serif " style="--bg:#F6F2EA;--fg:#1F2A55;--h:291px;--w:38px" href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank" rel="noopener" data-n="AI &amp; I" data-d="Every 主理，AI 如何改变工作" data-k="播客"><span class="mk mk-p"></span><span class="st">AI &amp; I</span><span class="cov"><span class="ck">播客</span><span class="ct">AI &amp; I</span><span class="cd">Every 主理，AI 如何改变工作</span></span></a><a class="spine k-pods t-sans " style="--bg:#2F55B5;--fg:#FFFFFF;--h:263px;--w:38px" href="https://allin.com" target="_blank" rel="noopener" data-n="All-In" data-d="四位投资人聊科技与宏观" data-k="播客"><span class="mk mk-p"></span><span class="st">All-In</span><span class="cov"><span class="ck">播客</span><span class="ct">All-In</span><span class="cd">四位投资人聊科技与宏观</span></span></a><a class="spine k-pods t-serif " style="--bg:#C9A6E0;--fg:#1B120D;--h:298px;--w:32px" href="https://www.acquired.fm" target="_blank" rel="noopener" data-n="Acquired" data-d="讲透一家伟大公司的长篇史" data-k="播客"><span class="mk mk-p"></span><span class="st">Acquired</span><span class="cov"><span class="ck">播客</span><span class="ct">Acquired</span><span class="cd">讲透一家伟大公司的长篇史</span></span></a><div class="spine k-pods t-serif " style="--bg:#E9B23A;--fg:#2A1D16;--h:209px;--w:41px" data-n="BG2" data-d="Gerstner 与 Gurley 的投资视角" data-k="播客"><span class="mk mk-p"></span><span class="st">BG2</span><span class="cov"><span class="ck">播客</span><span class="ct">BG2</span><span class="cd">Gerstner 与 Gurley 的投资视角</span></span></div><span class="bookend" aria-hidden="true"><span>Primary</span></span><a class="spine k-official t-sans " style="--bg:#F2A7C3;--fg:#1B120D;--h:295px;--w:41px" href="https://openai.com/news/" target="_blank" rel="noopener" data-n="OpenAI News" data-d="模型发布、收购、研究" data-k="官方一手"><span class="st">OpenAI News</span><span class="mk-o">OFFICIAL</span><span class="cov"><span class="ck">官方一手</span><span class="ct">OpenAI News</span><span class="cd">模型发布、收购、研究</span></span></a><a class="spine k-official t-sans " style="--bg:#2E5A3F;--fg:#F1EBDD;--h:290px;--w:32px" href="https://deepmind.google/blog/" target="_blank" rel="noopener" data-n="Google DeepMind Blog" data-d="研究与 Gemini 发布" data-k="官方一手"><span class="st">Google DeepMind Blog</span><span class="mk-o">OFFICIAL</span><span class="cov"><span class="ck">官方一手</span><span class="ct">Google DeepMind Blog</span><span class="cd">研究与 Gemini 发布</span></span></a><a class="spine k-official t-cond " style="--bg:#D9373B;--fg:#FFF3EA;--h:267px;--w:38px" href="https://www.anthropic.com/news" target="_blank" rel="noopener" data-n="Anthropic News" data-d="Claude 发布与公司公告" data-k="官方一手"><span class="st">Anthropic News</span><span class="mk-o">OFFICIAL</span><span class="cov"><span class="ck">官方一手</span><span class="ct">Anthropic News</span><span class="cd">Claude 发布与公司公告</span></span></a><a class="spine k-official t-cond " style="--bg:#222222;--fg:#F3EFE6;--h:301px;--w:35px" href="https://www.anthropic.com/engineering" target="_blank" rel="noopener" data-n="Anthropic Engineering" data-d="工程深度文章" data-k="官方一手"><span class="st">Anthropic Engineering</span><span class="mk-o">OFFICIAL</span><span class="cov"><span class="ck">官方一手</span><span class="ct">Anthropic Engineering</span><span class="cd">工程深度文章</span></span></a><div class="spine k-official t-serif " style="--bg:#D6D4CE;--fg:#111111;--h:252px;--w:41px" data-n="财报与监管文件" data-d="Tesla 等公司的一手披露" data-k="官方一手"><span class="st">财报与监管文件</span><span class="mk-o">OFFICIAL</span><span class="cov"><span class="ck">官方一手</span><span class="ct">财报与监管文件</span><span class="cd">Tesla 等公司的一手披露</span></span></div></div></div></div>
@@ -723,7 +759,6 @@ html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
       <div class="dow cap" id="dow" hidden></div>
     </div>
     <button type="button" class="xbtn" id="dclose" aria-label="关闭">✕</button>
-    <div class="ticker" id="ticker" aria-label="AI 温度计"></div>
   </div>
   <div class="dwrap">
       <div class="dmain" id="dmain"><div class="dstate"><b>Loading</b>正在取出这一期</div></div>
@@ -848,7 +883,7 @@ var index=[],dates={},view=null,cur=null,full=false,data=null;
     index=list.sort(function(a,b){return a.date<b.date?1:-1});index.forEach(function(x){dates[x.date]=1});
     if(!index.length){view=today();cal();state('Soon','第一期明早 07:41 出刊');return}
     var t=document.getElementById('teaser');if(t){t.href='#daily';t.querySelector('.tl').textContent=md(index[0].date)+' · '+index[0].headline;t.hidden=false}
-    var h=location.hash.slice(1);go(dates[h]?h:index[0].date,false);if(dates[h]||h==='daily'||(!h&&(navigator.standalone||matchMedia('(display-mode: standalone)').matches)))openD();
+    var h=location.hash.slice(1);go(dates[h]?h:index[0].date,false);if(dates[h]||h==='daily')openD();
   }).catch(function(){state('Offline','目录读取失败，刷新再试')});
 })();
 
@@ -858,9 +893,11 @@ var index=[],dates={},view=null,cur=null,full=false,data=null;
   var box=document.getElementById('ticker');if(!box)return;
   function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
   var NS='http://www.w3.org/2000/svg';
-  function spark(pts,col){var s=document.createElementNS(NS,'svg');s.setAttribute('viewBox','0 0 50 22');s.setAttribute('preserveAspectRatio','none');if(pts.length<2)return s;
-    var mx=Math.max.apply(null,pts),mn=Math.min.apply(null,pts),d=pts.map(function(v,i){return (i?'L':'M')+(i/(pts.length-1)*48+1).toFixed(1)+' '+(20-(v-mn)/((mx-mn)||1)*18).toFixed(1)}).join(' ');
-    var a=document.createElementNS(NS,'path');a.setAttribute('d',d);a.setAttribute('fill','none');a.setAttribute('stroke',col);a.setAttribute('stroke-width','1.8');s.append(a);return s}
+  function spark(pts,col){var s=document.createElementNS(NS,'svg');s.classList.add('chart');s.setAttribute('viewBox','0 0 260 88');s.setAttribute('preserveAspectRatio','none');s.setAttribute('aria-label','历史披露趋势，各图独立刻度');s.setAttribute('role','img');if(pts.length<2)return s;
+    var vals=pts.map(function(p){return p.value}),times=pts.map(function(p){return Date.parse(p.date.length===7?p.date+'-01':p.date)}),mx=Math.max.apply(null,vals),mn=Math.min.apply(null,vals),span=times[times.length-1]-times[0];
+    var d=pts.map(function(p,i){return (i?'L':'M')+(6+(times[i]-times[0])/(span||1)*248).toFixed(1)+' '+(78-(p.value-mn)/((mx-mn)||1)*66).toFixed(1)}).join(' ');
+    var area=document.createElementNS(NS,'path');area.setAttribute('d',d+' L254 86 L6 86 Z');area.setAttribute('fill',col);area.setAttribute('opacity','.07');s.append(area);
+    var a=document.createElementNS(NS,'path');a.setAttribute('d',d);a.setAttribute('fill','none');a.setAttribute('stroke',col);a.setAttribute('stroke-width','2');a.setAttribute('stroke-linejoin','round');s.append(a);return s}
   // Three-point second derivative on unequal intervals. Monthly disclosures use
   // calendar months; daily observations use weeks. This is not % growth change.
   function acceleration(pts){
@@ -873,7 +910,7 @@ var index=[],dates={},view=null,cur=null,full=false,data=null;
     var value=2*((p[2].value-p[1].value)/h2-(p[1].value-p[0].value)/h1)/(h1+h2);
     return {value:value,period:monthly?'月':'周',dates:p.map(function(q){return q.date}).join(' → ')};
   }
-  function tile(label,pts,pre,unit,col){var a=el('a','tk'),n=pts.length,l=pts[n-1];a.append(el('span','l',label));
+  function tile(label,pts,pre,unit,col){var a=el('a','tk'),n=pts.length,l=pts[n-1];a.style.setProperty('--metric-color',col);a.append(el('span','l',label));
     if(!l){a.append(el('span','v','—'),el('span','c na','待更新'),spark([],col));return a}
     a.href=l.url;a.target='_blank';a.rel='noopener';a.title=label+' · '+l.date+' · '+l.src;
     var v=el('span','v',pre+l.value);v.append(el('small',null,unit));a.append(v);
@@ -888,13 +925,13 @@ var index=[],dates={},view=null,cur=null,full=false,data=null;
     }else{line.classList.add('na');line.textContent='加速度 —';line.append(el('small',null,pts.length<3?'待第 3 个数据点':'数据间隔不可比较'))}
     a.append(line);
     if(l.addedAt){a.dataset.added=l.addedAt;a.querySelector('.l').append(el('i','new','更新'))}
-    a.append(spark(pts.map(function(q){return q.value}),col));return a}
+    a.append(spark(pts,col),el('span','asof',(l.periodEnd?'Top 10 · '+l.periodStart+' — '+l.periodEnd:'披露月份 '+l.date)+' · 来源 ↗'));return a}
   Promise.all([fetch('revenue.json',{cache:'no-cache'}).then(function(r){return r.json()}),fetch('pulse.json',{cache:'no-cache'}).then(function(r){return r.json()})]).then(function(x){
     var S={},M={};x[0].series.forEach(function(s){S[s.id]=s.points});x[1].metrics.forEach(function(m){M[m.id]=m.points||[]});
     var tiles=[
       tile('ANTHROPIC 年化营收',S.anthropic||[],'$','B','#E8642C'),tile('OPENAI 年化营收',S.openai||[],'$','B','#2F55B5'),
-      tile('OPENROUTER 周 TOKENS',M.openrouter||[],'','T','#2E5A3F'),tile('NVIDIA 市值',M.nvda||[],'$','T','#141110'),tile('云厂商 CAPEX/季',M.capex||[],'$','B','#9B6FC0')].filter(function(t){return t.href&&t.querySelector('svg path')});box.style.gridTemplateColumns='repeat('+tiles.length+',minmax(0,1fr))';box.replaceChildren.apply(box,tiles);if(window.tkMarks)tkMarks();
-  }).catch(function(){box.hidden=true});
+      tile('OPENROUTER 周 TOKENS',M.openrouter||[],'','T','#2E5A3F')].filter(function(t){return t.href&&t.querySelector('svg path')});box.style.gridTemplateColumns='repeat('+tiles.length+',minmax(0,1fr))';box.replaceChildren.apply(box,tiles);if(window.tkMarks)tkMarks();
+  }).catch(function(){box.replaceChildren(el('p','market-loading','指标暂时无法读取，请刷新重试。'))});
 })();
 </script>
 <script>
