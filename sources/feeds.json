@@ -1,0 +1,110 @@
+[
+  {
+    "id": "one-useful-thing",
+    "name": "One Useful Thing",
+    "kind": "article",
+    "url": "https://www.oneusefulthing.org/feed"
+  },
+  {
+    "id": "interconnects",
+    "name": "Interconnects",
+    "kind": "article",
+    "url": "https://www.interconnects.ai/feed"
+  },
+  {
+    "id": "import-ai",
+    "name": "Import AI",
+    "kind": "article",
+    "url": "https://importai.substack.com/feed"
+  },
+  {
+    "id": "lenny",
+    "name": "Lenny",
+    "kind": "mixed",
+    "url": "https://www.lennysnewsletter.com/feed"
+  },
+  {
+    "id": "dwarkesh",
+    "name": "Dwarkesh",
+    "kind": "mixed",
+    "url": "https://www.dwarkesh.com/feed"
+  },
+  {
+    "id": "semianalysis",
+    "name": "SemiAnalysis",
+    "kind": "article",
+    "url": "https://newsletter.semianalysis.com/feed"
+  },
+  {
+    "id": "latent-space",
+    "name": "Latent Space",
+    "kind": "mixed",
+    "url": "https://www.latent.space/feed"
+  },
+  {
+    "id": "simon",
+    "name": "Simon Willison",
+    "kind": "article",
+    "url": "https://simonwillison.net/atom/everything/"
+  },
+  {
+    "id": "hamel",
+    "name": "Hamel Husain",
+    "kind": "article",
+    "url": "https://hamel.dev/index.xml"
+  },
+  {
+    "id": "all-in",
+    "name": "All-In",
+    "kind": "podcast",
+    "url": "https://allinchamathjason.libsyn.com/rss"
+  },
+  {
+    "id": "acquired",
+    "name": "Acquired",
+    "kind": "podcast",
+    "url": "https://feeds.transistor.fm/acquired"
+  },
+  {
+    "id": "bg2",
+    "name": "BG2",
+    "kind": "podcast",
+    "url": "https://anchor.fm/s/f06c2370/podcast/rss"
+  },
+  {
+    "id": "no-priors",
+    "name": "No Priors",
+    "kind": "podcast",
+    "url": "https://feeds.megaphone.fm/nopriors"
+  },
+  {
+    "id": "mad",
+    "name": "The MAD Podcast",
+    "kind": "podcast",
+    "url": "https://anchor.fm/s/f2ee4948/podcast/rss"
+  },
+  {
+    "id": "unsupervised",
+    "name": "Unsupervised Learning",
+    "kind": "podcast",
+    "url": "https://feeds.simplecast.com/dOSE_bdP"
+  },
+  {
+    "id": "training-data",
+    "name": "Training Data",
+    "kind": "podcast",
+    "url": "https://feeds.megaphone.fm/trainingdata"
+  },
+  {
+    "id": "every",
+    "name": "The Every Podcast / AI & I",
+    "kind": "podcast",
+    "url": "https://rss2.flightcast.com/vh1lt5f2oeh4a5hn5jglgpzg.xml"
+  },
+  {
+    "id": "unsupervised-transcripts",
+    "name": "Unsupervised Learning transcripts",
+    "kind": "mixed",
+    "url": "https://unsupervisedlearning.substack.com/feed"
+  }
+]
