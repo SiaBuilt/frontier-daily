@@ -10,16 +10,24 @@
 
 ## 1. 取材（日期 = 运行当天，北京时间）
 1. X 上的 builder：下载 https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-x.json（过去 24 小时推文）。
-2. 播客：同仓库 `feed-podcasts.json`（含文字稿）；`feed-blogs.json`。另外逐个检查这些播客 7 天内有无新集（官网或 YouTube 频道，浏览与搜索工具），有就读简介和能拿到的文字稿：
-   - Acquired（https://www.acquired.fm）
-   - All-In（https://allin.com）、BG2、Dwarkesh Podcast、No Priors、Training Data、Unsupervised Learning、The MAD Podcast、Latent Space、AI & I、Lenny's Podcast
+2. 播客与访谈：**以 builder 为追踪对象，不以固定节目为边界**。优先发现 OpenAI、Anthropic、Meta 等公司的创始人、研究员、工程师和产品负责人在任意播客、视频访谈或长对谈中的一手分享；也关注离开这些公司创业的 builder，现任与前任身份须核实。重点是亲历的创业、产品取舍、研究工程、团队建设与失败复盘，不只追 CEO 或公司新闻。
+   - 每日先按下方「人物驱动的访谈发现」跨节目搜索，再用同仓库 `feed-podcasts.json`（含文字稿）、`feed-blogs.json` 和已登记 RSS 补充。访谈首发窗口为 7 天。
+   - Acquired、All-In、BG2、Dwarkesh、No Priors、Training Data、Unsupervised Learning、MAD、Latent Space、AI & I、Lenny 等只是发现入口，不是节目白名单；新节目只要嘉宾、日期和内容可核实即可收录。
 3. 一手长文：用浏览工具检查 36 小时内有无新文：simonwillison.net、oneusefulthing.org、interconnects.ai、importai.substack.com、hamel.dev、eugeneyan.com、newsletter.semianalysis.com、lennysnewsletter.com、latent.space、dwarkesh.com。
 4. 官方一手：anthropic.com/news、anthropic.com/engineering、openai.com/news、deepmind.google/blog；必要时 WebSearch 核实当天大事件。
 5. 去重：读前一期 brief，已收录过的 url 不再收。
 6. 抓不到的源如实写进 stats 的「失败的源」，不要编造。
 
+### 人物驱动的访谈发现（每日必做，优先于固定节目巡检）
+1. **先搜公司与角色，再搜具体人物。** 分别检索 OpenAI、Anthropic、Meta 的近 7 天访谈线索，结合 `podcast`、`interview`、`conversation`、`founder`、`researcher`、`engineer`、`product` 及中文“访谈 / 创业 / 对谈”等词。其他 AI 公司 builder 同样可收录；以上三家是优先级，不是排他条件。
+2. **从线索扩展人物。** 阅读公司官方团队/作者页、builder 自己的帖子或博客、节目官方嘉宾介绍，核实人物姓名及访谈发生时的身份；再搜索“姓名 + interview/podcast”，寻找其在不同节目中的新访谈。名单随新线索扩展，不把职位或所属公司永久写死，也不能只搜最知名的创始人。
+3. **找到原始单集再读内容。** 检查节目官网、官方 YouTube 或公开 RSS，记录嘉宾、身份来源、节目名、单集链接、原始发布时间和正文/文字稿入口。搜索结果只作线索，不能作为日期、引文或观点的唯一依据。文字稿抓取失败时继续尝试官方公开替代页；只有简介就明确记录缺口，不生成详细访谈结论。
+4. **按内容而非名气排序。** 优先有具体经历、取舍、失败原因和可迁移方法的分享；排除只有宣传、泛泛预测、二手解读和重复剪辑的内容。大厂身份不自动获得高权重；创业感悟要保留发生背景和适用条件。
+5. **跨节目与剪辑去重。** 最近 7 期不仅按 URL，还按嘉宾 + 原始访谈 + 核心观点去重；同一访谈的切片、转载、改标题或新上传不能重置日期。首发早于 7 天但刚发布文字稿，也不能当作新集。
+6. **留可核查的发现记录。** 将本次搜索词、已检查的公司/人物、候选单集、日期与身份依据、入选或排除原因写到 `/tmp/frontier-sources-YYYY-MM-DD/interview-discovery.json`。该文件由执行任务的 agent 创建，RSS 脚本不执行跨节目搜索；不得只跑脚本就声称已完成访谈发现。`stats` 简述实际搜索覆盖和文字稿缺口，未检查不写成无更新。
+
 ### 采集备用路径（每日必做）
-- 先运行 `python3 scripts/collect_sources.py --output /tmp/frontier-sources-YYYY-MM-DD`。脚本按 `sources/feeds.json` 并发读取官方 RSS/Atom，保存各源的正文/简介、原始发布日期、单集链接、可用文字稿链接及 `report.json`。部分源失败会返回非零退出码，但已成功的结果仍可用，必须检查报告逐项处理。
+- 作为跨节目访谈搜索的补充，运行 `python3 scripts/collect_sources.py --output /tmp/frontier-sources-YYYY-MM-DD`。脚本按 `sources/feeds.json` 并发读取官方 RSS/Atom，保存各源的正文/简介、原始发布日期、单集链接、可用文字稿链接及 `report.json`。部分源失败会返回非零退出码，但已成功的结果仍可用，必须检查报告逐项处理。
 - 先用 RSS 发现候选和核对日期，再读具体文章或单集。RSS 的 `text` / `contentHtml` 可能只是预览，不能按字数断言全文；`transcripts` 是待读取的链接，不代表已阅读。播客简介不能扩写成嘉宾观点。混合源的文章用 36 小时窗口，播客用 7 天窗口。
 - 读取顺序：官方 RSS/Atom → 官方文章/单集及公开文字稿 → 浏览器可见正文 → 搜索定位官方替代链接。网页工具为空时改用直接 HTTP 读取公开资源；反过来 HTTP 403 时尝试浏览工具。不得绕过付费墙或访问控制。
 - RSS 条目保留 `publishedRaw` 与 `publishedAt`；不拿 `updated` 代替首发时间。缺日期时查单集 JSON-LD、官方页面或视频发布时间，仍不明则不入选。不要根据频道首页或搜索缓存推断没有更新。
