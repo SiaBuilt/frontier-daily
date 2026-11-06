@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-07",
+  "generatedAt": "2026-11-07T07:38:21+08:00",
+  "headline": "OpenAI 联手安全研究团队，检查第三方服务连接风险",
+  "themes": [
+    "跨系统安全",
+    "外部研究合作",
+    "agent 防御"
+  ],
+  "stats": "X：0 条（feed 生成于 11 月 6 日，未逐条完成时窗与背景核验）｜一手长文：0 条｜播客：0 条；已搜索 OpenAI、Anthropic、Meta 角色访谈，候选缺原始日期或正文，旧访谈排除｜事实新闻：1 条（OpenAI）｜失败的源：RSS 18 源均读取成功；未完成核验：Eugene Yan、Anthropic engineering、中央博客及播客 feed；其余 RSS 候选未完成全文核验；Paul Ford 原文为 10 月 21 日，排除；官方主页已检查 OpenAI、Anthropic、DeepMind。未核验不代表无更新。",
+  "sections": [
+    {
+      "id": "x",
+      "title": "Builders 在说什么",
+      "items": []
+    },
+    {
+      "id": "pod",
+      "title": "一手长文与播客",
+      "items": []
+    },
+    {
+      "id": "industry",
+      "title": "典型事实",
+      "items": [
+        {
+          "id": "i1",
+          "kind": "fact",
+          "who": "OpenAI",
+          "tag": "安全合作",
+          "url": "https://openai.com/index/partnering-with-hacktron/",
+          "sourceLabel": "OpenAI 官方公告",
+          "title": "OpenAI 与 Hacktron 合作，重点测试第三方服务连接处",
+          "summary": "OpenAI 宣布与 Hacktron 合作选择高优先级测试范围，重点检查系统与第三方服务的交互，并通过 Daybreak Red 扩大其前沿模型访问权限。",
+          "ctx": "OpenAI 11 月 6 日公布新的安全研究合作。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 2,
+          "soWhat": "连接外部服务的 agent，需要把跨系统交互纳入安全测试范围。",
+          "verification": "官方公告",
+          "explanation": [
+            {
+              "label": "怎么做",
+              "text": "双方将由 OpenAI 工程师与 Hacktron 安全研究员共同选择测试重点。Hacktron 开发用于代码审查、渗透测试和红队测试的 AI agent；合作同时增加其通过 Daybreak Red 使用前沿模型的权限，让研究人员把模型能力用于检查实际系统。"
+            },
+            {
+              "label": "证据与边界",
+              "text": "公告称，双方通过漏洞赏金项目建立联系，Hacktron 此前发现并披露的漏洞给 OpenAI 留下深刻印象。此次关注应用、云基础设施和身份系统之间的连接，但尚未公布本轮发现数量、修复效果或独立评测。合作宣布不等于这些连接已被证明安全。"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "question": "当 agent 串起多个服务时，你会先测试哪一处权限边界？"
+}
