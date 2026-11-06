@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-06",
+  "generatedAt": "2026-11-06T13:16:21+08:00",
+  "headline": "安全 agent 同时测能力与边界，游戏评测观察长程策略",
+  "themes": [
+    "安全边界",
+    "多智能体评测",
+    "高校实践"
+  ],
+  "stats": "X：0条，feed生成于11月5日06:28 UTC，已过期未采用｜一手长文：1条｜播客：0条；已跨节目搜索OpenAI、Anthropic、Meta，旧访谈排除；新候选仅简介或缺单集链接、文字稿未读｜事实新闻：2条（OpenAI）｜失败的源：RSS采集无HTTP失败；18源报告已检查，Unsupervised文字稿feed陈旧；部分新文仅预览未采用；其他候选未完成全文核验。Eugene、Anthropic新闻/工程及DeepMind主页已巡检，未据此断言全部无更新。顶栏无核实新数值，未改。",
+  "sections": [
+    {
+      "id": "x",
+      "title": "Builders 在说什么",
+      "items": []
+    },
+    {
+      "id": "pod",
+      "title": "一手长文与播客",
+      "items": [
+        {
+          "id": "p1",
+          "kind": "article",
+          "who": "Dwarkesh Patel",
+          "title": "让 AI 玩社会推理游戏，观察长程策略与证据判断",
+          "url": "https://www.dwarkesh.com/p/clocktower",
+          "sourceLabel": "Dwarkesh 原文",
+          "summary": "作者搭建《血染钟楼》对战环境，观察模型如何串联证据、协作与欺骗；混合模型团队的小规模试验未显示显著优势。",
+          "ctx": "11月5日发布自建游戏评测与对局记录。",
+          "weight": 2,
+          "tag": "评测",
+          "quote": "",
+          "quoteZh": "",
+          "soWhat": "评测多智能体协作时，应同时检查规则公平性和失败过程。"
+        }
+      ]
+    },
+    {
+      "id": "industry",
+      "title": "典型事实",
+      "items": [
+        {
+          "id": "i1",
+          "kind": "fact",
+          "who": "OpenAI",
+          "title": "GPT‑6 Cyber 发布，漏洞能力与授权边界一起评测",
+          "url": "https://openai.com/index/introducing-gpt-6-cyber/",
+          "sourceLabel": "OpenAI 官方公告",
+          "summary": "OpenAI 发布 GPT‑6 Cyber，先向部分获批 Daybreak Red 客户开放 API 与 Codex 访问；公告同时报告漏洞利用与越界测试结果。",
+          "ctx": "11月5日官方发布新网络安全模型。",
+          "weight": 3,
+          "tag": "安全",
+          "quote": "",
+          "quoteZh": "",
+          "verification": "官方公告；评测结果为厂商披露",
+          "soWhat": "安全 agent 的验收需要同时衡量任务完成和授权范围遵守。",
+          "explanation": [
+            {
+              "label": "能力与边界",
+              "text": "官方称，模型在 ExploitGym 的得分从前代的32.1%升至48.5%；这项测试针对指定漏洞的利用能力。另一项诱捕评测检查模型是否攻击任务外服务，加入部署提示后报告全部保持在范围内。两类测试衡量不同问题，不能互相替代。"
+            },
+            {
+              "label": "开放与未知",
+              "text": "首批访问仍限获批客户，并非全面开放。上述结果来自厂商测试，不能保证所有真实部署都不会越界；落地时仍需在具体资产、权限和审计条件下验收。公告还描述了针对关键基础设施的额外防护。"
+            }
+          ]
+        },
+        {
+          "id": "i2",
+          "kind": "fact",
+          "who": "OpenAI",
+          "title": "澳大利亚高校分阶段引入 ChatGPT Edu 与 AI 实践课程",
+          "url": "https://openai.com/index/australian-universities-ai-native-graduates/",
+          "sourceLabel": "OpenAI 官方公告",
+          "summary": "OpenAI 介绍与澳大利亚多所高校的合作，覆盖工具访问、课程与实践项目；部分面向全体学生的开放安排在2027年。",
+          "ctx": "11月5日官方披露高校合作与应用案例。",
+          "weight": 1,
+          "tag": "教育",
+          "quote": "",
+          "quoteZh": "",
+          "verification": "官方合作说明；未独立核验教学成效"
+        }
+      ]
+    }
+  ],
+  "question": "你的 agent 验收是否既测任务完成，也测不该执行的动作？"
+}
