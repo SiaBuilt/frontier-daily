@@ -1,0 +1,164 @@
+{
+  "date": "2026-11-08",
+  "generatedAt": "2026-11-08T07:44:15+08:00",
+  "headline": "AI 读实验数据，Claude 用日志纠正记忆",
+  "themes": [
+    "实验数据判读",
+    "跨会话记忆",
+    "聊天中的原生界面"
+  ],
+  "stats": "X：0 条，13 位 builder 的 29 条 feed 记录已筛，快照较出刊时间早 17 小时，候选原帖核验遇到 HTTP 403｜一手长文：1 条；SemiAnalysis 原文仅见订阅预览，Simon 新条为转引，Latent Space IPO 新闻汇编排除｜播客：2 条；已搜索 OpenAI、Anthropic、Meta 及相关人物，Alexey 单集去重，旧访谈排除；Fabian 官方 VTT 返回 403，改核中央 feed 文字稿和节目正文；All-In、Jev、Nebius、Figma 未完成原始文字稿核验，部分跨节目线索未核实首发日期｜事实新闻：3 条（OpenAI、Meta、Vercel）｜失败的源：18 个登记 RSS 均抓取成功；Unsupervised 转录 feed 陈旧；One Useful Thing 与 Interconnects 网页抓取失败，RSS 可读且 36 小时内无条目。中央博客 feed 为空。",
+  "sections": [
+    {
+      "id": "x",
+      "title": "Builders 在说什么",
+      "items": []
+    },
+    {
+      "id": "pod",
+      "title": "一手长文与播客",
+      "items": [
+        {
+          "id": "p1",
+          "kind": "article",
+          "who": "Anthropic 工程团队",
+          "tag": "记忆设计",
+          "url": "https://www.anthropic.com/research/components-of-agent-memory",
+          "sourceLabel": "Anthropic Engineering",
+          "title": "Claude 怎样用原始日志纠正跨会话记忆？",
+          "summary": "Anthropic 拆解跨会话记忆的几层结构，并用数据库问答和游戏实验说明，模型可以在会话之间回看原始日志、纠正旧笔记。",
+          "ctx": "Anthropic 公开了 Claude 记忆组件的工程实验。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 3,
+          "soWhat": "给记忆保留可回查的原始记录，能让后续会话验证已经写下的规则。"
+        },
+        {
+          "id": "p2",
+          "kind": "podcast",
+          "who": "Fabian Theis，Helmholtz Munich 计算健康中心主任",
+          "tag": "虚拟细胞",
+          "url": "https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/",
+          "sourceLabel": "Latent Space 单集",
+          "title": "虚拟细胞怎样从绘制图谱走到指导实验？",
+          "summary": "Theis 讨论如何从描绘细胞状态，走到预测基因或药物干预的结果，再据预测选择下一轮实验。",
+          "ctx": "Biohub 的大规模数据采集计划再次带热虚拟细胞研究。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 2,
+          "program": "Latent Space",
+          "takeaways": [
+            "细胞观测数可以很大，干预的类型和覆盖范围仍可能偏窄。",
+            "模型比较需要认真检查简单基线，以及指标能否奖励对干预反应的有效预测。"
+          ],
+          "soWhat": "规划实验数据时，可以单独衡量干预条件的覆盖，而非只统计采集了多少细胞。"
+        },
+        {
+          "id": "p3",
+          "kind": "podcast",
+          "who": "Ronak Malde，Trajectory 联合创始人、前 Windsurf 成员",
+          "tag": "持续学习",
+          "url": "https://sequoiacap.com/podcast/a-model-for-everyone-how-ronak-from-trajectory-is-building-products-for-continual-learning",
+          "sourceLabel": "Sequoia Capital 单集与文字稿",
+          "title": "从用户重试到模型更新，Trajectory 怎样接起训练流程？",
+          "summary": "Malde 回顾 Windsurf 从用户编辑和重试中提取信号的经历，解释 Trajectory 怎样把训练、评测与部署接起来。",
+          "ctx": "Malde 在 Training Data 回顾了训练 Windsurf SWE-1 的经历。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 2,
+          "program": "Training Data",
+          "takeaways": [
+            "采集轨迹时，把主 agent、子 agent 的动作以及用户反馈放进同一条任务时间线。",
+            "训练还需要能重放任务的环境和可操作的评分标准，单有生产日志难以复现实验。"
+          ],
+          "soWhat": "持续更新模型之前，团队需要把产品对成功的定义变成可以反复执行的评测。"
+        }
+      ]
+    },
+    {
+      "id": "industry",
+      "title": "典型事实",
+      "items": [
+        {
+          "id": "i1",
+          "kind": "fact",
+          "who": "OpenAI 与 Ligo",
+          "tag": "实验评测",
+          "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/",
+          "sourceLabel": "OpenAI 官方研究",
+          "title": "OpenAI 与 Ligo 用 100 道湿实验任务测试 AI",
+          "summary": "BioBasicsBench 测试 AI 能否读懂实验原始数据、发现错误并判断证据是否充分。GPT‑6 Astra 在 xhigh 设置下平均获得可得分的 66.7%。",
+          "ctx": "OpenAI 与酶设计公司 Ligo 发布 BioBasicsBench。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 3,
+          "verification": "官方研究及评测结果",
+          "soWhat": "实验助手的评测可以单独检查它能否发现无效对照，并在证据不足时停止下结论。",
+          "explanation": [
+            {
+              "label": "怎么测",
+              "text": "题目来自研究人员自己的实验，覆盖蛋白质方法、成像、定量、核酸方法与分子克隆。模型拿到的是凝胶照片、显微图像或仪器读数等原始材料，按专家规则逐项得分，结论、测量和推理可以分别拿到部分分数。"
+            },
+            {
+              "label": "结果与边界",
+              "text": "在同为 xhigh 的设置下，GPT‑5.6 Sol 得到 43.8%。Astra 在一例荧光图像任务中发现两个染料的检测范围重叠，因而要求补充对照。66.7% 是本套题的平均得分比例，实际实验操作与实验室部署效果需另外验证。"
+            }
+          ]
+        },
+        {
+          "id": "i2",
+          "kind": "fact",
+          "who": "Meta AI Research",
+          "tag": "任务记忆",
+          "url": "https://research.meta.ai/blog/specialized-models-for-muse-and-metaai",
+          "sourceLabel": "Meta AI Research 官方公告",
+          "title": "Meta 将主动记忆和任务恢复带到 Muse 与 Meta AI",
+          "summary": "Meta 开始向 Muse 和 Meta AI 推出经 Muse Wonder 训练的专用模型，增强对历史信息的取舍，并在任务遇阻时尝试恢复或寻找替代方案。",
+          "ctx": "Meta 将 Muse Wonder 的部分能力带给更多产品用户。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 2,
+          "verification": "官方公告，数据为 Meta 自测",
+          "soWhat": "跨会话记忆可以同时评估两件事：能否找回关键信息，以及能否识别它何时已经过时。",
+          "explanation": [
+            {
+              "label": "两项能力",
+              "text": "Active Memory 让模型区分短期和长期信息，判断旧对话中的内容何时仍有用。Active Focus 则针对任务执行中的障碍训练模型，让它在工具或路径遇阻时继续尝试，并能接住用户中途补充的要求。"
+            },
+            {
+              "label": "测了什么",
+              "text": "Meta 报告，在 Muse 的主动记忆评测中，正确使用关键上下文的任务比例由 76% 升到 90%。该结果来自公司发布的新旧 Muse 模型对比，Meta AI 各场景的实际表现及长期记忆可靠性仍需单独观察。"
+            }
+          ]
+        },
+        {
+          "id": "i3",
+          "kind": "fact",
+          "who": "Vercel",
+          "tag": "生成界面",
+          "url": "https://vercel.com/changelog/json-render-and-chat-sdk-agents",
+          "sourceLabel": "Vercel 官方更新日志",
+          "title": "Vercel 让 agent 向 Slack 和 Teams 流式发送原生卡片",
+          "summary": "Vercel 的 Chat SDK 接入 json-render。agent 可以输出结构化组件描述，由平台适配器将其转换为 Slack 或 Teams 的原生卡片。",
+          "ctx": "Vercel 发布 Chat SDK 与 json-render 的集成。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 2,
+          "verification": "官方更新日志及代码示例",
+          "soWhat": "同一份组件定义可以跨聊天平台使用，具体展示效果仍取决于各平台的卡片上限。",
+          "explanation": [
+            {
+              "label": "怎么渲染",
+              "text": "开发者先定义可用的表格、图表和按钮等组件。模型按这个目录输出 JSON，渲染器把描述转为卡片，再由适配器生成 Slack 的 Block Kit 或 Teams 的 Adaptive Cards。卡片可以随着模型输出逐步更新。"
+            },
+            {
+              "label": "如何处理限制",
+              "text": "渲染器会按组件规则校验属性，开发者可把错误交还模型修正。适配器还会处理平台上限，例如 Slack 的第二张表可以降级为代码块。开发者也可设定严格上限，遇到超限描述时直接拒绝。"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "question": "你的 agent 写下一条长期规则前，需要拿出什么证据？"
+}
