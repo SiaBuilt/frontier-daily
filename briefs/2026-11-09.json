@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-09",
+  "generatedAt": "2026-11-09T07:40:48+08:00",
+  "headline": "斯坦福让编程课学生给真实开源项目交作业",
+  "themes": [
+    "AI 编程教育",
+    "Agent 工作环境",
+    "原型性能验证"
+  ],
+  "stats": "X：0 条，中央快照距出刊约 17 小时，已筛 10 位 builder 的 19 条记录；核到部分原帖，Pro 额度适用范围未交叉确认，Asahi 讨论背景未核实｜一手长文：1 条；SemiAnalysis 仅公开订阅预览，Simon 另一条为浏览器兼容修复，Latent Space 新闻汇编排除｜播客：1 条；跨节目搜索 OpenAI、Anthropic、Meta 并扩展到具体人物，已收录的 Anthropic 增长工程师访谈去重；Tulsee 单集文字稿需订阅，Jev 官方文字稿未核实且 YouTube 网页抓取限流，Mark Chen 和 Alexandr Wang 线索缺一手首发日期；No Priors、All-In、Every、Nebius 等候选未完成单集或正文核验｜事实新闻：0 条｜失败的源：18 个登记 RSS 均抓取成功，Unsupervised 文字稿 feed 陈旧；中央博客 feed 为空，中央播客一条转录失败（HTTP 502）；OpenAI News 直接 HTTP 403，已改用网页工具核对。",
+  "sections": [
+    {
+      "id": "x",
+      "title": "Builders 在说什么",
+      "items": []
+    },
+    {
+      "id": "pod",
+      "title": "一手长文与播客",
+      "items": [
+        {
+          "id": "p1",
+          "kind": "podcast",
+          "who": "Mihail Eric，斯坦福大学兼职教师、Monaco AI 负责人",
+          "program": "Latent Space",
+          "tag": "编程教育",
+          "url": "https://latent.space/p/cs146s/",
+          "sourceLabel": "Latent Space 单集与文字稿",
+          "title": "当 AI 能做完旧练习，斯坦福编程课加入开源贡献",
+          "summary": "Mihail Eric 发现编码 agent 已能完成不少旧练习，便让学生给真实开源项目提交改动，由维护者审查。",
+          "ctx": "Eric 在 Latent Space 复盘斯坦福 CS146S 课程改版。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 3,
+          "takeaways": [
+            "学生得先理解项目需求和代码约束，再让维护者判断补丁是否适合合入。",
+            "Monaco 保留外购的代码审查工具，但自建了贴合自身云环境的工作区，让后台 agent 能复现故障并测试补丁。"
+          ],
+          "soWhat": "当生成补丁变快，作业可以考学生能否解释改动，并拿出维护者能复核的验证结果。"
+        },
+        {
+          "id": "p2",
+          "kind": "article",
+          "who": "Simon Willison",
+          "tag": "性能验证",
+          "url": "https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/",
+          "sourceLabel": "Simon Willison 个人博客",
+          "title": "用 Claude 对照四种 SQLite 扩展，性能差异落在数字解析上",
+          "summary": "Willison 用 Claude 比较 SQLite 扩展的 C 与 Rust 实现。在两百万行混合数据上，C 改用自写小数解析后，从每行 67 纳秒降至 19 纳秒。",
+          "ctx": "Willison 想把带货币符号和千分位的字符串转成可排序数值。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 2,
+          "soWhat": "用 AI 比较技术选型时，可以先固定输入和输出，再用基准测试把差异追到具体实现。",
+          "sources": [
+            {
+              "label": "作者公开的 AI 生成实验报告与代码",
+              "url": "https://github.com/simonw/research/tree/main/sqlite-parse-number-c-vs-rust"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "industry",
+      "title": "典型事实",
+      "items": []
+    }
+  ],
+  "question": "当编码 agent 能快速交出补丁，你会用什么任务检验一个人读懂了代码？"
+}
