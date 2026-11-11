@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-23",
+ "updatedAt": "2026-11-11",
  "unit": "USD billions, annualized revenue run-rate",
  "note": "两家公司都不公开月度营收，以下是公开报道或官方披露的年化营收（run-rate）。两家的口径不完全一致，比如对云合作伙伴分成的计法不同，横向对比时只作参考。",
  "series": [
@@ -13,7 +13,8 @@
    {"date":"2026-02","value":14,"src":"Anthropic Series G 公告","url":"https://explodingtopics.com/blog/anthropic-revenue"},
    {"date":"2026-04","value":30,"src":"Anthropic 官方博客","url":"https://explodingtopics.com/blog/anthropic-revenue"},
    {"date":"2026-05","value":47,"src":"媒体汇总","url":"https://explodingtopics.com/blog/anthropic-revenue"},
-   {"date":"2026-07","value":65,"src":"投资人更新 · CNBC / Bloomberg","url":"https://www.cnbc.com/2026/08/17/anthropic-says-annualized-revenue-climbed-to-65-billion-in-july.html"}
+   {"date":"2026-07","value":65,"src":"投资人更新 · CNBC / Bloomberg","url":"https://www.cnbc.com/2026/08/17/anthropic-says-annualized-revenue-climbed-to-65-billion-in-july.html"},
+   {"date":"2026-10","value":81,"src":"Anthropic S-1/A（截至 10 月 31 日）","url":"https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm","addedAt":"2026-11-11"}
   ]},
   {"id":"openai","name":"OpenAI","color":"#2F55B5","points":[
    {"date":"2024-12","value":6,"src":"Reuters","url":"https://explodingtopics.com/blog/openai-revenue"},

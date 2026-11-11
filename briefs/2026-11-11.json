@@ -1,0 +1,150 @@
+{
+  "date": "2026-11-11",
+  "generatedAt": "2026-11-11T14:32:45+08:00",
+  "headline": "Anthropic 披露 IPO 配售，ChatGPT 开放商家入口",
+  "themes": [
+    "上市融资",
+    "商家发现",
+    "团队协作"
+  ],
+  "stats": "X：0 条，15 位 builder 的 29 条记录已筛，快照距本次运行逾 24 小时，记录均超出窗口｜一手长文：1 条；模型转引、工具版本简讯排除，Ethan Mollick、NaiveAI 及 Lenny 候选未完成入选核验｜播客：1 条；已跨节目搜索 OpenAI、Anthropic、Meta，近期已收单集去重；Resend 官方 VTT 直读 403，改核中央转录与官方单集；Codex 工作坊未核到完整一手文字稿，Jev、All-In 等未完成全文核验｜事实新闻：3 条（SEC、OpenAI、Anthropic）｜失败的源：18 个登记 RSS 成功，Unsupervised 文字稿 feed 陈旧，中央博客 feed 为空。",
+  "sections": [
+    {
+      "id": "x",
+      "title": "Builders 在说什么",
+      "items": []
+    },
+    {
+      "id": "pod",
+      "title": "一手长文与播客",
+      "items": [
+        {
+          "id": "p1",
+          "kind": "podcast",
+          "who": "Zeno Rocha，Resend 联合创始人兼 CEO",
+          "tag": "工具设计",
+          "url": "https://latent.space/p/resend/",
+          "sourceLabel": "Latent Space 单集",
+          "title": "Resend 给 Agent 做了一份可直接读取的价格表",
+          "summary": "Rocha 发现模型做竞品比较时读不到互动定价控件，于是把同一份定价数据用文本写出来。",
+          "ctx": "Latent Space 请 Rocha 复盘 Resend 如何服务编码 agent。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 2,
+          "soWhat": "定价规则若藏在交互控件里，编码 agent 可能在比较供应商时漏掉它。",
+          "program": "Latent Space",
+          "takeaways": [
+            "开源 React Email 模板能搭配其他邮件服务使用，开发者可以先解决模板问题。",
+            "Rocha 会展开实际的 MCP 工具调用检查返回值，曾发现结果过大，超出可用上下文。"
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "article",
+          "who": "Simon Willison",
+          "tag": "声音定位",
+          "url": "https://simonwillison.net/2026/Nov/9/mysterious-beeps/",
+          "sourceLabel": "Simon Willison 个人博客",
+          "title": "用浏览器麦克风给 Claude Code 接上声音数据",
+          "summary": "Willison 让 Claude Code 搭建网页，把多台设备采集的声音传回分析，再通过拍手、回放与移动设备缩小异响范围。",
+          "ctx": "Willison 想找出家里间歇出现的蜂鸣声。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 2,
+          "soWhat": "给编码 agent 接入可回放的传感数据，可以让它迭代排查真实环境里的问题。"
+        }
+      ]
+    },
+    {
+      "id": "industry",
+      "title": "典型事实",
+      "items": [
+        {
+          "id": "i1",
+          "kind": "fact",
+          "who": "Anthropic",
+          "tag": "上市融资",
+          "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm",
+          "sourceLabel": "SEC 招股书修订稿",
+          "title": "Anthropic 披露 260 亿美元附条件私募配售",
+          "summary": "Anthropic 在修订招股书中披露，七家科技公司同意按 IPO 价格认购合计 260 亿美元的 Class N 普通股，交割取决于 IPO 完成等条件。",
+          "ctx": "Anthropic 于 11 月 10 日提交修订招股书。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 3,
+          "soWhat": "跟踪上市融资时，可以分别看公开发行、附条件配售和已交割资金。",
+          "verification": "SEC S-1/A 与配售协议",
+          "explanation": [
+            {
+              "label": "具体机制",
+              "text": "认购方包括 Google、微软、英伟达、AMD、博通、美光和台积电旗下的投资实体，各自承担认购义务。招股书列明，Google 的认购会履行此前承诺投资的一部分。配售与公开发行使用同一每股价格。"
+            },
+            {
+              "label": "适用范围",
+              "text": "配售计划在公开发行完成后立即交割，并受协议中的其他条件约束。招股书另披露，截至 10 月底的年化营收运行率约 810 亿美元。该经营指标基于近期用量费和月度订阅费折算，实际财年收入须看会计口径。"
+            }
+          ],
+          "sources": [
+            {
+              "label": "Google 认购协议",
+              "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/exhibit1015-sx1ax2.htm"
+            }
+          ]
+        },
+        {
+          "id": "i2",
+          "kind": "fact",
+          "who": "OpenAI",
+          "tag": "商家入口",
+          "url": "https://openai.com/index/introducing-businesses-chatgpt/",
+          "sourceLabel": "OpenAI 官方公告",
+          "title": "ChatGPT 开放商家认领，并试点商家 Agent",
+          "summary": "OpenAI 推出 Business Hub 测试版，商家验证后可更新资料及商品供给。符合条件的美国电商和线上服务商还能上线问答 agent。",
+          "ctx": "OpenAI 发布 Businesses in ChatGPT 测试版。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 3,
+          "soWhat": "商家可以开始维护 ChatGPT 里的商品资料，并观察提及与访问能否带来实际询盘。",
+          "verification": "官方公告",
+          "explanation": [
+            {
+              "label": "具体机制",
+              "text": "商家可提交价格、库存等商品信息，还可查看提及、网站点击及被引用时的常见话题。OpenAI 对这些数据做聚合，并在互动量满足一定门槛后显示。商家后台提供统计，用户对话文本仍留在 ChatGPT。"
+            },
+            {
+              "label": "适用范围",
+              "text": "用户从商家资料页主动进入带标识的商家 Agent 对话，可以继续问产品规格或适配问题。商家也可把该对话设为广告落地入口。当前 Agent 限符合条件的美国电商和线上服务商，扩展到更多市场与品类仍待后续发布。"
+            }
+          ]
+        },
+        {
+          "id": "i3",
+          "kind": "fact",
+          "who": "Anthropic",
+          "tag": "协作工具",
+          "url": "https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors",
+          "sourceLabel": "Claude 官方公告",
+          "title": "Claude 加入协作表格、白板和交互连接器",
+          "summary": "Anthropic 推出 Claude Sheets、Whiteboards 和 Claude Data，并让部分第三方应用可直接嵌在 Claude 内使用。官方将 Meetings 列为即将推出。",
+          "ctx": "Anthropic 在 The Briefing 介绍面向团队的新功能。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 2,
+          "soWhat": "表格、白板和仪表盘可以沿用同一工作上下文，减少团队在不同产物里重复录入信息。",
+          "verification": "官方产品公告",
+          "explanation": [
+            {
+              "label": "具体机制",
+              "text": "Sheets 支持多人和 Claude 一起编辑公式与多标签页。Whiteboards 支持共同整理讨论并生成摘要。Claude Data 可连接 Snowflake 或 Salesforce，基于数据做仪表盘，团队认证指标的能力处于测试阶段。"
+            },
+            {
+              "label": "适用范围",
+              "text": "交互连接器让部分合作方在 Claude 内嵌入应用界面，员工可在原对话里处理应用内的操作。公告预告 Meetings 将支持通话中记笔记和更新文档，实际开放时间与部署范围仍以官方后续说明为准。"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "question": "当商家能在 AI 答案旁提供自己的问答入口，用户需要看到哪些信息才能判断答复来自谁？"
+}
