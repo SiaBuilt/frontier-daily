@@ -1,0 +1,150 @@
+{
+  "date": "2026-11-12",
+  "generatedAt": "2026-11-12T07:43:52+08:00",
+  "headline": "Gemini 批量做判断，DeepMind 验证 Signal 核心协议",
+  "themes": [
+    "模型路由",
+    "形式验证",
+    "模型供应链"
+  ],
+  "stats": "X：0 条，快照距运行约 17 小时，筛查 15 位 builder 的 32 条记录，窗口内候选未完成原帖和背景核验｜一手长文：1 条，Simon 的 Decisions 条目改查 Google 原公告｜播客：0 条；跨节目搜索 OpenAI、Anthropic、Meta，Meta 旧访谈排除，Mark Chen 首发日期未核实，Resend 等已去重，Handshake、Every、Lenny 等未完成一手全文核验｜事实新闻：4 条（Google、DeepMind、Microsoft Research、Mercor）｜失败的源：18 个登记 RSS 均成功，Unsupervised 文字稿 feed 陈旧，中央博客 feed 为空；部分 Substack 首页无可读正文，已参考 RSS。",
+  "sections": [
+    {
+      "id": "x",
+      "title": "Builders 在说什么",
+      "items": []
+    },
+    {
+      "id": "pod",
+      "title": "一手长文与播客",
+      "items": [
+        {
+          "id": "p1",
+          "kind": "article",
+          "who": "Latent Space 编辑团队",
+          "tag": "推理实测",
+          "url": "https://latent.space/p/naiveai/",
+          "sourceLabel": "Latent Space 原创实测",
+          "title": "NaiveAI 的每秒 2100 token 是单秒峰值",
+          "summary": "Latent Space 将 Naive-N0.5-Flash 与两款 Flash 模型对比，发现它在简单和中等难度题上更快，但复杂题往往消耗更多思考 token。",
+          "ctx": "Latent Space 实测 NaiveAI 主打高速的开放权重模型。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 2,
+          "soWhat": "比较模型速度时，应同时看单次任务耗时、生成量和成本。"
+        }
+      ]
+    },
+    {
+      "id": "industry",
+      "title": "典型事实",
+      "items": [
+        {
+          "id": "i1",
+          "kind": "fact",
+          "who": "Google",
+          "tag": "任务路由",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+          "sourceLabel": "Google 官方公告",
+          "title": "Gemini Decisions API 一次可评估最多 1000 个问题",
+          "summary": "Google 推出 Gemini Decisions API，可对同一份多模态输入批量做是非判断、选项选择或按评分规则打分，并返回概率。",
+          "ctx": "Google 发布 Gemini Decision 1 和对应 API。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 3,
+          "soWhat": "对答案范围明确的步骤，产品可以直接用概率做分流，并把边界案例交给人工或其他模型。",
+          "verification": "Google 官方公告",
+          "explanation": [
+            {
+              "label": "具体机制",
+              "text": "开发者给出候选选项或评分档位，模型一次前向计算即可为选项打分。单次请求可共享文本、图像、音频、视频或 PDF 输入，适合工具选择、内容分级或根据规则筛查材料。"
+            },
+            {
+              "label": "适用范围",
+              "text": "Google 报告，在最长 1.6 万 token 的测试条件下，端到端中位延迟为 150 至 250 毫秒。公告给出的计费为每百万输入 token 0.10 美元，输出不单独计费。具体任务的可靠性仍需用实际数据检验。"
+            }
+          ]
+        },
+        {
+          "id": "i2",
+          "kind": "fact",
+          "who": "Google DeepMind",
+          "tag": "形式验证",
+          "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
+          "sourceLabel": "DeepMind 官方研究",
+          "title": "DeepMind 用 Gemini 验证 Signal 核心密码协议实现",
+          "summary": "DeepMind 用 Gemini Carbon 驱动的 agent 生成可由 Lean 检查的证明，验证 Signal 核心密码协议实现是否满足指定的安全性质。",
+          "ctx": "DeepMind 公开 AlphaProof Code 的 Signal 案例。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 3,
+          "soWhat": "模型能承担大规模证明工作，专家仍需审查安全目标及其适用条件。",
+          "verification": "DeepMind 官方研究",
+          "explanation": [
+            {
+              "label": "具体机制",
+              "text": "研究人员先将 Signal 的安全目标写成形式化规范，并由专家逐条审阅。随后由 agent 构造证明，由 Lean 检查推导是否成立。技术报告记载，该项目生成约 650 万行经机器检查的证明代码。"
+            },
+            {
+              "label": "适用范围",
+              "text": "证明结论依赖受信任的规范与机器指令语义，覆盖的是研究所选的核心密码实现与性质。客户端其他功能、运行环境以及未纳入规范的行为仍需要另行评估。"
+            }
+          ]
+        },
+        {
+          "id": "i3",
+          "kind": "fact",
+          "who": "Microsoft Research",
+          "tag": "模型后门",
+          "url": "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/",
+          "sourceLabel": "Microsoft Research 官方研究",
+          "title": "微软研究用少于 10 个神经元演示 Agent 权重后门",
+          "summary": "Microsoft Research 在实验中修改少于 10 个休眠神经元，就能让基于该模型的 agent 在隐藏触发条件出现时生成恶意指令。",
+          "ctx": "微软研究人员公布 Lazarus 权重篡改实验。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 2,
+          "soWhat": "允许模型调用终端的团队，需要独立验证模型来源和工具权限。",
+          "verification": "Microsoft Research 官方研究",
+          "explanation": [
+            {
+              "label": "具体机制",
+              "text": "研究假定攻击者能改动模型权重。被修改的模型在常规评测中仍能表现正常，触发条件出现时才改变输出。后门一旦把指令传到具备执行权限的 agent，风险便从模型输出延伸到运行环境。"
+            },
+            {
+              "label": "适用范围",
+              "text": "研究展示的是特定实验中的可行性。真实环境中的后果还取决于执行器权限、隔离策略和外部访问能力。常规对话评测能覆盖的触发条件有限，权重完整性校验与工具权限控制应各自落实。"
+            }
+          ]
+        },
+        {
+          "id": "i4",
+          "kind": "fact",
+          "who": "Mercor",
+          "tag": "数据融资",
+          "url": "https://www.mercor.com/blog/series-d/",
+          "sourceLabel": "Mercor 官方公告",
+          "title": "Mercor 宣布 7.5 亿美元 D 轮，估值 200 亿美元",
+          "summary": "Mercor 宣布以 200 亿美元估值完成 7.5 亿美元 D 轮，交易包含员工股份收购，参投方包括 NVIDIA、Salesforce 和 Zoom。",
+          "ctx": "Mercor 发布 D 轮融资公告。",
+          "quote": "",
+          "quoteZh": "",
+          "weight": 2,
+          "soWhat": "企业评测数据的需求值得单独观察，尤其是客户是否会长期为行业专家和任务设计付费。",
+          "verification": "Mercor 官方公告",
+          "explanation": [
+            {
+              "label": "具体机制",
+              "text": "Mercor 为 AI 公司组织领域专家，参与训练数据生产和评测。公司称，原先服务前沿实验室的能力正在被开放模型团队、应用公司和大型企业采用。"
+            },
+            {
+              "label": "适用范围",
+              "text": "本轮包含员工股份收购，公告未在该文拆分一级新增资金与员工股权交易的金额。融资规模反映该轮交易，企业客户的采用深度和收入构成仍需后续披露。"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "question": "你的 agent 流程中，哪些步骤适合先用固定选项打分，再把难例交给更强的模型？"
+}
