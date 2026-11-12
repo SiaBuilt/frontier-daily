@@ -1,0 +1,110 @@
+{
+  "date": "2026-11-13",
+  "generatedAt": "2026-11-13T07:43:16+08:00",
+  "headline": "黄仁勋辞任 NVIDIA CEO，Anthropic 公布自动红队",
+  "themes": [
+    "管理层交接",
+    "自动红队",
+    "决策模型"
+  ],
+  "stats": "X：0 条，16 位 builder 的 32 条快照记录已筛，快照距运行约 17 小时，窗口内候选原帖及背景未完成核验｜一手长文：1 条；SemiAnalysis 仅订阅预览，Simon 部分条目为工具简讯或已覆盖主题｜播客：0 条；跨节目搜索 OpenAI、Anthropic、Meta 并扩展到具体人物，Mark Chen 首发日期未核实，Max Jaderberg 视频网页抓取限流，No Priors、Lenny、Every 等未完成一手全文核验｜事实新闻：2 条（NVIDIA/SEC、Anthropic）｜失败的源：18 个登记 RSS 成功，中央博客 feed 为空，Unsupervised 文字稿 feed 陈旧。",
+  "sections": [
+    {
+      "id": "x",
+      "title": "Builders 在说什么",
+      "items": []
+    },
+    {
+      "id": "pod",
+      "title": "一手长文与播客",
+      "items": [
+        {
+          "id": "p1",
+          "kind": "article",
+          "who": "Richard MacManus",
+          "tag": "决策模型",
+          "url": "https://latent.space/p/jev-revolution/",
+          "sourceLabel": "Latent Space 现场报道",
+          "title": "Glean 把 Jev 用于分类，UiPath 用它逐轮筛选文档",
+          "summary": "Glean 在分类体系变化时用 Jev 处理新的选项。UiPath 则把文档片段分组比较，让每组选出的片段进入下一轮。",
+          "ctx": "AI Engineer Code Summit 展示 Jev 的产品用例。",
+          "weight": 2,
+          "soWhat": "当选项会频繁变化，可以先评估模型能否按更新后的规则做判断。",
+          "quote": "",
+          "quoteZh": "",
+          "sources": [
+            {
+              "label": "大会官方议程",
+              "url": "https://ai.engineer/code/2026/schedule"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "industry",
+      "title": "典型事实",
+      "items": [
+        {
+          "id": "i1",
+          "kind": "fact",
+          "who": "NVIDIA",
+          "tag": "管理交接",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition",
+          "sourceLabel": "NVIDIA 公告与 SEC 8-K",
+          "title": "黄仁勋辞任 NVIDIA CEO，CFO 临时接任",
+          "summary": "NVIDIA 公告确认黄仁勋辞去总裁、CEO 和董事职务。CFO Colette Kress 临时接任 CEO，并继续担任 CFO。",
+          "ctx": "NVIDIA 公告管理层交接并提交 8-K。",
+          "weight": 3,
+          "soWhat": "交接期间，临时 CEO、董事会主席与永久继任者是三个不同的任命节点。",
+          "quote": "",
+          "quoteZh": "",
+          "verification": "NVIDIA 公告与 SEC 8-K",
+          "explanation": [
+            {
+              "label": "事件细节",
+              "text": "8-K 记载，董事会在 11 月 11 日接受辞呈，即时生效。Kress 从 2013 年起担任 CFO，过渡期间继续负责财务。公司还任命董事 Harvey C. Jones 担任董事会主席。"
+            },
+            {
+              "label": "后续与边界",
+              "text": "董事会已经启动永久 CEO 的遴选，候选人来自公司内外。公司公告目前确认了过渡安排，正式继任者和交接时间表仍待披露。"
+            }
+          ],
+          "sources": [
+            {
+              "label": "SEC 8-K",
+              "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm"
+            }
+          ]
+        },
+        {
+          "id": "i2",
+          "kind": "fact",
+          "who": "Anthropic",
+          "tag": "自动红队",
+          "url": "https://safeguards.anthropic.com/2026/automated-red-teaming/",
+          "sourceLabel": "Anthropic 官方研究",
+          "title": "Anthropic 用 Anvil 在 24 至 48 小时内找到生物安全绕过",
+          "summary": "Anthropic 公布内部自动红队系统 Anvil。在 8 道生物安全悬赏题上，它对所测分类器找到的绕过达到或超过最佳人工结果。",
+          "ctx": "Anthropic 公开 Anvil 内部红队实验。",
+          "weight": 3,
+          "soWhat": "自动红队可以缩短发现问题到修复的周期，结果需要连同攻击者的权限一起解释。",
+          "quote": "",
+          "quoteZh": "",
+          "verification": "Anthropic 官方研究",
+          "explanation": [
+            {
+              "label": "事件细节",
+              "text": "Anvil 让多个 Claude 会话并行测试目标模型，依据反馈反复调整尝试。Anthropic 报告，系统在所测生物安全题上用 24 至 48 小时找到绕过，人工悬赏测试曾耗时数周至数月。"
+            },
+            {
+              "label": "后续与边界",
+              "text": "最难的任务依赖强模型、内部分类器的精确分数，以及测试用攻击模型关闭自身防护等条件。实验中的权限比普通外部用户更高，结论也受测试任务和分类器版本限制。"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "question": "用 AI 测试另一套 AI 的安全防护时，哪些内部反馈应该只在测试环境开放？"
+}
