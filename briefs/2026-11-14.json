@@ -1,0 +1,104 @@
+{
+  "date": "2026-11-14",
+  "generatedAt": "2026-11-14T07:40:23+08:00",
+  "headline": "Gemini 4 Hydrogen 上线，Antigravity 开始切换模型",
+  "themes": [
+    "模型调度",
+    "算力融资",
+    "研发自动化"
+  ],
+  "stats": "X：0 条，中央快照为 16 位 builder 的 38 条记录，窗口内原帖及背景未完成核验｜一手长文：1 条，Dwarkesh 网页工具未读到正文，直接 HTTP 读取并与 RSS 核对｜播客：0 条；搜索 OpenAI、Anthropic、Meta 及具体人物，旧访谈排除，Max Jaderberg 和 Every 未完成一手文字稿核验｜事实新闻：2 条（Google、SEC）｜失败的源：18 个登记 RSS 均成功，中央博客 feed 为空，部分 Substack 首页无可读正文，Unsupervised 文字稿 feed 陈旧。",
+  "sections": [
+    {
+      "id": "x",
+      "title": "Builders 在说什么",
+      "items": []
+    },
+    {
+      "id": "pod",
+      "title": "一手长文与播客",
+      "items": [
+        {
+          "id": "p1",
+          "kind": "article",
+          "who": "Dwarkesh Patel",
+          "tag": "研发自动化",
+          "url": "https://www.dwarkesh.com/p/rsi",
+          "sourceLabel": "Dwarkesh Patel 原文",
+          "title": "Dwarkesh 用数学进展推演 AI 研发自动化",
+          "summary": "Patel 根据可验证数学任务的进展及实验室内部研发案例，推测 AI 可能在几年内达到顶尖人类研究者的水平。",
+          "ctx": "Patel 撰文解释近期为何缩短了对 AI 研发自动化的预期。",
+          "weight": 2,
+          "soWhat": "检验这一预测时，可以跟踪模型是否能独立提出研究问题并验证结果。",
+          "quote": "",
+          "quoteZh": ""
+        }
+      ]
+    },
+    {
+      "id": "industry",
+      "title": "典型事实",
+      "items": [
+        {
+          "id": "i1",
+          "kind": "fact",
+          "who": "Google DeepMind",
+          "tag": "模型调度",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+          "sourceLabel": "Google 官方公告",
+          "title": "Gemini 4 Hydrogen 上线，Antigravity 可在同一会话切换模型",
+          "summary": "Google 推出面向日常编码和 agent 执行的 Hydrogen，并在 Antigravity 引入可在会话内切换模型的 Orchestrator。",
+          "ctx": "Google 发布 Gemini 4 Hydrogen 并公布多模型协作方案。",
+          "weight": 3,
+          "soWhat": "衡量模型分工时，可以同时记录任务成功率、完成时间和用量。",
+          "quote": "",
+          "quoteZh": "",
+          "verification": "官方公告与模型卡",
+          "explanation": [
+            {
+              "label": "具体机制",
+              "text": "复杂任务可以由 Carbon 协调，再交由 Hydrogen 编写代码、运行测试或核对改动。Google 报告，在 Terminal-Bench 4.0 中，混合模式的成功率接近单用 Carbon，平均少用 24% 的额度，完成时间缩短 19%。"
+            },
+            {
+              "label": "范围与条件",
+              "text": "这些结果来自 Google 在特定编码基准上的测试，实际收益取决于任务拆分与切换成本。Hydrogen 支持百万 token 上下文，API 标价为每百万输入 token 1.50 美元、输出 token 7.50 美元。"
+            }
+          ],
+          "sources": [
+            {
+              "label": "Google DeepMind 模型卡",
+              "url": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/"
+            }
+          ]
+        },
+        {
+          "id": "i2",
+          "kind": "fact",
+          "who": "Nscale",
+          "tag": "算力融资",
+          "url": "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm",
+          "sourceLabel": "SEC 招股书修订稿",
+          "title": "Nscale 披露为 Anthropic 算力项目筹措融资的要求",
+          "summary": "Nscale 修订招股书称，Anthropic 服务协议要求其尽最大努力在规定期限内取得合格融资，资金用于 GPU 与配套数据中心。",
+          "ctx": "Nscale 提交 11 月 12 日招股书修订稿。",
+          "weight": 2,
+          "soWhat": "判断算力合同何时能兑现，可以同时看融资进度和数据中心建设支出。",
+          "quote": "",
+          "quoteZh": "",
+          "verification": "SEC S-1/A",
+          "explanation": [
+            {
+              "label": "具体机制",
+              "text": "合格融资覆盖服务所需的 GPU 系统，以及支持这些设备的 Monarch 园区设施。公司估计，园区一号楼的数据中心和电力资本支出约为 100 亿至 105 亿美元，截至 9 月末已发生约 10 亿美元。"
+            },
+            {
+              "label": "范围与条件",
+              "text": "协议未指定最低融资金额，招股书披露的是融资义务与建设预算。另据同一文件，Nscale 在 9 月签约发行合计 31 亿美元的无担保可转债，其中 20 亿美元由 NVIDIA 认购。"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "question": "让一个模型规划、另一个模型执行时，你会如何判断模型切换真的节省了时间？"
+}
